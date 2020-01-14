@@ -1,0 +1,54 @@
+# rule identifiers to exclude from running
+disabled_rules:
+  - trailing_whitespace
+  - explicit_type_interface
+  - identifier_name
+
+excluded:
+  - noodlesTests
+  - noodlesUITests
+
+# rule identifiers to opt in
+opt_in_rules:
+  - force_unwrapping
+  - conditional_returns_on_newline
+  - closure_spacing
+  - implicitly_unwrapped_optional
+
+
+# special configuration for rules 
+large_tuple:
+  warning: 2
+  error: 3
+
+function_body_length:
+  warning: 40
+  error: 100
+
+colon:
+  flexible_right_spacing: false
+  apply_to_dictionaries: true
+
+function_parameter_count:
+  warning: 5
+  error: 8
+
+line_length:
+  warning: 120
+  error: 200
+  ignores_urls: false
+  ignores_function_declarations: false
+  ignores_comments: false
+
+file_length:
+  warning: 400
+  error: 1000
+
+cyclomatic_complexity:
+  warning: 10
+  error: 20
+  ignores_case_statements: false
+
+implicitly_unwrapped_optional:
+  mode: allExceptIBOutlets
+

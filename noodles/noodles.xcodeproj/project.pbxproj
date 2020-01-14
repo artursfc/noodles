@@ -16,6 +16,8 @@
 		A42EE85A23CE338A0046E645 /* NoodlesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE85923CE338A0046E645 /* NoodlesTests.swift */; };
 		A42EE86523CE338A0046E645 /* NoodlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE86423CE338A0046E645 /* NoodlesUITests.swift */; };
 		A42EE87523CE34FB0046E645 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42EE87423CE34FB0046E645 /* CloudKit.framework */; };
+		D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */; };
+		D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB223CE4B160005F0CE /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		A42EE86623CE338A0046E645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A42EE87223CE34420046E645 /* noodles.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = noodles.entitlements; sourceTree = "<group>"; };
 		A42EE87423CE34FB0046E645 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		D91B3BB223CE4B160005F0CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,10 @@
 		A42EE83E23CE33870046E645 /* noodles */ = {
 			isa = PBXGroup;
 			children = (
+				D91B3BAF23CE47400005F0CE /* Helpers */,
+				D91B3BAD23CE46C40005F0CE /* Managers */,
+				D91B3BAC23CE46C10005F0CE /* Interactors */,
+				D91B3BAB23CE46B20005F0CE /* Models */,
 				A42EE87223CE34420046E645 /* noodles.entitlements */,
 				A42EE83F23CE33870046E645 /* AppDelegate.swift */,
 				A42EE84123CE33870046E645 /* SceneDelegate.swift */,
@@ -140,6 +148,36 @@
 				A42EE87423CE34FB0046E645 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D91B3BAB23CE46B20005F0CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D91B3BAC23CE46C10005F0CE /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		D91B3BAD23CE46C40005F0CE /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D91B3BAF23CE47400005F0CE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */,
+				D91B3BB223CE4B160005F0CE /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,9 +333,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */,
+				D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */,
 				A42EE84423CE33870046E645 /* ViewController.swift in Sources */,
 				A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */,
 				A42EE84223CE33870046E645 /* SceneDelegate.swift in Sources */,
+				D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +504,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = noodles/noodles.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L76X5KFZD9;
+				DEVELOPMENT_TEAM = Q9Y63W6Q4X;
 				INFOPLIST_FILE = noodles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -484,7 +524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = noodles/noodles.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L76X5KFZD9;
+				DEVELOPMENT_TEAM = Q9Y63W6Q4X;
 				INFOPLIST_FILE = noodles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

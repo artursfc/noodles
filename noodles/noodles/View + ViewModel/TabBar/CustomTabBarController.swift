@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
+class CustomTabBarController: UITabBarController {
 
     let channelsViewController = ChannelsViewController()
     let feedViewController = FeedViewController()
@@ -19,7 +19,6 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate = self
         setup()
     }
 

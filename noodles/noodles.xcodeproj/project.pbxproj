@@ -222,11 +222,11 @@
 		A42EE83E23CE33870046E645 /* noodles */ = {
 			isa = PBXGroup;
 			children = (
+				A483A21023CFAB3500C7EB56 /* Interactors */,
+				A483A20F23CFAB3100C7EB56 /* Models */,
+				A483A20E23CFAB1200C7EB56 /* Coordinators */,
 				D9FE63B223CE792E004ADC29 /* Core Data */,
 				D91B3BAF23CE47400005F0CE /* Helpers */,
-				D91B3BAD23CE46C40005F0CE /* Managers */,
-				D91B3BAC23CE46C10005F0CE /* Interactors */,
-				D91B3BAB23CE46B20005F0CE /* Models */,
 				7597317223CF8EDB00F9EFA5 /* View + ViewModel */,
 				A42EE87223CE34420046E645 /* noodles.entitlements */,
 				A42EE83F23CE33870046E645 /* AppDelegate.swift */,
@@ -264,25 +264,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D91B3BAB23CE46B20005F0CE /* Models */ = {
+		A483A20E23CFAB1200C7EB56 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		A483A20F23CFAB3100C7EB56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D91B3BAC23CE46C10005F0CE /* Interactors */ = {
+		A483A21023CFAB3500C7EB56 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Interactors;
-			sourceTree = "<group>";
-		};
-		D91B3BAD23CE46C40005F0CE /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		D91B3BAF23CE47400005F0CE /* Helpers */ = {

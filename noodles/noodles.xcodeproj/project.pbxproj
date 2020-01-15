@@ -138,8 +138,8 @@
 		A42EE83E23CE33870046E645 /* noodles */ = {
 			isa = PBXGroup;
 			children = (
-				4F55FDB323CF94C00032EF0F /* Models */,
 				D91B3BAF23CE47400005F0CE /* Helpers */,
+				4F55FDB323CF94C00032EF0F /* Models */,
 				A42EE87223CE34420046E645 /* noodles.entitlements */,
 				A42EE83F23CE33870046E645 /* AppDelegate.swift */,
 				A42EE84123CE33870046E645 /* SceneDelegate.swift */,

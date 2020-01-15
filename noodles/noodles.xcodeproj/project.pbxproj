@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7597314D23CE6FAF00F9EFA5 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597314B23CE6FAF00F9EFA5 /* ChannelsViewController.swift */; };
+		7597314E23CE6FAF00F9EFA5 /* ChannelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597314C23CE6FAF00F9EFA5 /* ChannelsViewController.xib */; };
+		7597315123CEC2F500F9EFA5 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597314F23CEC2F500F9EFA5 /* CustomTabBarController.swift */; };
+		7597315223CEC2F500F9EFA5 /* CustomTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597315023CEC2F500F9EFA5 /* CustomTabBarController.xib */; };
+		7597315523CECC9B00F9EFA5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597315323CECC9B00F9EFA5 /* FeedViewController.swift */; };
+		7597315623CECC9B00F9EFA5 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597315423CECC9B00F9EFA5 /* FeedViewController.xib */; };
+		7597316223CF76DB00F9EFA5 /* SaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597316023CF76DB00F9EFA5 /* SaveViewController.swift */; };
+		7597316323CF76DB00F9EFA5 /* SaveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597316123CF76DB00F9EFA5 /* SaveViewController.xib */; };
+		7597316623CF798E00F9EFA5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597316423CF798E00F9EFA5 /* ProfileViewController.swift */; };
+		7597316723CF798E00F9EFA5 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597316523CF798E00F9EFA5 /* ProfileViewController.xib */; };
+		7597316A23CF79AE00F9EFA5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597316823CF79AE00F9EFA5 /* SearchViewController.swift */; };
+		7597316B23CF79AE00F9EFA5 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597316923CF79AE00F9EFA5 /* SearchViewController.xib */; };
+		7597317423CF8F7B00F9EFA5 /* ChannelCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597317323CF8F7B00F9EFA5 /* ChannelCollectionViewDataSource.swift */; };
+		7597317723CF90DF00F9EFA5 /* ChannelsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597317523CF90DF00F9EFA5 /* ChannelsCollectionViewCell.swift */; };
+		7597317823CF90DF00F9EFA5 /* ChannelsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597317623CF90DF00F9EFA5 /* ChannelsCollectionViewCell.xib */; };
 		4F55FDAA23CE58F00032EF0F /* MockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDA923CE58F00032EF0F /* MockManager.swift */; };
 		4F55FDD123CFA3260032EF0F /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDCD23CFA3260032EF0F /* ChannelModel.swift */; };
 		4F55FDD223CFA3260032EF0F /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDCE23CFA3260032EF0F /* PostModel.swift */; };
@@ -14,7 +29,6 @@
 		4F55FDD423CFA3260032EF0F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD023CFA3260032EF0F /* UserModel.swift */; };
 		A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE83F23CE33870046E645 /* AppDelegate.swift */; };
 		A42EE84223CE33870046E645 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE84123CE33870046E645 /* SceneDelegate.swift */; };
-		A42EE84423CE33870046E645 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE84323CE33870046E645 /* ViewController.swift */; };
 		A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42EE84823CE33870046E645 /* noodles.xcdatamodeld */; };
 		A42EE84C23CE338A0046E645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A42EE84B23CE338A0046E645 /* Assets.xcassets */; };
 		A42EE84F23CE338A0046E645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42EE84D23CE338A0046E645 /* LaunchScreen.storyboard */; };
@@ -43,6 +57,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7597314B23CE6FAF00F9EFA5 /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
+		7597314C23CE6FAF00F9EFA5 /* ChannelsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsViewController.xib; sourceTree = "<group>"; };
+		7597314F23CEC2F500F9EFA5 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		7597315023CEC2F500F9EFA5 /* CustomTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBarController.xib; sourceTree = "<group>"; };
+		7597315323CECC9B00F9EFA5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		7597315423CECC9B00F9EFA5 /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		7597316023CF76DB00F9EFA5 /* SaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveViewController.swift; sourceTree = "<group>"; };
+		7597316123CF76DB00F9EFA5 /* SaveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveViewController.xib; sourceTree = "<group>"; };
+		7597316423CF798E00F9EFA5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7597316523CF798E00F9EFA5 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		7597316823CF79AE00F9EFA5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7597316923CF79AE00F9EFA5 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		7597317323CF8F7B00F9EFA5 /* ChannelCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		7597317523CF90DF00F9EFA5 /* ChannelsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsCollectionViewCell.swift; sourceTree = "<group>"; };
+		7597317623CF90DF00F9EFA5 /* ChannelsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsCollectionViewCell.xib; sourceTree = "<group>"; };
 		4F55FDA923CE58F00032EF0F /* MockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockManager.swift; sourceTree = "<group>"; };
 		4F55FDCD23CFA3260032EF0F /* ChannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
 		4F55FDCE23CFA3260032EF0F /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -51,7 +80,6 @@
 		A42EE83C23CE33870046E645 /* noodles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noodles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42EE83F23CE33870046E645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A42EE84123CE33870046E645 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A42EE84323CE33870046E645 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A42EE84923CE33870046E645 /* noodles.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = noodles.xcdatamodel; sourceTree = "<group>"; };
 		A42EE84B23CE338A0046E645 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A42EE84E23CE338A0046E645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,6 +94,14 @@
 		A42EE87423CE34FB0046E645 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		D91B3BB223CE4B160005F0CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D9FE63A223CE7927004ADC29 /* Channel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D9FE63A323CE7927004ADC29 /* Channel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D9FE63A423CE7927004ADC29 /* Rank+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rank+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D9FE63A523CE7927004ADC29 /* Rank+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rank+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D9FE63A623CE7927004ADC29 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D9FE63A723CE7927004ADC29 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D9FE63A823CE7927004ADC29 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D9FE63A923CE7927004ADC29 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +130,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7597316C23CF8E5C00F9EFA5 /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+				7597317923CF90E900F9EFA5 /* Cell */,
+				7597314B23CE6FAF00F9EFA5 /* ChannelsViewController.swift */,
+				7597317323CF8F7B00F9EFA5 /* ChannelCollectionViewDataSource.swift */,
+				7597314C23CE6FAF00F9EFA5 /* ChannelsViewController.xib */,
 		4F55FDCC23CFA3260032EF0F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +145,74 @@
 				4F55FDCF23CFA3260032EF0F /* RankModel.swift */,
 				4F55FDD023CFA3260032EF0F /* UserModel.swift */,
 			);
-			path = Models;
+			path = Channels;
+			sourceTree = "<group>";
+		};
+		7597316D23CF8E7200F9EFA5 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				7597315323CECC9B00F9EFA5 /* FeedViewController.swift */,
+				7597315423CECC9B00F9EFA5 /* FeedViewController.xib */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		7597316E23CF8E7F00F9EFA5 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				7597314F23CEC2F500F9EFA5 /* CustomTabBarController.swift */,
+				7597315023CEC2F500F9EFA5 /* CustomTabBarController.xib */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		7597316F23CF8E9700F9EFA5 /* Saved */ = {
+			isa = PBXGroup;
+			children = (
+				7597316023CF76DB00F9EFA5 /* SaveViewController.swift */,
+				7597316123CF76DB00F9EFA5 /* SaveViewController.xib */,
+			);
+			path = Saved;
+			sourceTree = "<group>";
+		};
+		7597317023CF8EA000F9EFA5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7597316423CF798E00F9EFA5 /* ProfileViewController.swift */,
+				7597316523CF798E00F9EFA5 /* ProfileViewController.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		7597317123CF8EA900F9EFA5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				7597316823CF79AE00F9EFA5 /* SearchViewController.swift */,
+				7597316923CF79AE00F9EFA5 /* SearchViewController.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		7597317223CF8EDB00F9EFA5 /* View + ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7597316C23CF8E5C00F9EFA5 /* Channels */,
+				7597316D23CF8E7200F9EFA5 /* Feed */,
+				7597316E23CF8E7F00F9EFA5 /* TabBar */,
+				7597316F23CF8E9700F9EFA5 /* Saved */,
+				7597317023CF8EA000F9EFA5 /* Profile */,
+				7597317123CF8EA900F9EFA5 /* Search */,
+			);
+			path = "View + ViewModel";
+			sourceTree = "<group>";
+		};
+		7597317923CF90E900F9EFA5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7597317523CF90DF00F9EFA5 /* ChannelsCollectionViewCell.swift */,
+				7597317623CF90DF00F9EFA5 /* ChannelsCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		A42EE83323CE33870046E645 = {
@@ -129,16 +239,18 @@
 		A42EE83E23CE33870046E645 /* noodles */ = {
 			isa = PBXGroup;
 			children = (
+				D9FE63B223CE792E004ADC29 /* Core Data */,
 				D91B3BAF23CE47400005F0CE /* Helpers */,
+				D91B3BAD23CE46C40005F0CE /* Managers */,
+				D91B3BAC23CE46C10005F0CE /* Interactors */,
+				7597317223CF8EDB00F9EFA5 /* View + ViewModel */,
 				4F55FDCC23CFA3260032EF0F /* Models */,
 				A42EE87223CE34420046E645 /* noodles.entitlements */,
 				A42EE83F23CE33870046E645 /* AppDelegate.swift */,
 				A42EE84123CE33870046E645 /* SceneDelegate.swift */,
-				A42EE84323CE33870046E645 /* ViewController.swift */,
 				A42EE84B23CE338A0046E645 /* Assets.xcassets */,
 				A42EE84D23CE338A0046E645 /* LaunchScreen.storyboard */,
 				A42EE85023CE338A0046E645 /* Info.plist */,
-				A42EE84823CE33870046E645 /* noodles.xcdatamodeld */,
 			);
 			path = noodles;
 			sourceTree = "<group>";
@@ -169,14 +281,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D91B3BAB23CE46B20005F0CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D91B3BAC23CE46C10005F0CE /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		D91B3BAD23CE46C40005F0CE /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		D91B3BAF23CE47400005F0CE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */,
 				D91B3BB223CE4B160005F0CE /* Constants.swift */,
-				4F55FDA923CE58F00032EF0F /* MockManager.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D9FE63B223CE792E004ADC29 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				D9FE63A223CE7927004ADC29 /* Channel+CoreDataClass.swift */,
+				D9FE63A323CE7927004ADC29 /* Channel+CoreDataProperties.swift */,
+				D9FE63A423CE7927004ADC29 /* Rank+CoreDataClass.swift */,
+				D9FE63A523CE7927004ADC29 /* Rank+CoreDataProperties.swift */,
+				D9FE63A623CE7927004ADC29 /* Post+CoreDataClass.swift */,
+				D9FE63A723CE7927004ADC29 /* Post+CoreDataProperties.swift */,
+				D9FE63A823CE7927004ADC29 /* User+CoreDataClass.swift */,
+				D9FE63A923CE7927004ADC29 /* User+CoreDataProperties.swift */,
+				A42EE84823CE33870046E645 /* noodles.xcdatamodeld */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,8 +432,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7597316723CF798E00F9EFA5 /* ProfileViewController.xib in Resources */,
 				A42EE84F23CE338A0046E645 /* LaunchScreen.storyboard in Resources */,
+				7597315623CECC9B00F9EFA5 /* FeedViewController.xib in Resources */,
+				7597314E23CE6FAF00F9EFA5 /* ChannelsViewController.xib in Resources */,
+				7597315223CEC2F500F9EFA5 /* CustomTabBarController.xib in Resources */,
+				7597317823CF90DF00F9EFA5 /* ChannelsCollectionViewCell.xib in Resources */,
 				A42EE84C23CE338A0046E645 /* Assets.xcassets in Resources */,
+				7597316B23CF79AE00F9EFA5 /* SearchViewController.xib in Resources */,
+				7597316323CF76DB00F9EFA5 /* SaveViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,16 +486,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7597314D23CE6FAF00F9EFA5 /* ChannelsViewController.swift in Sources */,
+				7597316A23CF79AE00F9EFA5 /* SearchViewController.swift in Sources */,
+				7597317723CF90DF00F9EFA5 /* ChannelsCollectionViewCell.swift in Sources */,
+				7597315123CEC2F500F9EFA5 /* CustomTabBarController.swift in Sources */,
+				7597316623CF798E00F9EFA5 /* ProfileViewController.swift in Sources */,
 				A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */,
-				4F55FDD223CFA3260032EF0F /* PostModel.swift in Sources */,
 				D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */,
-				A42EE84423CE33870046E645 /* ViewController.swift in Sources */,
-				4F55FDD323CFA3260032EF0F /* RankModel.swift in Sources */,
+				7597316223CF76DB00F9EFA5 /* SaveViewController.swift in Sources */,
 				A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */,
+				4F55FDD223CFA3260032EF0F /* PostModel.swift in Sources */,
+				4F55FDD323CFA3260032EF0F /* RankModel.swift in Sources */,
 				4F55FDD123CFA3260032EF0F /* ChannelModel.swift in Sources */,
 				4F55FDAA23CE58F00032EF0F /* MockManager.swift in Sources */,
 				A42EE84223CE33870046E645 /* SceneDelegate.swift in Sources */,
+				7597315523CECC9B00F9EFA5 /* FeedViewController.swift in Sources */,
 				D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */,
+				7597317423CF8F7B00F9EFA5 /* ChannelCollectionViewDataSource.swift in Sources */,
 				4F55FDD423CFA3260032EF0F /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,7 +670,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = noodles/noodles.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 93JG72P729;
+				DEVELOPMENT_TEAM = Q9Y63W6Q4X;
 				INFOPLIST_FILE = noodles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -528,7 +690,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = noodles/noodles.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 93JG72P729;
+				DEVELOPMENT_TEAM = Q9Y63W6Q4X;
 				INFOPLIST_FILE = noodles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -34,6 +34,9 @@
 		A42EE85A23CE338A0046E645 /* NoodlesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE85923CE338A0046E645 /* NoodlesTests.swift */; };
 		A42EE86523CE338A0046E645 /* NoodlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE86423CE338A0046E645 /* NoodlesUITests.swift */; };
 		A42EE87523CE34FB0046E645 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42EE87423CE34FB0046E645 /* CloudKit.framework */; };
+		D90E74D023CFC9B800125F48 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E74CF23CFC9B800125F48 /* CoreDataManager.swift */; };
+		D90E74D223CFC9D600125F48 /* CoreDataStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E74D123CFC9D600125F48 /* CoreDataStatus.swift */; };
+		D90E74D423CFC9F600125F48 /* DataModifiedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E74D323CFC9F600125F48 /* DataModifiedDelegate.swift */; };
 		D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */; };
 		D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB223CE4B160005F0CE /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -90,6 +93,9 @@
 		A42EE86623CE338A0046E645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A42EE87223CE34420046E645 /* noodles.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = noodles.entitlements; sourceTree = "<group>"; };
 		A42EE87423CE34FB0046E645 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		D90E74CF23CFC9B800125F48 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D90E74D123CFC9D600125F48 /* CoreDataStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStatus.swift; sourceTree = "<group>"; };
+		D90E74D323CFC9F600125F48 /* DataModifiedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModifiedDelegate.swift; sourceTree = "<group>"; };
 		D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		D91B3BB223CE4B160005F0CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D9FE63A223CE7927004ADC29 /* Channel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -300,6 +306,7 @@
 		D91B3BAF23CE47400005F0CE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D90E74D323CFC9F600125F48 /* DataModifiedDelegate.swift */,
 				D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */,
 				D91B3BB223CE4B160005F0CE /* Constants.swift */,
 			);
@@ -318,6 +325,8 @@
 				D9FE63A823CE7927004ADC29 /* User+CoreDataClass.swift */,
 				D9FE63A923CE7927004ADC29 /* User+CoreDataProperties.swift */,
 				A42EE84823CE33870046E645 /* noodles.xcdatamodeld */,
+				D90E74CF23CFC9B800125F48 /* CoreDataManager.swift */,
+				D90E74D123CFC9D600125F48 /* CoreDataStatus.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -487,14 +496,17 @@
 				7597317723CF90DF00F9EFA5 /* ChannelsCollectionViewCell.swift in Sources */,
 				7597315123CEC2F500F9EFA5 /* CustomTabBarController.swift in Sources */,
 				4F55FDDC23CFAD110032EF0F /* RankModel.swift in Sources */,
+				D90E74D023CFC9B800125F48 /* CoreDataManager.swift in Sources */,
 				7597316623CF798E00F9EFA5 /* ProfileViewController.swift in Sources */,
 				A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */,
 				D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */,
 				4F55FDDA23CFAD110032EF0F /* ChannelModel.swift in Sources */,
+				D90E74D423CFC9F600125F48 /* DataModifiedDelegate.swift in Sources */,
 				7597316223CF76DB00F9EFA5 /* SaveViewController.swift in Sources */,
 				4F55FDD923CFAD110032EF0F /* UserModel.swift in Sources */,
 				A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */,
 				A42EE84223CE33870046E645 /* SceneDelegate.swift in Sources */,
+				D90E74D223CFC9D600125F48 /* CoreDataStatus.swift in Sources */,
 				7597315523CECC9B00F9EFA5 /* FeedViewController.swift in Sources */,
 				D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */,
 				7597317423CF8F7B00F9EFA5 /* ChannelCollectionViewDataSource.swift in Sources */,

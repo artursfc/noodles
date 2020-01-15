@@ -18,14 +18,6 @@
 		A42EE87523CE34FB0046E645 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42EE87423CE34FB0046E645 /* CloudKit.framework */; };
 		D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */; };
 		D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB223CE4B160005F0CE /* Constants.swift */; };
-		D9FE63AA23CE7927004ADC29 /* Channel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE63A223CE7927004ADC29 /* Channel+CoreDataClass.swift */; };
-		D9FE63AB23CE7927004ADC29 /* Channel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE63A323CE7927004ADC29 /* Channel+CoreDataProperties.swift */; };
-		D9FE63AC23CE7927004ADC29 /* Rank+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE63A423CE7927004ADC29 /* Rank+CoreDataClass.swift */; };
-		D9FE63AD23CE7927004ADC29 /* Rank+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE63A523CE7927004ADC29 /* Rank+CoreDataProperties.swift */; };
-		D9FE63AE23CE7927004ADC29 /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE63A623CE7927004ADC29 /* Post+CoreDataClass.swift */; };
-		D9FE63AF23CE7927004ADC29 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE63A723CE7927004ADC29 /* Post+CoreDataProperties.swift */; };
-		D9FE63B023CE7927004ADC29 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE63A823CE7927004ADC29 /* User+CoreDataClass.swift */; };
-		D9FE63B123CE7927004ADC29 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE63A923CE7927004ADC29 /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -367,16 +359,8 @@
 				A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */,
 				D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */,
 				A42EE84423CE33870046E645 /* ViewController.swift in Sources */,
-				D9FE63B023CE7927004ADC29 /* User+CoreDataClass.swift in Sources */,
-				D9FE63AD23CE7927004ADC29 /* Rank+CoreDataProperties.swift in Sources */,
-				D9FE63AE23CE7927004ADC29 /* Post+CoreDataClass.swift in Sources */,
-				D9FE63AF23CE7927004ADC29 /* Post+CoreDataProperties.swift in Sources */,
-				D9FE63AA23CE7927004ADC29 /* Channel+CoreDataClass.swift in Sources */,
 				A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */,
 				A42EE84223CE33870046E645 /* SceneDelegate.swift in Sources */,
-				D9FE63B123CE7927004ADC29 /* User+CoreDataProperties.swift in Sources */,
-				D9FE63AC23CE7927004ADC29 /* Rank+CoreDataClass.swift in Sources */,
-				D9FE63AB23CE7927004ADC29 /* Channel+CoreDataProperties.swift in Sources */,
 				D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

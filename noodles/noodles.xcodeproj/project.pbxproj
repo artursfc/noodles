@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F55FDD923CFAD110032EF0F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD523CFAD110032EF0F /* UserModel.swift */; };
+		4F55FDDA23CFAD110032EF0F /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD623CFAD110032EF0F /* ChannelModel.swift */; };
+		4F55FDDB23CFAD110032EF0F /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD723CFAD110032EF0F /* PostModel.swift */; };
+		4F55FDDC23CFAD110032EF0F /* RankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD823CFAD110032EF0F /* RankModel.swift */; };
 		7597314D23CE6FAF00F9EFA5 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597314B23CE6FAF00F9EFA5 /* ChannelsViewController.swift */; };
 		7597314E23CE6FAF00F9EFA5 /* ChannelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597314C23CE6FAF00F9EFA5 /* ChannelsViewController.xib */; };
 		7597315123CEC2F500F9EFA5 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597314F23CEC2F500F9EFA5 /* CustomTabBarController.swift */; };
@@ -52,6 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F55FDD523CFAD110032EF0F /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		4F55FDD623CFAD110032EF0F /* ChannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
+		4F55FDD723CFAD110032EF0F /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		4F55FDD823CFAD110032EF0F /* RankModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankModel.swift; sourceTree = "<group>"; };
 		7597314B23CE6FAF00F9EFA5 /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
 		7597314C23CE6FAF00F9EFA5 /* ChannelsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsViewController.xib; sourceTree = "<group>"; };
 		7597314F23CEC2F500F9EFA5 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -222,11 +230,11 @@
 		A42EE83E23CE33870046E645 /* noodles */ = {
 			isa = PBXGroup;
 			children = (
+				A483A21023CFAB3500C7EB56 /* Interactors */,
+				A483A20F23CFAB3100C7EB56 /* Models */,
+				A483A20E23CFAB1200C7EB56 /* Coordinators */,
 				D9FE63B223CE792E004ADC29 /* Core Data */,
 				D91B3BAF23CE47400005F0CE /* Helpers */,
-				D91B3BAD23CE46C40005F0CE /* Managers */,
-				D91B3BAC23CE46C10005F0CE /* Interactors */,
-				D91B3BAB23CE46B20005F0CE /* Models */,
 				7597317223CF8EDB00F9EFA5 /* View + ViewModel */,
 				A42EE87223CE34420046E645 /* noodles.entitlements */,
 				A42EE83F23CE33870046E645 /* AppDelegate.swift */,
@@ -264,25 +272,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D91B3BAB23CE46B20005F0CE /* Models */ = {
+		A483A20E23CFAB1200C7EB56 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		A483A20F23CFAB3100C7EB56 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F55FDD623CFAD110032EF0F /* ChannelModel.swift */,
+				4F55FDD723CFAD110032EF0F /* PostModel.swift */,
+				4F55FDD823CFAD110032EF0F /* RankModel.swift */,
+				4F55FDD523CFAD110032EF0F /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D91B3BAC23CE46C10005F0CE /* Interactors */ = {
+		A483A21023CFAB3500C7EB56 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Interactors;
-			sourceTree = "<group>";
-		};
-		D91B3BAD23CE46C40005F0CE /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		D91B3BAF23CE47400005F0CE /* Helpers */ = {
@@ -470,13 +482,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7597314D23CE6FAF00F9EFA5 /* ChannelsViewController.swift in Sources */,
+				4F55FDDB23CFAD110032EF0F /* PostModel.swift in Sources */,
 				7597316A23CF79AE00F9EFA5 /* SearchViewController.swift in Sources */,
 				7597317723CF90DF00F9EFA5 /* ChannelsCollectionViewCell.swift in Sources */,
 				7597315123CEC2F500F9EFA5 /* CustomTabBarController.swift in Sources */,
+				4F55FDDC23CFAD110032EF0F /* RankModel.swift in Sources */,
 				7597316623CF798E00F9EFA5 /* ProfileViewController.swift in Sources */,
 				A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */,
 				D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */,
+				4F55FDDA23CFAD110032EF0F /* ChannelModel.swift in Sources */,
 				7597316223CF76DB00F9EFA5 /* SaveViewController.swift in Sources */,
+				4F55FDD923CFAD110032EF0F /* UserModel.swift in Sources */,
 				A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */,
 				A42EE84223CE33870046E645 /* SceneDelegate.swift in Sources */,
 				7597315523CECC9B00F9EFA5 /* FeedViewController.swift in Sources */,

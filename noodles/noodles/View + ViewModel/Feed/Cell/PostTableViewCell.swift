@@ -14,25 +14,20 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var flag: UIImageView!
     @IBOutlet weak var date: UILabel!
-    var isSave: Bool?
 
     @IBOutlet weak var tagsCollectionView: UICollectionView!
+    var dataSource = TagsCollectionViewDataSource()
+
+    let TAGSCOLLECTIONVIEWCELL = "TagsCollectionViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        tagsCollectionView.dataSource = dataSource
+        tagsCollectionView.register(UINib(nibName: TAGSCOLLECTIONVIEWCELL, bundle: nil), forCellWithReuseIdentifier: TAGSCOLLECTIONVIEWCELL)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-    }
-
-    func checkIfIsSaved() {
-        if isSave == true {
-            flag.image = UIImage(named: "flagIconSelected")
-        } else {
-            flag.image = UIImage(named: "flagIcon")
-        }
     }
 }

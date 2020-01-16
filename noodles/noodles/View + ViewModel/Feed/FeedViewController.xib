@@ -19,10 +19,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zhe-cg-Eh4">
-                    <rect key="frame" x="20" y="139" width="374" height="723"/>
+                    <rect key="frame" x="20" y="262" width="374" height="600"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="723" id="GWJ-Uq-pxi"/>
+                        <constraint firstAttribute="height" constant="600" id="GWJ-Uq-pxi"/>
                     </constraints>
                 </tableView>
             </subviews>

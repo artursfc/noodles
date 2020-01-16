@@ -17,6 +17,7 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPostTableView()
+        view.backgroundColor = UIColor.fakeWhite
     }
 
     func setupPostTableView() {

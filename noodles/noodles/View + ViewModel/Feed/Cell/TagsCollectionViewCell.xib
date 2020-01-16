@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagsCollectionViewCell" id="gTV-IL-0wX" customClass="TagsCollectionViewCell" customModule="noodles" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="25"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="25"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag" translatesAutoresizingMaskIntoConstraints="NO" id="vW2-J7-Qvl">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="25"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQP-Hm-Udm">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="25"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vW2-J7-Qvl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="C1F-o2-1ES"/>
+                <constraint firstAttribute="trailing" secondItem="vW2-J7-Qvl" secondAttribute="trailing" id="CxN-1F-34e"/>
+                <constraint firstItem="cQP-Hm-Udm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="H6g-fz-dTy"/>
+                <constraint firstItem="cQP-Hm-Udm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HMG-pd-USm"/>
+                <constraint firstItem="vW2-J7-Qvl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TE3-WT-vVJ"/>
+                <constraint firstAttribute="bottom" secondItem="cQP-Hm-Udm" secondAttribute="bottom" id="bWd-Lv-qX1"/>
+                <constraint firstAttribute="trailing" secondItem="cQP-Hm-Udm" secondAttribute="trailing" id="weX-bR-NRO"/>
+                <constraint firstAttribute="bottom" secondItem="vW2-J7-Qvl" secondAttribute="bottom" id="zL6-JD-CpY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="100" height="25"/>
+            <connections>
+                <outlet property="tagTitle" destination="cQP-Hm-Udm" id="INw-Z5-83r"/>
+            </connections>
+            <point key="canvasLocation" x="173.91304347826087" y="138.28125"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="tag" width="90" height="25"/>
+    </resources>
+</document>

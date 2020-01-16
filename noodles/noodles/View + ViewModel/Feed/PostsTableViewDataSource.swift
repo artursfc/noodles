@@ -6,6 +6,7 @@
 //  Copyright © 2020 Artur Carneiro. All rights reserved.
 //
 // swiftlint:disable large_tuple
+// swiftlint:disable line_length
 
 import UIKit
 
@@ -29,8 +30,15 @@ class PostsTableViewDataSource: NSObject, UITableViewDataSource {
         cell.postTitle.text = fakeViewModel[indexPath.row].0
         cell.author.text = fakeViewModel[indexPath.row].1
         cell.date.text = fakeViewModel[indexPath.row].2
-        cell.isSave = fakeViewModel[indexPath.row].3
-
+        cell.flag.image = checkIfIsSaved(indexPath: indexPath)
         return cell
+    }
+
+    func checkIfIsSaved(indexPath: IndexPath) -> UIImage {
+        if fakeViewModel[indexPath.row].3 == true {
+            return UIImage(named: "flagIconSelected") ?? UIImage()
+        } else {
+            return UIImage(named: "flagIcon") ?? UIImage()
+        }
     }
 }

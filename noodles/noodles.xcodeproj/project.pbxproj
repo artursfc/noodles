@@ -29,6 +29,9 @@
 		7597317D23CFB4D800F9EFA5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597317B23CFB4D800F9EFA5 /* PostTableViewCell.swift */; };
 		7597317E23CFB4D800F9EFA5 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597317C23CFB4D800F9EFA5 /* PostTableViewCell.xib */; };
 		7597318223CFB88E00F9EFA5 /* PostsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597318123CFB88E00F9EFA5 /* PostsTableViewDataSource.swift */; };
+		7597321023D0A55B00F9EFA5 /* TagsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597320F23D0A55B00F9EFA5 /* TagsCollectionViewDataSource.swift */; };
+		7597321323D0A61A00F9EFA5 /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597321123D0A61A00F9EFA5 /* TagsCollectionViewCell.swift */; };
+		7597321423D0A61A00F9EFA5 /* TagsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597321223D0A61A00F9EFA5 /* TagsCollectionViewCell.xib */; };
 		A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE83F23CE33870046E645 /* AppDelegate.swift */; };
 		A42EE84223CE33870046E645 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE84123CE33870046E645 /* SceneDelegate.swift */; };
 		A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42EE84823CE33870046E645 /* noodles.xcdatamodeld */; };
@@ -81,6 +84,9 @@
 		7597317B23CFB4D800F9EFA5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		7597317C23CFB4D800F9EFA5 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		7597318123CFB88E00F9EFA5 /* PostsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewDataSource.swift; sourceTree = "<group>"; };
+		7597320F23D0A55B00F9EFA5 /* TagsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		7597321123D0A61A00F9EFA5 /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
+		7597321223D0A61A00F9EFA5 /* TagsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsCollectionViewCell.xib; sourceTree = "<group>"; };
 		A42EE83C23CE33870046E645 /* noodles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noodles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42EE83F23CE33870046E645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A42EE84123CE33870046E645 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +225,9 @@
 			children = (
 				7597317B23CFB4D800F9EFA5 /* PostTableViewCell.swift */,
 				7597317C23CFB4D800F9EFA5 /* PostTableViewCell.xib */,
+				7597320F23D0A55B00F9EFA5 /* TagsCollectionViewDataSource.swift */,
+				7597321123D0A61A00F9EFA5 /* TagsCollectionViewCell.swift */,
+				7597321223D0A61A00F9EFA5 /* TagsCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -457,6 +466,7 @@
 				A42EE84F23CE338A0046E645 /* LaunchScreen.storyboard in Resources */,
 				7597315623CECC9B00F9EFA5 /* FeedViewController.xib in Resources */,
 				7597314E23CE6FAF00F9EFA5 /* ChannelsViewController.xib in Resources */,
+				7597321423D0A61A00F9EFA5 /* TagsCollectionViewCell.xib in Resources */,
 				7597315223CEC2F500F9EFA5 /* CustomTabBarController.xib in Resources */,
 				7597317823CF90DF00F9EFA5 /* ChannelsCollectionViewCell.xib in Resources */,
 				A42EE84C23CE338A0046E645 /* Assets.xcassets in Resources */,
@@ -523,8 +533,10 @@
 				A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */,
 				A42EE84223CE33870046E645 /* SceneDelegate.swift in Sources */,
 				7597315523CECC9B00F9EFA5 /* FeedViewController.swift in Sources */,
+				7597321323D0A61A00F9EFA5 /* TagsCollectionViewCell.swift in Sources */,
 				D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */,
 				7597317423CF8F7B00F9EFA5 /* ChannelCollectionViewDataSource.swift in Sources */,
+				7597321023D0A55B00F9EFA5 /* TagsCollectionViewDataSource.swift in Sources */,
 				7597317D23CFB4D800F9EFA5 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

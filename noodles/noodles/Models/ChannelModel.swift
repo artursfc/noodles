@@ -11,9 +11,9 @@ import Foundation
 struct ChannelModel {
     var id: String
     var posts: [PostModel]
-    var cratedBy: String
-    var canBeEditedBy: [String]
-    var canBeViewedBy: [String]
+    var cratedBy: UserModel
+    var canBeEditedBy: [RankModel]
+    var canBeViewedBy: [RankModel]
     var createdAt: Date
     var editedAt: Date
 }

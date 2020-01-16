@@ -10,11 +10,19 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
+    @IBOutlet weak var postsTableView: UITableView!
+    var POSTTABLEVIEWCELL = "PostTableViewCell"
+    let dataSource = PostsTableViewDataSource()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        setupPostTableView()
+        view.backgroundColor = UIColor.fakeWhite
     }
 
-
+    func setupPostTableView() {
+        postsTableView.dataSource = dataSource
+        postsTableView.register(UINib(nibName: POSTTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: POSTTABLEVIEWCELL)
+        postsTableView.separatorColor = UIColor.clear
+    }
 }

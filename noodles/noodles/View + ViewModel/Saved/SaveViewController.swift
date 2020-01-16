@@ -10,8 +10,19 @@ import UIKit
 
 class SaveViewController: UIViewController {
 
+    @IBOutlet weak var postsTableView: UITableView!
+    var POSTTABLEVIEWCELL = "PostTableViewCell"
+    let dataSource = PostsTableViewDataSource()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.fakeWhite
+        setupPostTableView()
     }
 
+    func setupPostTableView() {
+        postsTableView.dataSource = dataSource
+        postsTableView.register(UINib(nibName: POSTTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: POSTTABLEVIEWCELL)
+        postsTableView.separatorColor = UIColor.clear
+    }
 }

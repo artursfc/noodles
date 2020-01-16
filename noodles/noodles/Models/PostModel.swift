@@ -14,11 +14,11 @@ struct PostModel {
     var title: String
     var body: String
     var author: String
-    var authorID: String
+    var authorID: UserModel
     var tags: [String]
-    var readBy: [String]
+    var readBy: [UserModel]
     var validated: Bool
     var createdAt: Date
     var editedAt: Date
-    var channels: [String]
+    var channels: [ChannelModel]
 }

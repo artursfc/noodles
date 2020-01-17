@@ -12,11 +12,11 @@ import CloudKit
 
 class NoodlesTests: XCTestCase {
 
-    private var mock: CloudKitQuery?
+    private var mock: CloudKitManager?
 
     override func setUp() {
         super.setUp()
-         mock = CloudKitQuery()
+         mock = CloudKitManager()
     }
 
     override func tearDown() {
@@ -40,6 +40,14 @@ class NoodlesTests: XCTestCase {
 //            print(records)
 //            XCTAssert(records.count > 0)
 //        }
+    }
+    
+    func testSave(){
+        let record = CKRecord(recordType: "Channel")
+        
+        record.setValue("Bob", forKey: "name")
+        
+        
     }
 
 }

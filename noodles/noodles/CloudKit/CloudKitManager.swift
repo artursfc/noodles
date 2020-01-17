@@ -9,7 +9,7 @@
 import Foundation
 import CloudKit
 
-struct CKResponse {
+struct Response {
     var error: CKError?
     var records: [CKRecord]?
 }
@@ -24,22 +24,32 @@ final class CloudKitManager {
     }
 
     //TODO: Add error treatment
-    public func query(using query: CKQuery, completionHandler: @escaping (CKResponse) -> Void) {
+    public func query(using query: CKQuery, completionHandler: @escaping (Response) -> Void) {
         publicDB.perform(query, inZoneWith: .default) { (records, error) in
             if let error = error as? CKError {
                 DispatchQueue.main.async {
-                    completionHandler(CKResponse(error: error, records: nil))
+                    completionHandler(Response(error: error, records: nil))
                 }
                 return
             }
             DispatchQueue.main.async {
-                completionHandler(CKResponse(error: nil, records: records))
+                completionHandler(Response(error: nil, records: records))
             }
         }
     }
     
-    func savePost(database: CKDatabase, object: PostModel, completionHandler: @escaping ((CKResponse) -> Void)) {
-    
+    func save(record: CKRecord, on database: CKDatabase, completionHandler: @escaping ((Response) -> Void)) {
+        database.save(record) { (record, error) in
+            if let error = error as? CKError {
+                DispatchQueue.main.async {
+                    completionHandler(Response(error: error, records: nil))
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                completionHandler(Response(error: nil, records: nil))
+            }
+        }
     }
 
 }

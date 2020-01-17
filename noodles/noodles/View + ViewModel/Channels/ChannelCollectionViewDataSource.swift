@@ -35,6 +35,7 @@ class ChannelCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
         if fakeViewModel[indexPath.row].1 == 0 {
             cell.badget.isHidden = true
+            cell.newPostCount.isHidden = true
         } else {
             cell.newPostCount.text = String(fakeViewModel[indexPath.row].1)
         }

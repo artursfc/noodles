@@ -40,6 +40,7 @@
 		A42EE85A23CE338A0046E645 /* NoodlesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE85923CE338A0046E645 /* NoodlesTests.swift */; };
 		A42EE86523CE338A0046E645 /* NoodlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE86423CE338A0046E645 /* NoodlesUITests.swift */; };
 		A42EE87523CE34FB0046E645 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42EE87423CE34FB0046E645 /* CloudKit.framework */; };
+		A4FE0D1A23D1F5B10061EEDA /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE0D1923D1F5B10061EEDA /* CloudKitManager.swift */; };
 		D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */; };
 		D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB223CE4B160005F0CE /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,7 @@
 		A42EE86623CE338A0046E645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A42EE87223CE34420046E645 /* noodles.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = noodles.entitlements; sourceTree = "<group>"; };
 		A42EE87423CE34FB0046E645 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		A4FE0D1923D1F5B10061EEDA /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		D91B3BB223CE4B160005F0CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D9FE63A223CE7927004ADC29 /* Channel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 		A42EE83E23CE33870046E645 /* noodles */ = {
 			isa = PBXGroup;
 			children = (
+				A4FE0D1723D1F5890061EEDA /* CloudKit */,
 				A483A21023CFAB3500C7EB56 /* Interactors */,
 				A483A20F23CFAB3100C7EB56 /* Models */,
 				A483A20E23CFAB1200C7EB56 /* Coordinators */,
@@ -329,6 +332,14 @@
 			children = (
 			);
 			path = Interactors;
+			sourceTree = "<group>";
+		};
+		A4FE0D1723D1F5890061EEDA /* CloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				A4FE0D1923D1F5B10061EEDA /* CloudKitManager.swift */,
+			);
+			path = CloudKit;
 			sourceTree = "<group>";
 		};
 		D91B3BAF23CE47400005F0CE /* Helpers */ = {
@@ -532,6 +543,7 @@
 				4F55FDD923CFAD110032EF0F /* UserModel.swift in Sources */,
 				A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */,
 				A42EE84223CE33870046E645 /* SceneDelegate.swift in Sources */,
+				A4FE0D1A23D1F5B10061EEDA /* CloudKitManager.swift in Sources */,
 				7597315523CECC9B00F9EFA5 /* FeedViewController.swift in Sources */,
 				7597321323D0A61A00F9EFA5 /* TagsCollectionViewCell.swift in Sources */,
 				D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */,

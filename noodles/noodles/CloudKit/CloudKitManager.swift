@@ -37,5 +37,9 @@ final class CloudKitManager {
             }
         }
     }
+    
+    func savePost(database: CKDatabase, object: PostModel, completionHandler: @escaping ((CKResponse) -> Void)) {
+    
+    }
 
 }

@@ -11,6 +11,8 @@
 		4F55FDDA23CFAD110032EF0F /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD623CFAD110032EF0F /* ChannelModel.swift */; };
 		4F55FDDB23CFAD110032EF0F /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD723CFAD110032EF0F /* PostModel.swift */; };
 		4F55FDDC23CFAD110032EF0F /* RankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD823CFAD110032EF0F /* RankModel.swift */; };
+		7519DFBE23D258B700ADDFBA /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7519DFBC23D258B700ADDFBA /* SearchTableViewCell.swift */; };
+		7519DFBF23D258B700ADDFBA /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7519DFBD23D258B700ADDFBA /* SearchTableViewCell.xib */; };
 		7597314D23CE6FAF00F9EFA5 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597314B23CE6FAF00F9EFA5 /* ChannelsViewController.swift */; };
 		7597314E23CE6FAF00F9EFA5 /* ChannelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597314C23CE6FAF00F9EFA5 /* ChannelsViewController.xib */; };
 		7597315123CEC2F500F9EFA5 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597314F23CEC2F500F9EFA5 /* CustomTabBarController.swift */; };
@@ -32,6 +34,8 @@
 		7597321023D0A55B00F9EFA5 /* TagsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597320F23D0A55B00F9EFA5 /* TagsCollectionViewDataSource.swift */; };
 		7597321323D0A61A00F9EFA5 /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597321123D0A61A00F9EFA5 /* TagsCollectionViewCell.swift */; };
 		7597321423D0A61A00F9EFA5 /* TagsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597321223D0A61A00F9EFA5 /* TagsCollectionViewCell.xib */; };
+		7597321823D2060D00F9EFA5 /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597321623D2060D00F9EFA5 /* CustomNavigationViewController.swift */; };
+		7597321923D2060D00F9EFA5 /* CustomNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597321723D2060D00F9EFA5 /* CustomNavigationViewController.xib */; };
 		A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE83F23CE33870046E645 /* AppDelegate.swift */; };
 		A42EE84223CE33870046E645 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE84123CE33870046E645 /* SceneDelegate.swift */; };
 		A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42EE84823CE33870046E645 /* noodles.xcdatamodeld */; };
@@ -66,6 +70,8 @@
 		4F55FDD623CFAD110032EF0F /* ChannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
 		4F55FDD723CFAD110032EF0F /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		4F55FDD823CFAD110032EF0F /* RankModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankModel.swift; sourceTree = "<group>"; };
+		7519DFBC23D258B700ADDFBA /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		7519DFBD23D258B700ADDFBA /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		7597314B23CE6FAF00F9EFA5 /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
 		7597314C23CE6FAF00F9EFA5 /* ChannelsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsViewController.xib; sourceTree = "<group>"; };
 		7597314F23CEC2F500F9EFA5 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -87,6 +93,8 @@
 		7597320F23D0A55B00F9EFA5 /* TagsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		7597321123D0A61A00F9EFA5 /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
 		7597321223D0A61A00F9EFA5 /* TagsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsCollectionViewCell.xib; sourceTree = "<group>"; };
+		7597321623D2060D00F9EFA5 /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
+		7597321723D2060D00F9EFA5 /* CustomNavigationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationViewController.xib; sourceTree = "<group>"; };
 		A42EE83C23CE33870046E645 /* noodles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noodles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42EE83F23CE33870046E645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A42EE84123CE33870046E645 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +148,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7519DFBB23D2589800ADDFBA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7519DFBC23D258B700ADDFBA /* SearchTableViewCell.swift */,
+				7519DFBD23D258B700ADDFBA /* SearchTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		7597316C23CF8E5C00F9EFA5 /* Channels */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +209,7 @@
 		7597317123CF8EA900F9EFA5 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				7519DFBB23D2589800ADDFBA /* Cell */,
 				7597316823CF79AE00F9EFA5 /* SearchViewController.swift */,
 				7597316923CF79AE00F9EFA5 /* SearchViewController.xib */,
 			);
@@ -204,6 +222,7 @@
 				7597316C23CF8E5C00F9EFA5 /* Channels */,
 				7597316D23CF8E7200F9EFA5 /* Feed */,
 				7597316E23CF8E7F00F9EFA5 /* TabBar */,
+				7597321523D205DE00F9EFA5 /* Navigation */,
 				7597316F23CF8E9700F9EFA5 /* Saved */,
 				7597317023CF8EA000F9EFA5 /* Profile */,
 				7597317123CF8EA900F9EFA5 /* Search */,
@@ -237,6 +256,15 @@
 			children = (
 			);
 			name = Font;
+			sourceTree = "<group>";
+		};
+		7597321523D205DE00F9EFA5 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				7597321623D2060D00F9EFA5 /* CustomNavigationViewController.swift */,
+				7597321723D2060D00F9EFA5 /* CustomNavigationViewController.xib */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		A42EE83323CE33870046E645 = {
@@ -462,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7597316723CF798E00F9EFA5 /* ProfileViewController.xib in Resources */,
+				7597321923D2060D00F9EFA5 /* CustomNavigationViewController.xib in Resources */,
 				7597317E23CFB4D800F9EFA5 /* PostTableViewCell.xib in Resources */,
 				A42EE84F23CE338A0046E645 /* LaunchScreen.storyboard in Resources */,
 				7597315623CECC9B00F9EFA5 /* FeedViewController.xib in Resources */,
@@ -472,6 +501,7 @@
 				A42EE84C23CE338A0046E645 /* Assets.xcassets in Resources */,
 				7597316B23CF79AE00F9EFA5 /* SearchViewController.xib in Resources */,
 				7597316323CF76DB00F9EFA5 /* SaveViewController.xib in Resources */,
+				7519DFBF23D258B700ADDFBA /* SearchTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,9 +555,11 @@
 				7597315123CEC2F500F9EFA5 /* CustomTabBarController.swift in Sources */,
 				4F55FDDC23CFAD110032EF0F /* RankModel.swift in Sources */,
 				7597316623CF798E00F9EFA5 /* ProfileViewController.swift in Sources */,
+				7519DFBE23D258B700ADDFBA /* SearchTableViewCell.swift in Sources */,
 				A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */,
 				D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */,
 				4F55FDDA23CFAD110032EF0F /* ChannelModel.swift in Sources */,
+				7597321823D2060D00F9EFA5 /* CustomNavigationViewController.swift in Sources */,
 				7597316223CF76DB00F9EFA5 /* SaveViewController.swift in Sources */,
 				4F55FDD923CFAD110032EF0F /* UserModel.swift in Sources */,
 				A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */,

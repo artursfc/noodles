@@ -46,6 +46,9 @@
 		A42EE87523CE34FB0046E645 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42EE87423CE34FB0046E645 /* CloudKit.framework */; };
 		D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */; };
 		D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB223CE4B160005F0CE /* Constants.swift */; };
+		D984A3DF23D0D5050045A333 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D984A3DE23D0D5050045A333 /* CoreDataManager.swift */; };
+		D984A3E123D0D5320045A333 /* CoreDataStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D984A3E023D0D5320045A333 /* CoreDataStatus.swift */; };
+		D984A3E323D0D55C0045A333 /* DataModifiedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D984A3E223D0D55C0045A333 /* DataModifiedDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +115,9 @@
 		A42EE87423CE34FB0046E645 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		D91B3BB223CE4B160005F0CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D984A3DE23D0D5050045A333 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D984A3E023D0D5320045A333 /* CoreDataStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStatus.swift; sourceTree = "<group>"; };
+		D984A3E223D0D55C0045A333 /* DataModifiedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModifiedDelegate.swift; sourceTree = "<group>"; };
 		D9FE63A223CE7927004ADC29 /* Channel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D9FE63A323CE7927004ADC29 /* Channel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D9FE63A423CE7927004ADC29 /* Rank+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rank+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -364,6 +370,7 @@
 			children = (
 				D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */,
 				D91B3BB223CE4B160005F0CE /* Constants.swift */,
+				D984A3E223D0D55C0045A333 /* DataModifiedDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -380,6 +387,8 @@
 				D9FE63A823CE7927004ADC29 /* User+CoreDataClass.swift */,
 				D9FE63A923CE7927004ADC29 /* User+CoreDataProperties.swift */,
 				A42EE84823CE33870046E645 /* noodles.xcdatamodeld */,
+				D984A3DE23D0D5050045A333 /* CoreDataManager.swift */,
+				D984A3E023D0D5320045A333 /* CoreDataStatus.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -550,6 +559,7 @@
 				7597314D23CE6FAF00F9EFA5 /* ChannelsViewController.swift in Sources */,
 				4F55FDDB23CFAD110032EF0F /* PostModel.swift in Sources */,
 				7597316A23CF79AE00F9EFA5 /* SearchViewController.swift in Sources */,
+				D984A3E123D0D5320045A333 /* CoreDataStatus.swift in Sources */,
 				7597318223CFB88E00F9EFA5 /* PostsTableViewDataSource.swift in Sources */,
 				7597317723CF90DF00F9EFA5 /* ChannelsCollectionViewCell.swift in Sources */,
 				7597315123CEC2F500F9EFA5 /* CustomTabBarController.swift in Sources */,
@@ -558,6 +568,8 @@
 				7519DFBE23D258B700ADDFBA /* SearchTableViewCell.swift in Sources */,
 				A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */,
 				D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */,
+				D984A3E323D0D55C0045A333 /* DataModifiedDelegate.swift in Sources */,
+				D984A3DF23D0D5050045A333 /* CoreDataManager.swift in Sources */,
 				4F55FDDA23CFAD110032EF0F /* ChannelModel.swift in Sources */,
 				7597321823D2060D00F9EFA5 /* CustomNavigationViewController.swift in Sources */,
 				7597316223CF76DB00F9EFA5 /* SaveViewController.swift in Sources */,

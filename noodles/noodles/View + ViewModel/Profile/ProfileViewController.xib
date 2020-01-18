@@ -35,7 +35,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1Q-cI-3MB">
-                    <rect key="frame" x="132" y="234" width="150" height="140"/>
+                    <rect key="frame" x="132" y="184" width="150" height="140"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlacdeholder" translatesAutoresizingMaskIntoConstraints="NO" id="7zc-v5-h9w">
                             <rect key="frame" x="5" y="5" width="140" height="130"/>
@@ -52,7 +52,7 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XgA-dF-4vZ">
-                    <rect key="frame" x="20" y="439" width="374" height="45"/>
+                    <rect key="frame" x="20" y="389" width="374" height="45"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Cargo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6N-SI-AVb">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="24.5"/>
@@ -72,7 +72,7 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1UI-ZN-yQH">
-                    <rect key="frame" x="20" y="499" width="374" height="45"/>
+                    <rect key="frame" x="20" y="449" width="374" height="45"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peg-Tl-tkx">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="24.5"/>
@@ -92,7 +92,7 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1lz-0N-MHS">
-                    <rect key="frame" x="20" y="559" width="374" height="45"/>
+                    <rect key="frame" x="20" y="509" width="374" height="45"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="País" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hu-Uu-o83">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="24.5"/>
@@ -112,7 +112,7 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nyh-fE-Nyq">
-                    <rect key="frame" x="20" y="619" width="374" height="45"/>
+                    <rect key="frame" x="20" y="569" width="374" height="45"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Estado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHw-vs-IBL">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="24.5"/>
@@ -132,7 +132,7 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="G7S-Vq-Ml3">
-                    <rect key="frame" x="20" y="679" width="374" height="45"/>
+                    <rect key="frame" x="20" y="629" width="374" height="45"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Cidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkK-pa-OMz">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="24.5"/>
@@ -153,7 +153,7 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eqa-li-d2p">
-                    <rect key="frame" x="184" y="374" width="46" height="45"/>
+                    <rect key="frame" x="184" y="324" width="46" height="45"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdr-JX-IN0">
                             <rect key="frame" x="0.0" y="0.0" width="46" height="20.5"/>
@@ -187,7 +187,7 @@
                 <constraint firstItem="1UI-ZN-yQH" firstAttribute="top" secondItem="XgA-dF-4vZ" secondAttribute="bottom" constant="15" id="aec-yC-qE3"/>
                 <constraint firstItem="eqa-li-d2p" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="b4m-cA-0NM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nyh-fE-Nyq" secondAttribute="trailing" constant="20" id="dKI-46-KCM"/>
-                <constraint firstItem="W1Q-cI-3MB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="190" id="dSa-Yi-xKc"/>
+                <constraint firstItem="W1Q-cI-3MB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="140" id="dSa-Yi-xKc"/>
                 <constraint firstItem="nyh-fE-Nyq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="i94-EQ-W6D"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XgA-dF-4vZ" secondAttribute="trailing" constant="20" id="mjV-tA-cg7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aIG-uX-Fdb" secondAttribute="trailing" id="pgo-9D-QrD"/>

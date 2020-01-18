@@ -9,22 +9,32 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchResults: UITableView!
+    
+    let searchSugestions: [String] = ["Canais", "Geral", "Squad"]
+    let SEARCHTABLEVIEW = "SearchTableViewCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        searchResults.dataSource = self
+        searchResults.register(UINib(nibName: SEARCHTABLEVIEW, bundle: nil), forCellReuseIdentifier: SEARCHTABLEVIEW)
+        searchResults.separatorColor = UIColor.clear
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension SearchViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchSugestions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: SEARCHTABLEVIEW) as? SearchTableViewCell ??  SearchTableViewCell()
+        cell.searchResult.text = searchSugestions[indexPath.row]
+        
+        return cell
+    }
+}
+

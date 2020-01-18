@@ -10,21 +10,33 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var profileBackgroundView: UIView!
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var profilePicture: UIImageView!
+    var cornerRadius: CGFloat = 20.0
+
+    @IBOutlet weak var profileName: UILabel!
+    @IBOutlet weak var job: UIButton!
+
+    @IBOutlet weak var profileJob: UILabel!
+    @IBOutlet weak var profileEmail: UILabel!
+    @IBOutlet weak var profileCountry: UILabel!
+    @IBOutlet weak var profileState: UILabel!
+    @IBOutlet weak var profileCity: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setup()
     }
 
+    func setup() {
+        view.backgroundColor = UIColor.fakeWhite
 
-    /*
-    // MARK: - Navigation
+        backgroundView.backgroundColor = UIColor.fakeBlack
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        profileBackgroundView.layer.cornerRadius = cornerRadius
+        profileBackgroundView.backgroundColor = UIColor.fakeWhite
+
+        profilePicture.layer.cornerRadius = cornerRadius
     }
-    */
-
 }

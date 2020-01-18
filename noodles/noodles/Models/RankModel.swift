@@ -11,7 +11,7 @@ import Foundation
 struct RankModel {
     var id: String
     var title: String
-    var canEdit: [String]
-    var canView: [String]
+    var canEdit: [ChannelModel]
+    var canView: [ChannelModel]
     var canCreateChannel: Bool
 }

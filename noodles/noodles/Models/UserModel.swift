@@ -11,7 +11,7 @@ import Foundation
 struct UserModel {
     var id: String
     var name: String
-    var canEdit: [String]
-    var canView: [String]
+    var canEdit: [ChannelModel]
+    var canView: [ChannelModel]
     var canCreateChannel: Bool
 }

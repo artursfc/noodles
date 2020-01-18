@@ -9,14 +9,3 @@
 import Foundation
 import UIKit
 
-//enum Family: String {
-//    case SansLight = ""
-//    case SansReqular = ""
-//    case SansMedium = ""
-//}
-//
-//extension UIFont {
-//    class func systemFontOfSize(size: CGFloat) -> UIFont {
-//        return UIFont(name: Family.RawValue, size: size)
-//    }
-//}

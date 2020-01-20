@@ -34,7 +34,7 @@ function_parameter_count:
   error: 8
 
 line_length:
-  warning: 120
+  warning: 150
   error: 200
   ignores_urls: false
   ignores_function_declarations: false

@@ -12,11 +12,9 @@ import CloudKit
 
 class NoodlesTests: XCTestCase {
 
-    private var mock: CloudKitManager?
 
     override func setUp() {
         super.setUp()
-         mock = CloudKitManager()
     }
 
     override func tearDown() {
@@ -26,10 +24,11 @@ class NoodlesTests: XCTestCase {
     func testQuery() {
         let query = CKQuery(recordType: "Channel", predicate: NSPredicate(value: true))
         let exp = expectation(description: "CloudKit Async Query")
+        let manager = CloudKitManager()
 
         var records: [CKRecord]?
 
-        mock?.query(using: query, completionHandler: { (response) in
+        manager.query(using: query, on: .publicDB, completionHandler: { (response) in
             records = response.records
             exp.fulfill()
         })
@@ -47,14 +46,12 @@ class NoodlesTests: XCTestCase {
         record.setValue("Bob", forKey: "name")
 
         let exp = expectation(description: "CloudKit Async Save")
-
-        guard let publicDB = mock?.publicDB else {
-            return
-        }
+        let manager = CloudKitManager()
 
         var assertion: Bool = false
 
-        mock?.save(record: record, on: publicDB, completionHandler: { (response) in
+        manager.save(record: record, on: .publicDB, completionHandler: { (response) in
+            print(response)
             if response.error == nil && response.records == nil {
                 assertion.toggle()
             }
@@ -65,36 +62,27 @@ class NoodlesTests: XCTestCase {
         }
 
         XCTAssert(assertion == true)
+
     }
 
     func testUpdate() {
         let newRecord = CKRecord(recordType: "Channel")
-        var oldRecord: CKRecord?
         let recordID = CKRecord.ID(recordName: "15F50A18-BE79-5D1B-5C05-FAB2104FAC3D")
-
-        guard let publicDB = mock?.publicDB else {
-            return
-        }
-
+        let manager = CloudKitManager()
         let exp = expectation(description: "CloudKit Async Update")
 
         var assertion: Bool = false
 
-        publicDB.fetch(withRecordID: recordID) { [weak self] (record, error) in
-            if error != nil {
-                return
+        manager.update(recordID: recordID, with: newRecord, on: .publicDB) { (response) in
+            print(response)
+            if response.error == nil && response.records == nil {
+                assertion.toggle()
             }
-            oldRecord = record
-            guard let oldRecord = oldRecord else { return }
-            self?.mock?.update(record: oldRecord, with: newRecord, on: publicDB, completionHandler: { (response) in
-                if response.error == nil && response.records == nil {
-                    assertion.toggle()
-                }
-                exp.fulfill()
-            })
+            exp.fulfill()
         }
 
-        waitForExpectations(timeout: 15) { (_) in
+        waitForExpectations(timeout: 5) { (error) in
+            XCTAssertNil(error)
         }
 
         XCTAssert(assertion == true)
@@ -104,29 +92,18 @@ class NoodlesTests: XCTestCase {
         let recordID = CKRecord.ID(recordName: "15F50A18-BE79-5D1B-5C05-FAB2104FAC3D")
 
         let exp = expectation(description: "CloudKit Async Delete")
-
-        guard let publicDB = mock?.publicDB else {
-            return
-        }
+        let manager = CloudKitManager()
 
         var assertion: Bool = false
 
-        publicDB.fetch(withRecordID: recordID) { [weak self] (record, error) in
-            if error != nil {
-                return
+        manager.delete(recordID: recordID, on: .publicDB) { (response) in
+            if response.error == nil && response.records == nil {
+                assertion.toggle()
             }
-            guard let record = record else { return }
-            print(record)
-            self?.mock?.delete(record: record, on: publicDB, completionHandler: { (response) in
-                print(response)
-                if response.error == nil && response.records == nil {
-                    assertion.toggle()
-                }
-                exp.fulfill()
-            })
+            exp.fulfill()
         }
 
-        waitForExpectations(timeout: 10) { (_) in
+        waitForExpectations(timeout: 5) { (_) in
         }
 
         XCTAssert(assertion == true)

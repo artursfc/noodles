@@ -7,7 +7,7 @@
 //
 
 import Foundation
- 
+
 struct RankModel {
     var id: String
     var title: String

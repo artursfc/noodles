@@ -14,89 +14,145 @@ struct Response {
     var records: [CKRecord]?
 }
 
+enum Database {
+    case publicDB
+    case privateDB
+}
+
 final class CloudKitManager {
-    private let container: CKContainer
-    public private(set) var publicDB: CKDatabase
 
-    init() {
-        self.container = CKContainer.default()
-        self.publicDB = container.publicCloudDatabase
-    }
+    init() {}
 
-    public func query(using query: CKQuery, completionHandler: @escaping (Response) -> Void) {
-        publicDB.perform(query, inZoneWith: .default) { (records, error) in
-            if let error = error as? CKError {
-                DispatchQueue.main.async {
-                    completionHandler(Response(error: error, records: nil))
+    public func query(using query: CKQuery, on database: Database, completionHandler: @escaping (Response) -> Void) {
+        let container = CKContainer.default()
+        var db: CKDatabase?
+        switch database {
+        case .publicDB:
+            db = container.publicCloudDatabase
+        case .privateDB:
+            db = container.privateCloudDatabase
+        }
+        if let db = db {
+            db.perform(query, inZoneWith: .default) { (records, error) in
+                if let error = error as? CKError {
+                    DispatchQueue.main.async {
+                        completionHandler(Response(error: error, records: nil))
+                    }
                 }
-                return
-            }
-            DispatchQueue.main.async {
-                completionHandler(Response(error: nil, records: records))
+                DispatchQueue.main.async {
+                    completionHandler(Response(error: nil, records: records))
+                }
             }
         }
     }
 
-    public func save(record: CKRecord, on database: CKDatabase, completionHandler: @escaping ((Response) -> Void)) {
-        database.save(record) {(_, error) in
-            if let error = error as? CKError {
-                DispatchQueue.main.async {
-                    completionHandler(Response(error: error, records: nil))
+    public func save(record: CKRecord, on database: Database, completionHandler: @escaping ((Response) -> Void)) {
+        let container = CKContainer.default()
+        var db: CKDatabase?
+        switch database {
+        case .publicDB:
+            db = container.publicCloudDatabase
+        case .privateDB:
+            db = container.privateCloudDatabase
+        }
+        if let db = db {
+            db.save(record) { (_, error) in
+                if let error = error as? CKError {
+                    DispatchQueue.main.async {
+                        completionHandler(Response(error: error, records: nil))
+                    }
                 }
-                return
-            }
-            DispatchQueue.main.async {
-                completionHandler(Response(error: nil, records: nil))
+                DispatchQueue.main.async {
+                    completionHandler(Response(error: nil, records: nil))
+                }
             }
         }
     }
 
-    public func update(record: CKRecord, with newRecord: CKRecord, on database: CKDatabase, completionHandler: @escaping ((Response) -> Void)) {
-        let recordID = record.recordID
-        database.fetch(withRecordID: recordID) { (record, error) in
-            if let error = error as? CKError {
-                DispatchQueue.main.async {
-                    completionHandler(Response(error: error, records: nil))
+    public func update(recordID: CKRecord.ID, with newRecord: CKRecord, on database: Database, completionHandler: @escaping ((Response) -> Void)) {
+        let container = CKContainer.default()
+        var db: CKDatabase?
+        switch database {
+        case .publicDB:
+            db = container.publicCloudDatabase
+        case .privateDB:
+            db = container.privateCloudDatabase
+        }
+        if let db = db {
+            db.fetch(withRecordID: recordID) { (record, error) in
+                if let error = error as? CKError {
+                    DispatchQueue.main.async {
+                        completionHandler(Response(error: error, records: nil))
+                    }
                 }
-                return
-            }
-            if let record = record {
-                if record.recordType == newRecord.recordType {
+                if let record = record {
                     let keys = newRecord.allKeys()
                     for key in keys {
                         record.setValue(newRecord.value(forKey: key), forKey: key)
                     }
                     DispatchQueue.main.async {
-                        database.save(record) { (_, error) in
+                        db.save(record) { (_, error) in
                             if let error = error as? CKError {
                                 DispatchQueue.main.async {
                                     completionHandler(Response(error: error, records: nil))
                                 }
-                                return
                             }
                             DispatchQueue.main.async {
                                 completionHandler(Response(error: nil, records: nil))
                             }
                         }
                     }
-                } else {
-                    return
                 }
             }
         }
     }
 
-    public func delete(record: CKRecord, on database: CKDatabase, completionHandler: @escaping ((Response) -> Void)) {
-        let recordID = record.recordID
-        database.delete(withRecordID: recordID) { (_, error) in
-            if let error = error as? CKError {
-                DispatchQueue.main.async {
-                    completionHandler(Response(error: error, records: nil))
+    public func delete(recordID: CKRecord.ID, on database: Database, completionHandler: @escaping ((Response) -> Void)) {
+        let container = CKContainer.default()
+        var db: CKDatabase?
+        switch database {
+        case .publicDB:
+            db = container.publicCloudDatabase
+        case .privateDB:
+            db = container.privateCloudDatabase
+        }
+        if let db = db {
+            db.delete(withRecordID: recordID) { (_, error) in
+                if let error = error as? CKError {
+                    DispatchQueue.main.async {
+                        completionHandler(Response(error: error, records: nil))
+                    }
                 }
-                return
+                DispatchQueue.main.async {
+                    completionHandler(Response(error: nil, records: nil))
+                }
             }
-            DispatchQueue.main.async {
-                completionHandler(Response(error: nil, records: nil))
+        }
+    }
+
+    public func fetch(recordID: CKRecord.ID, on database: Database, completionHandler: @escaping ((Response) -> Void)) {
+        let container = CKContainer.default()
+        var db: CKDatabase?
+        switch database {
+        case .publicDB:
+            db = container.publicCloudDatabase
+        case .privateDB:
+            db = container.privateCloudDatabase
+        }
+        if let db = db {
+            db.fetch(withRecordID: recordID) { (record, error) in
+                if let error = error as? CKError {
+                    DispatchQueue.main.async {
+                        completionHandler(Response(error: error, records: nil))
+                    }
+                }
+                if let record = record {
+                    DispatchQueue.main.async {
+                        var records = [CKRecord]()
+                        records.append(record)
+                        completionHandler(Response(error: nil, records: records))
+                    }
+                }
             }
         }
     }

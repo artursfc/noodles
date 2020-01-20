@@ -17,7 +17,6 @@ struct Response {
 enum Database {
     case publicDB
     case privateDB
-    case sharedDB
 }
 
 final class CloudKitManager {
@@ -32,8 +31,6 @@ final class CloudKitManager {
             db = container.publicCloudDatabase
         case .privateDB:
             db = container.privateCloudDatabase
-        case .sharedDB:
-            db = container.sharedCloudDatabase
         }
         if let db = db {
             db.perform(query, inZoneWith: .default) { (records, error) in
@@ -57,8 +54,6 @@ final class CloudKitManager {
             db = container.publicCloudDatabase
         case .privateDB:
             db = container.privateCloudDatabase
-        case .sharedDB:
-            db = container.sharedCloudDatabase
         }
         if let db = db {
             db.save(record) { (_, error) in
@@ -82,8 +77,6 @@ final class CloudKitManager {
             db = container.publicCloudDatabase
         case .privateDB:
             db = container.privateCloudDatabase
-        case .sharedDB:
-            db = container.sharedCloudDatabase
         }
         if let db = db {
             db.fetch(withRecordID: recordID) { (record, error) in
@@ -122,8 +115,6 @@ final class CloudKitManager {
             db = container.publicCloudDatabase
         case .privateDB:
             db = container.privateCloudDatabase
-        case .sharedDB:
-            db = container.sharedCloudDatabase
         }
         if let db = db {
             db.delete(withRecordID: recordID) { (_, error) in
@@ -147,8 +138,6 @@ final class CloudKitManager {
             db = container.publicCloudDatabase
         case .privateDB:
             db = container.privateCloudDatabase
-        case .sharedDB:
-            db = container.sharedCloudDatabase
         }
         if let db = db {
             db.fetch(withRecordID: recordID) { (record, error) in

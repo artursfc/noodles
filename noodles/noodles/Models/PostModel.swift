@@ -8,15 +8,13 @@
 
 import Foundation
 
-struct PostModel {
+struct PostModel: Parseable {
     var id: String
-    var uniqueID: String
     var title: String
     var body: String
-    var author: String
-    var authorID: UserModel
+    var author: UserModel?
     var tags: [String]
-    var readBy: [UserModel]
+    var readBy: [UserModel]?
     var validated: Bool
     var createdAt: Date
     var editedAt: Date

@@ -12,7 +12,7 @@ import CoreData
 final class CoreDataManager {    
     private let context: NSManagedObjectContext
     private let container: NSPersistentContainer
-    private init() {
+    public init() {
         container = NSPersistentContainer(name: "noodles")
         container.loadPersistentStores { (_, error) in
             if let error = error as NSError? {

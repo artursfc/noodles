@@ -14,6 +14,6 @@ struct ChannelModel: Parseable {
     var createdBy: UserModel?
     var canBeEditedBy: [RankModel]?
     var canBeViewedBy: [RankModel]?
-    var createdAt: Date
-    var editedAt: Date
+    var createdAt: Date?
+    var editedAt: Date?
 }

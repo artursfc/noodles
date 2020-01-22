@@ -184,16 +184,16 @@ final class CloudKitManager {
             let query = CKQuery(recordType: "Users", predicate: predicate)
             query.sortDescriptors = [sortedBy]
             return query
-        case .channel:
-            let query = CKQuery(recordType: "Channel", predicate: predicate)
+        case .channels:
+            let query = CKQuery(recordType: "Channels", predicate: predicate)
             query.sortDescriptors = [sortedBy]
             return query
-        case .rank:
-            let query = CKQuery(recordType: "Rank", predicate: predicate)
+        case .ranks:
+            let query = CKQuery(recordType: "Ranks", predicate: predicate)
             query.sortDescriptors = [sortedBy]
             return query
-        case .post:
-            let query = CKQuery(recordType: "Post", predicate: predicate)
+        case .posts:
+            let query = CKQuery(recordType: "Posts", predicate: predicate)
             query.sortDescriptors = [sortedBy]
             return query
         }

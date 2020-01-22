@@ -16,7 +16,7 @@ struct PostModel: Parseable {
     var tags: [String]
     var readBy: [UserModel]?
     var validated: Bool
-    var createdAt: Date
-    var editedAt: Date
-    var channels: [ChannelModel]
+    var createdAt: Date?
+    var editedAt: Date?
+    var channels: [ChannelModel]?
 }

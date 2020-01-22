@@ -20,8 +20,8 @@ public enum Database {
 }
 
 public enum RecordType {
-    case channel
+    case channels
     case users
-    case post
-    case rank
+    case posts
+    case ranks
 }

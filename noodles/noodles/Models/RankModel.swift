@@ -8,10 +8,12 @@
 
 import Foundation
 
-struct RankModel {
+struct RankModel: Parseable {
     var id: String
     var title: String
-    var canEdit: [ChannelModel]
-    var canView: [ChannelModel]
+    var canEdit: [ChannelModel]?
+    var canView: [ChannelModel]?
     var canCreateChannel: Bool
+    var createdAt: Date?
+    var editedAt: Date?
 }

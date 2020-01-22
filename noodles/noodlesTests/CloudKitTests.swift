@@ -24,12 +24,11 @@ class CloudKitTests: XCTestCase {
     func testQuery() {
         let exp = expectation(description: "CloudKit Async Query")
         let manager = CloudKitManager()
-        let query = manager.generateQuery(of: .channel, with: NSPredicate(value: true), sortedBy: NSSortDescriptor(key: "creationDate", ascending: false))
+        let query = manager.generateQuery(of: .channels, with: NSPredicate(value: true), sortedBy: NSSortDescriptor(key: "creationDate", ascending: false))
 
         var records: [CKRecord]?
 
         manager.query(using: query, on: .publicDB, completionHandler: { (response) in
-            print(response.records)
             records = response.records
             exp.fulfill()
         })
@@ -137,7 +136,6 @@ class CloudKitTests: XCTestCase {
         operation.resultsLimit = 50
 
         manager.operate(with: operation, on: .publicDB) { (response) in
-            print(response)
             exp.fulfill()
         }
 
@@ -151,8 +149,7 @@ class CloudKitTests: XCTestCase {
         let coredata = CoreDataManager()
         let interactor = ChannelInteractor(cloudkit: cloudkit, coredata: coredata)
 
-        interactor.fetch(withChannelID: "15F50A18-BE79-5D1B-5C05-FAB2104FAC3D", from: .cloudkit) { (channel) in
-            print(channel)
+        interactor.fetch(withChannelID: "D10B8420-2ABC-FB27-716D-44FC8EADF781", from: .cloudkit) { (channel) in
             exp.fulfill()
         }
 

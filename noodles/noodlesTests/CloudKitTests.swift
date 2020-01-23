@@ -114,13 +114,19 @@ class CloudKitTests: XCTestCase {
         let exp = expectation(description: "CloudKit Async Fetch")
         let manager = CloudKitManager()
 
+        var assertion = false
+
         manager.fetch(recordID: recordID, on: .publicDB) { (response) in
-            print(response.records![0])
+            if response.records != nil {
+                assertion.toggle()
+            }
             exp.fulfill()
         }
 
         waitForExpectations(timeout: 5) { (_) in
         }
+
+        XCTAssertTrue(assertion)
     }
 
     func testOperation() {
@@ -135,26 +141,18 @@ class CloudKitTests: XCTestCase {
         operation.desiredKeys = ["name"]
         operation.resultsLimit = 50
 
+        var assertion = false
+
         manager.operate(with: operation, on: .publicDB) { (response) in
+            if response.records != nil {
+                assertion.toggle()
+            }
             exp.fulfill()
         }
 
         waitForExpectations(timeout: 5) { (_) in
         }
+
+        XCTAssertTrue(assertion)
     }
-
-    func testInteractor() {
-        let exp = expectation(description: "CloudKit Async Hell")
-        let cloudkit = CloudKitManager()
-        let coredata = CoreDataManager()
-        let interactor = ChannelInteractor(cloudkit: cloudkit, coredata: coredata)
-
-        interactor.fetch(withChannelID: "D10B8420-2ABC-FB27-716D-44FC8EADF781", from: .cloudkit) { (channel) in
-            exp.fulfill()
-        }
-
-        waitForExpectations(timeout: 15) { (_) in
-        }
-    }
-
 }

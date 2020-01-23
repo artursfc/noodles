@@ -16,4 +16,5 @@ struct RankModel: Parseable {
     var canCreateChannel: Bool
     var createdAt: Date?
     var editedAt: Date?
+    var users: [UserModel]?
 }

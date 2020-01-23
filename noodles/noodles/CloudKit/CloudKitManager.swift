@@ -148,7 +148,6 @@ final class CloudKitManager {
     }
 
     public func operate(with operation: CKQueryOperation, on database: Database, completionHandler: @escaping ((Response) -> Void)) {
-
         let container = CKContainer.default()
         var db: CKDatabase?
         switch database {

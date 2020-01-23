@@ -1,5 +1,5 @@
 //
-//  NoodlesTests.swift
+//  CloudKitTests.swift
 //  noodlesTests
 //
 //  Created by Artur Carneiro on 14/01/20.
@@ -10,7 +10,7 @@ import XCTest
 @testable import noodles
 import CloudKit
 
-class NoodlesTests: XCTestCase {
+class CloudKitTests: XCTestCase {
 
 
     override func setUp() {
@@ -22,9 +22,9 @@ class NoodlesTests: XCTestCase {
     }
 
     func testQuery() {
-        let query = CKQuery(recordType: "Channel", predicate: NSPredicate(value: true))
         let exp = expectation(description: "CloudKit Async Query")
         let manager = CloudKitManager()
+        let query = manager.generateQuery(of: .channels, with: NSPredicate(value: true), sortedBy: NSSortDescriptor(key: "creationDate", ascending: false))
 
         var records: [CKRecord]?
 
@@ -109,4 +109,50 @@ class NoodlesTests: XCTestCase {
         XCTAssert(assertion == true)
     }
 
+    func testFetch() {
+        let recordID = CKRecord.ID(recordName: "15F50A18-BE79-5D1B-5C05-FAB2104FAC3D")
+        let exp = expectation(description: "CloudKit Async Fetch")
+        let manager = CloudKitManager()
+
+        var assertion = false
+
+        manager.fetch(recordID: recordID, on: .publicDB) { (response) in
+            if response.records != nil {
+                assertion.toggle()
+            }
+            exp.fulfill()
+        }
+
+        waitForExpectations(timeout: 5) { (_) in
+        }
+
+        XCTAssertTrue(assertion)
+    }
+
+    func testOperation() {
+        let exp = expectation(description: "CloudKit Async Operation")
+        let manager = CloudKitManager()
+        let pred = NSPredicate(value: true)
+        let sort = NSSortDescriptor(key: "creationDate", ascending: false)
+        let query = CKQuery(recordType: "Channel", predicate: pred)
+        query.sortDescriptors = [sort]
+
+        let operation = CKQueryOperation(query: query)
+        operation.desiredKeys = ["name"]
+        operation.resultsLimit = 50
+
+        var assertion = false
+
+        manager.operate(with: operation, on: .publicDB) { (response) in
+            if response.records != nil {
+                assertion.toggle()
+            }
+            exp.fulfill()
+        }
+
+        waitForExpectations(timeout: 5) { (_) in
+        }
+
+        XCTAssertTrue(assertion)
+    }
 }

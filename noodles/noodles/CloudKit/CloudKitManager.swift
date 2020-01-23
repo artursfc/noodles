@@ -9,16 +9,6 @@
 import Foundation
 import CloudKit
 
-struct Response {
-    var error: CKError?
-    var records: [CKRecord]?
-}
-
-enum Database {
-    case publicDB
-    case privateDB
-}
-
 final class CloudKitManager {
 
     init() {}
@@ -154,6 +144,88 @@ final class CloudKitManager {
                     }
                 }
             }
+        }
+    }
+
+    public func operate(with operation: CKQueryOperation, on database: Database, completionHandler: @escaping ((Response) -> Void)) {
+        let container = CKContainer.default()
+        var db: CKDatabase?
+        switch database {
+        case .publicDB:
+            db = container.publicCloudDatabase
+        case .privateDB:
+            db = container.privateCloudDatabase
+        }
+        if let db = db {
+
+            var records = [CKRecord]()
+            operation.recordFetchedBlock = { record in
+                records.append(record)
+            }
+
+            operation.queryCompletionBlock = { (cursor, error) in
+                DispatchQueue.main.async {
+                    if error == nil {
+                        completionHandler(Response(error: nil, records: records))
+                    } else if let error = error as? CKError {
+                        completionHandler(Response(error: error, records: nil))
+                    }
+                }
+            }
+
+            db.add(operation)
+        }
+    }
+
+    public func generateQuery(of record: RecordType, with predicate: NSPredicate, sortedBy: NSSortDescriptor) -> CKQuery {
+        switch record {
+        case .users:
+            let query = CKQuery(recordType: "Users", predicate: predicate)
+            query.sortDescriptors = [sortedBy]
+            return query
+        case .channels:
+            let query = CKQuery(recordType: "Channels", predicate: predicate)
+            query.sortDescriptors = [sortedBy]
+            return query
+        case .ranks:
+            let query = CKQuery(recordType: "Ranks", predicate: predicate)
+            query.sortDescriptors = [sortedBy]
+            return query
+        case .posts:
+            let query = CKQuery(recordType: "Posts", predicate: predicate)
+            query.sortDescriptors = [sortedBy]
+            return query
+        }
+    }
+
+    public func fetchReferences(of recordIDs: [CKRecord.ID], on database: Database, completionHandler: @escaping ((Response) -> Void)) {
+        let container = CKContainer.default()
+        var db: CKDatabase?
+        switch database {
+        case .publicDB:
+            db = container.publicCloudDatabase
+        case .privateDB:
+            db = container.privateCloudDatabase
+        }
+        if let db = db {
+            let fetchOperation = CKFetchRecordsOperation(recordIDs: recordIDs)
+            fetchOperation.fetchRecordsCompletionBlock = { (recordsDict, error) in
+                if let error = error as? CKError {
+                    DispatchQueue.main.async {
+                        completionHandler(Response(error: error, records: nil))
+                    }
+                }
+                DispatchQueue.main.async {
+                    if let recordsDict = recordsDict {
+                        var records = [CKRecord]()
+                        for (_, record) in recordsDict {
+                            records.append(record)
+                        }
+                        completionHandler(Response(error: nil, records: records))
+                    }
+                }
+            }
+            db.add(fetchOperation)
         }
     }
 }

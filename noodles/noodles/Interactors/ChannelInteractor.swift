@@ -123,9 +123,13 @@ final class ChannelInteractor {
         let recordID = CKRecord.ID(recordName: channel.id)
         cloudkit.delete(recordID: recordID, on: .publicDB) { (response) in
             if response.error == nil && response.records == nil {
-                completionHandler(true)
+                DispatchQueue.main.async {
+                    completionHandler(true)
+                }
             } else {
-                completionHandler(false)
+                DispatchQueue.main.async {
+                    completionHandler(false)
+                }
             }
         }
     }

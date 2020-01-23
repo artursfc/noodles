@@ -43,6 +43,7 @@
 		A42706F423D9FC5100E9CC27 /* ChannelInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42706F323D9FC5100E9CC27 /* ChannelInteractorTests.swift */; };
 		A42706F623DA10A000E9CC27 /* InteractorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42706F523DA10A000E9CC27 /* InteractorParser.swift */; };
 		A42706F823DA273800E9CC27 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42706F723DA273800E9CC27 /* UserInteractor.swift */; };
+		A42706FA23DA57F900E9CC27 /* RankInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42706F923DA57F900E9CC27 /* RankInteractor.swift */; };
 		A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE83F23CE33870046E645 /* AppDelegate.swift */; };
 		A42EE84223CE33870046E645 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE84123CE33870046E645 /* SceneDelegate.swift */; };
 		A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42EE84823CE33870046E645 /* noodles.xcdatamodeld */; };
@@ -113,6 +114,7 @@
 		A42706F323D9FC5100E9CC27 /* ChannelInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelInteractorTests.swift; sourceTree = "<group>"; };
 		A42706F523DA10A000E9CC27 /* InteractorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorParser.swift; sourceTree = "<group>"; };
 		A42706F723DA273800E9CC27 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
+		A42706F923DA57F900E9CC27 /* RankInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankInteractor.swift; sourceTree = "<group>"; };
 		A42EE83C23CE33870046E645 /* noodles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noodles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42EE83F23CE33870046E645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A42EE84123CE33870046E645 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				A42706F123D9F84B00E9CC27 /* Interactors+Helpers.swift */,
 				A42706F523DA10A000E9CC27 /* InteractorParser.swift */,
 				A42706F723DA273800E9CC27 /* UserInteractor.swift */,
+				A42706F923DA57F900E9CC27 /* RankInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				A42706F223D9F84B00E9CC27 /* Interactors+Helpers.swift in Sources */,
 				A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */,
 				A42706F823DA273800E9CC27 /* UserInteractor.swift in Sources */,
+				A42706FA23DA57F900E9CC27 /* RankInteractor.swift in Sources */,
 				D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */,
 				D984A3E323D0D55C0045A333 /* DataModifiedDelegate.swift in Sources */,
 				D984A3DF23D0D5050045A333 /* CoreDataManager.swift in Sources */,

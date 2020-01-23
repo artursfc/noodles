@@ -36,12 +36,19 @@
 		7597321423D0A61A00F9EFA5 /* TagsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597321223D0A61A00F9EFA5 /* TagsCollectionViewCell.xib */; };
 		7597321823D2060D00F9EFA5 /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597321623D2060D00F9EFA5 /* CustomNavigationViewController.swift */; };
 		7597321923D2060D00F9EFA5 /* CustomNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597321723D2060D00F9EFA5 /* CustomNavigationViewController.xib */; };
+		A42706EC23D644FA00E9CC27 /* CloudKit+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42706EB23D644FA00E9CC27 /* CloudKit+Helpers.swift */; };
+		A42706EE23D6453B00E9CC27 /* ChannelInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42706ED23D6453B00E9CC27 /* ChannelInteractor.swift */; };
+		A42706F023D9F82F00E9CC27 /* ParseableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42706EF23D9F82F00E9CC27 /* ParseableProtocol.swift */; };
+		A42706F223D9F84B00E9CC27 /* Interactors+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42706F123D9F84B00E9CC27 /* Interactors+Helpers.swift */; };
+		A42706F423D9FC5100E9CC27 /* ChannelInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42706F323D9FC5100E9CC27 /* ChannelInteractorTests.swift */; };
+		A42706F623DA10A000E9CC27 /* InteractorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42706F523DA10A000E9CC27 /* InteractorParser.swift */; };
+		A42706F823DA273800E9CC27 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42706F723DA273800E9CC27 /* UserInteractor.swift */; };
 		A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE83F23CE33870046E645 /* AppDelegate.swift */; };
 		A42EE84223CE33870046E645 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE84123CE33870046E645 /* SceneDelegate.swift */; };
 		A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42EE84823CE33870046E645 /* noodles.xcdatamodeld */; };
 		A42EE84C23CE338A0046E645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A42EE84B23CE338A0046E645 /* Assets.xcassets */; };
 		A42EE84F23CE338A0046E645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42EE84D23CE338A0046E645 /* LaunchScreen.storyboard */; };
-		A42EE85A23CE338A0046E645 /* NoodlesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE85923CE338A0046E645 /* NoodlesTests.swift */; };
+		A42EE85A23CE338A0046E645 /* CloudKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE85923CE338A0046E645 /* CloudKitTests.swift */; };
 		A42EE86523CE338A0046E645 /* NoodlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE86423CE338A0046E645 /* NoodlesUITests.swift */; };
 		A42EE87523CE34FB0046E645 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42EE87423CE34FB0046E645 /* CloudKit.framework */; };
 		A4FE0D1A23D1F5B10061EEDA /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE0D1923D1F5B10061EEDA /* CloudKitManager.swift */; };
@@ -101,6 +108,13 @@
 		7597321223D0A61A00F9EFA5 /* TagsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsCollectionViewCell.xib; sourceTree = "<group>"; };
 		7597321623D2060D00F9EFA5 /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		7597321723D2060D00F9EFA5 /* CustomNavigationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationViewController.xib; sourceTree = "<group>"; };
+		A42706EB23D644FA00E9CC27 /* CloudKit+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKit+Helpers.swift"; sourceTree = "<group>"; };
+		A42706ED23D6453B00E9CC27 /* ChannelInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelInteractor.swift; sourceTree = "<group>"; };
+		A42706EF23D9F82F00E9CC27 /* ParseableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseableProtocol.swift; sourceTree = "<group>"; };
+		A42706F123D9F84B00E9CC27 /* Interactors+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interactors+Helpers.swift"; sourceTree = "<group>"; };
+		A42706F323D9FC5100E9CC27 /* ChannelInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelInteractorTests.swift; sourceTree = "<group>"; };
+		A42706F523DA10A000E9CC27 /* InteractorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorParser.swift; sourceTree = "<group>"; };
+		A42706F723DA273800E9CC27 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
 		A42EE83C23CE33870046E645 /* noodles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noodles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42EE83F23CE33870046E645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A42EE84123CE33870046E645 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,7 +123,7 @@
 		A42EE84E23CE338A0046E645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A42EE85023CE338A0046E645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A42EE85523CE338A0046E645 /* noodlesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = noodlesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A42EE85923CE338A0046E645 /* NoodlesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoodlesTests.swift; sourceTree = "<group>"; };
+		A42EE85923CE338A0046E645 /* CloudKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitTests.swift; sourceTree = "<group>"; };
 		A42EE85B23CE338A0046E645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A42EE86023CE338A0046E645 /* noodlesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = noodlesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42EE86423CE338A0046E645 /* NoodlesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoodlesUITests.swift; sourceTree = "<group>"; };
@@ -325,7 +339,8 @@
 		A42EE85823CE338A0046E645 /* noodlesTests */ = {
 			isa = PBXGroup;
 			children = (
-				A42EE85923CE338A0046E645 /* NoodlesTests.swift */,
+				A42EE85923CE338A0046E645 /* CloudKitTests.swift */,
+				A42706F323D9FC5100E9CC27 /* ChannelInteractorTests.swift */,
 				A42EE85B23CE338A0046E645 /* Info.plist */,
 			);
 			path = noodlesTests;
@@ -362,6 +377,7 @@
 				4F55FDD723CFAD110032EF0F /* PostModel.swift */,
 				4F55FDD823CFAD110032EF0F /* RankModel.swift */,
 				4F55FDD523CFAD110032EF0F /* UserModel.swift */,
+				A42706EF23D9F82F00E9CC27 /* ParseableProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -369,6 +385,10 @@
 		A483A21023CFAB3500C7EB56 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				A42706ED23D6453B00E9CC27 /* ChannelInteractor.swift */,
+				A42706F123D9F84B00E9CC27 /* Interactors+Helpers.swift */,
+				A42706F523DA10A000E9CC27 /* InteractorParser.swift */,
+				A42706F723DA273800E9CC27 /* UserInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -377,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				A4FE0D1923D1F5B10061EEDA /* CloudKitManager.swift */,
+				A42706EB23D644FA00E9CC27 /* CloudKit+Helpers.swift */,
 			);
 			path = CloudKit;
 			sourceTree = "<group>";
@@ -584,6 +605,7 @@
 			files = (
 				7597314D23CE6FAF00F9EFA5 /* ChannelsViewController.swift in Sources */,
 				4F55FDDB23CFAD110032EF0F /* PostModel.swift in Sources */,
+				A42706EC23D644FA00E9CC27 /* CloudKit+Helpers.swift in Sources */,
 				7597316A23CF79AE00F9EFA5 /* SearchViewController.swift in Sources */,
 				D984A3E123D0D5320045A333 /* CoreDataStatus.swift in Sources */,
 				7597318223CFB88E00F9EFA5 /* PostsTableViewDataSource.swift in Sources */,
@@ -592,10 +614,13 @@
 				4F55FDDC23CFAD110032EF0F /* RankModel.swift in Sources */,
 				7597316623CF798E00F9EFA5 /* ProfileViewController.swift in Sources */,
 				7519DFBE23D258B700ADDFBA /* SearchTableViewCell.swift in Sources */,
+				A42706F223D9F84B00E9CC27 /* Interactors+Helpers.swift in Sources */,
 				A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */,
+				A42706F823DA273800E9CC27 /* UserInteractor.swift in Sources */,
 				D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */,
 				D984A3E323D0D55C0045A333 /* DataModifiedDelegate.swift in Sources */,
 				D984A3DF23D0D5050045A333 /* CoreDataManager.swift in Sources */,
+				A42706F023D9F82F00E9CC27 /* ParseableProtocol.swift in Sources */,
 				4F55FDDA23CFAD110032EF0F /* ChannelModel.swift in Sources */,
 				7597321823D2060D00F9EFA5 /* CustomNavigationViewController.swift in Sources */,
 				7597316223CF76DB00F9EFA5 /* SaveViewController.swift in Sources */,
@@ -605,6 +630,8 @@
 				D938225D23DA058100769420 /* AddPostViewController.swift in Sources */,
 				A4FE0D1A23D1F5B10061EEDA /* CloudKitManager.swift in Sources */,
 				7597315523CECC9B00F9EFA5 /* FeedViewController.swift in Sources */,
+				A42706F623DA10A000E9CC27 /* InteractorParser.swift in Sources */,
+				A42706EE23D6453B00E9CC27 /* ChannelInteractor.swift in Sources */,
 				7597321323D0A61A00F9EFA5 /* TagsCollectionViewCell.swift in Sources */,
 				D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */,
 				7597317423CF8F7B00F9EFA5 /* ChannelCollectionViewDataSource.swift in Sources */,
@@ -617,7 +644,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A42EE85A23CE338A0046E645 /* NoodlesTests.swift in Sources */,
+				A42706F423D9FC5100E9CC27 /* ChannelInteractorTests.swift in Sources */,
+				A42EE85A23CE338A0046E645 /* CloudKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

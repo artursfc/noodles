@@ -8,12 +8,13 @@
 
 import Foundation
 
-struct ChannelModel {
+struct ChannelModel: Parseable {
     var id: String
-    var posts: [PostModel]
-    var cratedBy: UserModel
-    var canBeEditedBy: [RankModel]
-    var canBeViewedBy: [RankModel]
-    var createdAt: Date
-    var editedAt: Date
+    var name: String
+    var posts: [PostModel]?
+    var createdBy: UserModel?
+    var canBeEditedBy: [RankModel]?
+    var canBeViewedBy: [RankModel]?
+    var createdAt: Date?
+    var editedAt: Date?
 }

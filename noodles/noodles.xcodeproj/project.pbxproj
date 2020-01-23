@@ -47,6 +47,8 @@
 		A4FE0D1A23D1F5B10061EEDA /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE0D1923D1F5B10061EEDA /* CloudKitManager.swift */; };
 		D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */; };
 		D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB223CE4B160005F0CE /* Constants.swift */; };
+		D938225D23DA058100769420 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938225B23DA058100769420 /* AddPostViewController.swift */; };
+		D938225E23DA058100769420 /* AddPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D938225C23DA058100769420 /* AddPostViewController.xib */; };
 		D984A3DF23D0D5050045A333 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D984A3DE23D0D5050045A333 /* CoreDataManager.swift */; };
 		D984A3E123D0D5320045A333 /* CoreDataStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D984A3E023D0D5320045A333 /* CoreDataStatus.swift */; };
 		D984A3E323D0D55C0045A333 /* DataModifiedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D984A3E223D0D55C0045A333 /* DataModifiedDelegate.swift */; };
@@ -117,6 +119,8 @@
 		A4FE0D1923D1F5B10061EEDA /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		D91B3BB223CE4B160005F0CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D938225B23DA058100769420 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		D938225C23DA058100769420 /* AddPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPostViewController.xib; sourceTree = "<group>"; };
 		D984A3DE23D0D5050045A333 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D984A3E023D0D5320045A333 /* CoreDataStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStatus.swift; sourceTree = "<group>"; };
 		D984A3E223D0D55C0045A333 /* DataModifiedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModifiedDelegate.swift; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 		7597317223CF8EDB00F9EFA5 /* View + ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D938225A23DA020F00769420 /* AddPost */,
 				7597316C23CF8E5C00F9EFA5 /* Channels */,
 				7597316D23CF8E7200F9EFA5 /* Feed */,
 				7597316E23CF8E7F00F9EFA5 /* TabBar */,
@@ -386,6 +391,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		D938225A23DA020F00769420 /* AddPost */ = {
+			isa = PBXGroup;
+			children = (
+				D938225B23DA058100769420 /* AddPostViewController.swift */,
+				D938225C23DA058100769420 /* AddPostViewController.xib */,
+			);
+			name = AddPost;
+			sourceTree = "<group>";
+		};
 		D9FE63B223CE792E004ADC29 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +535,7 @@
 				A42EE84C23CE338A0046E645 /* Assets.xcassets in Resources */,
 				7597316B23CF79AE00F9EFA5 /* SearchViewController.xib in Resources */,
 				7597316323CF76DB00F9EFA5 /* SaveViewController.xib in Resources */,
+				D938225E23DA058100769420 /* AddPostViewController.xib in Resources */,
 				7519DFBF23D258B700ADDFBA /* SearchTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,6 +602,7 @@
 				4F55FDD923CFAD110032EF0F /* UserModel.swift in Sources */,
 				A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */,
 				A42EE84223CE33870046E645 /* SceneDelegate.swift in Sources */,
+				D938225D23DA058100769420 /* AddPostViewController.swift in Sources */,
 				A4FE0D1A23D1F5B10061EEDA /* CloudKitManager.swift in Sources */,
 				7597315523CECC9B00F9EFA5 /* FeedViewController.swift in Sources */,
 				7597321323D0A61A00F9EFA5 /* TagsCollectionViewCell.swift in Sources */,

@@ -18,22 +18,58 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fdj-CS-gra">
-                    <rect key="frame" x="20" y="262" width="374" height="600"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TN-w9-1Iq">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saveTabBarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="1gd-ab-yVY">
+                            <rect key="frame" x="20" y="65" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="GTo-HI-1as"/>
+                                <constraint firstAttribute="height" constant="35" id="Ka7-0G-sMJ"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SALVOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLO-Q1-HZY">
+                            <rect key="frame" x="65" y="65" width="200" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="8q6-Ai-qsH"/>
+                                <constraint firstAttribute="width" constant="200" id="E6i-FJ-QwR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="600" id="gTd-wP-fLd"/>
+                        <constraint firstItem="1gd-ab-yVY" firstAttribute="leading" secondItem="6TN-w9-1Iq" secondAttribute="leading" constant="20" id="7tg-gb-Q6e"/>
+                        <constraint firstItem="wLO-Q1-HZY" firstAttribute="leading" secondItem="1gd-ab-yVY" secondAttribute="trailing" constant="10" id="W8J-Kc-YyG"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="ftK-UK-9QM"/>
+                        <constraint firstAttribute="height" constant="120" id="nBw-Ic-4rB"/>
+                        <constraint firstAttribute="bottom" secondItem="wLO-Q1-HZY" secondAttribute="bottom" constant="20" id="qaz-Z1-5D6"/>
+                        <constraint firstAttribute="bottom" secondItem="1gd-ab-yVY" secondAttribute="bottom" constant="20" id="srY-6m-PlV"/>
                     </constraints>
+                    <viewLayoutGuide key="safeArea" id="Yth-zm-sNd"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fdj-CS-gra">
+                    <rect key="frame" x="20" y="120" width="374" height="742"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Fdj-CS-gra" secondAttribute="bottom" id="6od-E9-QTv"/>
+                <constraint firstItem="6TN-w9-1Iq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YX9-yP-tnD"/>
+                <constraint firstItem="Fdj-CS-gra" firstAttribute="top" secondItem="6TN-w9-1Iq" secondAttribute="bottom" id="aPS-EV-VOv"/>
                 <constraint firstItem="Fdj-CS-gra" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ejW-HO-SaS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fdj-CS-gra" secondAttribute="trailing" constant="20" id="hVF-0H-z0E"/>
+                <constraint firstItem="6TN-w9-1Iq" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hdV-Wg-tpu"/>
+                <constraint firstItem="6TN-w9-1Iq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jeM-8g-6li"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="125"/>
         </view>
     </objects>
+    <resources>
+        <image name="saveTabBarIcon" width="20" height="26"/>
+    </resources>
 </document>

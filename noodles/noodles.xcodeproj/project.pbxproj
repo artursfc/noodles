@@ -13,6 +13,7 @@
 		4F55FDDC23CFAD110032EF0F /* RankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD823CFAD110032EF0F /* RankModel.swift */; };
 		4F678DCC23DAAA8C00A20396 /* RankSelectionTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F678DCB23DAAA8C00A20396 /* RankSelectionTableViewDataSource.swift */; };
 		4F678DCE23DAAC1400A20396 /* RankSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F678DCD23DAAC1400A20396 /* RankSelectionTableViewCell.swift */; };
+		4F678DD023DAB55700A20396 /* ChannelCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F678DCF23DAB55700A20396 /* ChannelCreationViewController.swift */; };
 		4F99DE1F23D8DBD7009DA867 /* ChannelCreationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F99DE1E23D8DBD7009DA867 /* ChannelCreationViewController.xib */; };
 		4F99DE2223D8DFD3009DA867 /* RankSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F99DE2123D8DFD3009DA867 /* RankSelectionTableViewCell.xib */; };
 		4F99DE2723D8E303009DA867 /* CheckBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F99DE2623D8E303009DA867 /* CheckBox.xib */; };
@@ -89,6 +90,7 @@
 		4F55FDD823CFAD110032EF0F /* RankModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankModel.swift; sourceTree = "<group>"; };
 		4F678DCB23DAAA8C00A20396 /* RankSelectionTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankSelectionTableViewDataSource.swift; sourceTree = "<group>"; };
 		4F678DCD23DAAC1400A20396 /* RankSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		4F678DCF23DAB55700A20396 /* ChannelCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCreationViewController.swift; sourceTree = "<group>"; };
 		4F99DE1E23D8DBD7009DA867 /* ChannelCreationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCreationViewController.xib; sourceTree = "<group>"; };
 		4F99DE2123D8DFD3009DA867 /* RankSelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankSelectionTableViewCell.xib; sourceTree = "<group>"; };
 		4F99DE2623D8E303009DA867 /* CheckBox.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBox.xib; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				4F99DE2023D8DE88009DA867 /* Cell */,
 				4F99DE1E23D8DBD7009DA867 /* ChannelCreationViewController.xib */,
 				4F678DCB23DAAA8C00A20396 /* RankSelectionTableViewDataSource.swift */,
+				4F678DCF23DAB55700A20396 /* ChannelCreationViewController.swift */,
 			);
 			path = ChannelCreation;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */,
 				D984A3E323D0D55C0045A333 /* DataModifiedDelegate.swift in Sources */,
 				D984A3DF23D0D5050045A333 /* CoreDataManager.swift in Sources */,
+				4F678DD023DAB55700A20396 /* ChannelCreationViewController.swift in Sources */,
 				A42706F023D9F82F00E9CC27 /* ParseableProtocol.swift in Sources */,
 				4F55FDDA23CFAD110032EF0F /* ChannelModel.swift in Sources */,
 				7597321823D2060D00F9EFA5 /* CustomNavigationViewController.swift in Sources */,

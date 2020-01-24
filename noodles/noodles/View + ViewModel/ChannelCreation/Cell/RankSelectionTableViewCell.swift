@@ -13,6 +13,8 @@ class RankSelectionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var rankTitle: UILabel!
     
+    @IBOutlet weak var checkImg: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

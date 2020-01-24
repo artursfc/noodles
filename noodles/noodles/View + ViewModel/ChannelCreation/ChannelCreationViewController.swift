@@ -12,18 +12,27 @@ import UIKit
 class ChannelCreationViewController: UIViewController {
     
     @IBOutlet weak var rankSelectionTableView: UITableView!
-    var POSTTABLEVIEWCELL = "PostTableViewCell"
-    let dataSource = PostsTableViewDataSource()
+    var RANKSELECTIONTABLEVIEWCELL = "RankSelectionTableViewCell"
+    let dataSource = RankSelectionTableViewDataSource()
+    var selectedRanks: [RankSelectionTableViewCell] = [RankSelectionTableViewCell]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupPostTableView()
+        setupRankSelectionTableView()
         view.backgroundColor = UIColor.fakeWhite
     }
 
-    func setupPostTableView() {
-        postsTableView.dataSource = dataSource
-        postsTableView.register(UINib(nibName: POSTTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: POSTTABLEVIEWCELL)
-        postsTableView.separatorColor = UIColor.clear
+    func setupRankSelectionTableView() {
+        rankSelectionTableView.dataSource = dataSource
+        rankSelectionTableView.register(UINib(nibName: RANKSELECTIONTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: RANKSELECTIONTABLEVIEWCELL)
+        rankSelectionTableView.separatorColor = UIColor.clear
     }
+}
+
+extension ChannelCreationViewController: ChannelCreationDelegate {
+    func getSelectedRanks() {
+        
+    }
+    
+    
 }

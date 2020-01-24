@@ -9,7 +9,7 @@
 import Foundation
 import CloudKit
 
-public struct Response {
+public struct CloudKitResponse {
     var error: CKError?
     var records: [CKRecord]?
 }

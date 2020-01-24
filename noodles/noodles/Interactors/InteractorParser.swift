@@ -89,6 +89,58 @@ final class InteractorParser {
         }
     }
 
+    public func parse(objects: [NSManagedObject], into model: StructType) -> [Parseable]? {
+        switch model {
+        case .channels:
+            if let channelObjects = objects as? [Channel] {
+                var channels = [ChannelModel]()
+                for object in channelObjects {
+                    let model = ChannelModel(id: object.id ?? "", name: object.name ?? "", posts: nil, createdBy: nil,
+                                             canBeEditedBy: nil, canBeViewedBy: nil,
+                                             createdAt: object.createdAt ?? nil, editedAt: object.editedAt ?? nil)
+                    channels.append(model)
+                }
+                return channels
+            }
+            return nil
+        case .posts:
+            if let postObjects = objects as? [Post] {
+                var posts = [PostModel]()
+                for object in postObjects {
+                    let model = PostModel(id: object.id ?? "", title: object.title ?? "", body: object.body ?? "",
+                                          author: nil, tags: object.tags ?? [], readBy: nil, validated: object.validated,
+                                          createdAt: object.createdAt ?? nil, editedAt: object.editedAt ?? nil, channels: nil)
+                    posts.append(model)
+                }
+                return posts
+            }
+            return nil
+        case .ranks:
+            if let rankObjects = objects as? [Rank] {
+                var ranks = [RankModel]()
+                for object in rankObjects {
+                    let model = RankModel(id: object.id ?? "", title: object.title ?? "", canEdit: nil,
+                                          canView: nil, canCreateChannel: object.canCreateChannel, createdAt: object.createdAt ?? nil,
+                                          editedAt: object.editedAt ?? nil, users: nil)
+                    ranks.append(model)
+                }
+                return ranks
+            }
+            return nil
+        case .users:
+            if let userObjects = objects as? [User] {
+                var users = [UserModel]()
+                for object in userObjects {
+                    let model = UserModel(id: object.id ?? "", name: object.name ?? "", rank: nil,
+                                          createdAt: object.createdAt ?? nil, editedAt: object.editedAt ?? nil)
+                    users.append(model)
+                }
+                return users
+            }
+        }
+        return nil
+    }
+
     // MARK: Private functions
     private func parse(channels: [ChannelModel]) -> [CKRecord] {
         var records = [CKRecord]()

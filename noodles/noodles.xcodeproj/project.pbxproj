@@ -57,8 +57,6 @@
 		D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */; };
 		D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB223CE4B160005F0CE /* Constants.swift */; };
 		D984A3DF23D0D5050045A333 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D984A3DE23D0D5050045A333 /* CoreDataManager.swift */; };
-		D984A3E123D0D5320045A333 /* CoreDataStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D984A3E023D0D5320045A333 /* CoreDataStatus.swift */; };
-		D984A3E323D0D55C0045A333 /* DataModifiedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D984A3E223D0D55C0045A333 /* DataModifiedDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,8 +142,6 @@
 		D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		D91B3BB223CE4B160005F0CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D984A3DE23D0D5050045A333 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		D984A3E023D0D5320045A333 /* CoreDataStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStatus.swift; sourceTree = "<group>"; };
-		D984A3E223D0D55C0045A333 /* DataModifiedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModifiedDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,7 +404,6 @@
 			children = (
 				D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */,
 				D91B3BB223CE4B160005F0CE /* Constants.swift */,
-				D984A3E223D0D55C0045A333 /* DataModifiedDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -426,7 +421,6 @@
 				A427070423DB115200E9CC27 /* Rank+CoreDataProperties.swift */,
 				A42EE84823CE33870046E645 /* noodles.xcdatamodeld */,
 				D984A3DE23D0D5050045A333 /* CoreDataManager.swift */,
-				D984A3E023D0D5320045A333 /* CoreDataStatus.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -598,7 +592,6 @@
 				4F55FDDB23CFAD110032EF0F /* PostModel.swift in Sources */,
 				A42706EC23D644FA00E9CC27 /* CloudKit+Helpers.swift in Sources */,
 				7597316A23CF79AE00F9EFA5 /* SearchViewController.swift in Sources */,
-				D984A3E123D0D5320045A333 /* CoreDataStatus.swift in Sources */,
 				7597318223CFB88E00F9EFA5 /* PostsTableViewDataSource.swift in Sources */,
 				7597317723CF90DF00F9EFA5 /* ChannelsCollectionViewCell.swift in Sources */,
 				7597315123CEC2F500F9EFA5 /* CustomTabBarController.swift in Sources */,
@@ -610,7 +603,6 @@
 				A42706F823DA273800E9CC27 /* UserInteractor.swift in Sources */,
 				A42706FA23DA57F900E9CC27 /* RankInteractor.swift in Sources */,
 				D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */,
-				D984A3E323D0D55C0045A333 /* DataModifiedDelegate.swift in Sources */,
 				D984A3DF23D0D5050045A333 /* CoreDataManager.swift in Sources */,
 				A42706F023D9F82F00E9CC27 /* ParseableProtocol.swift in Sources */,
 				4F55FDDA23CFAD110032EF0F /* ChannelModel.swift in Sources */,

@@ -69,6 +69,8 @@
 		D938226423DA73E900769420 /* CreatePostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D938226223DA73E900769420 /* CreatePostViewController.xib */; };
 		D938226623DA7E1900769420 /* AddPostDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938226523DA7E1900769420 /* AddPostDelegate.swift */; };
 		D938226823DAAFDA00769420 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938226723DAAFDA00769420 /* TextFieldExtension.swift */; };
+		D938227123DB9B3C00769420 /* SearchFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938227023DB9B3C00769420 /* SearchFooter.swift */; };
+		D938227723DBA38E00769420 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938227623DBA38E00769420 /* Objects.swift */; };
 		D984A3DF23D0D5050045A333 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D984A3DE23D0D5050045A333 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +169,8 @@
 		D938226223DA73E900769420 /* CreatePostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostViewController.xib; sourceTree = "<group>"; };
 		D938226523DA7E1900769420 /* AddPostDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostDelegate.swift; sourceTree = "<group>"; };
 		D938226723DAAFDA00769420 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		D938227023DB9B3C00769420 /* SearchFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFooter.swift; sourceTree = "<group>"; };
+		D938227623DBA38E00769420 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 		D984A3DE23D0D5050045A333 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -290,6 +294,8 @@
 				7519DFBB23D2589800ADDFBA /* Cell */,
 				7597316823CF79AE00F9EFA5 /* SearchViewController.swift */,
 				7597316923CF79AE00F9EFA5 /* SearchViewController.xib */,
+				D938227023DB9B3C00769420 /* SearchFooter.swift */,
+				D938227623DBA38E00769420 /* Objects.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -297,7 +303,6 @@
 		7597317223CF8EDB00F9EFA5 /* View + ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-
 				4F99DE1D23D8DB44009DA867 /* ChannelCreation */,
 				D938226F23DB77E100769420 /* PostCreation */,
 				7597316C23CF8E5C00F9EFA5 /* Channels */,
@@ -667,6 +672,7 @@
 			files = (
 				4F678DCE23DAAC1400A20396 /* RankSelectionTableViewCell.swift in Sources */,
 				7597314D23CE6FAF00F9EFA5 /* ChannelsViewController.swift in Sources */,
+				D938227723DBA38E00769420 /* Objects.swift in Sources */,
 				4F55FDDB23CFAD110032EF0F /* PostModel.swift in Sources */,
 				A42706EC23D644FA00E9CC27 /* CloudKit+Helpers.swift in Sources */,
 				7597316A23CF79AE00F9EFA5 /* SearchViewController.swift in Sources */,
@@ -699,6 +705,7 @@
 				A4FE0D1A23D1F5B10061EEDA /* CloudKitManager.swift in Sources */,
 				7597315523CECC9B00F9EFA5 /* FeedViewController.swift in Sources */,
 				A42706F623DA10A000E9CC27 /* InteractorParser.swift in Sources */,
+				D938227123DB9B3C00769420 /* SearchFooter.swift in Sources */,
 				A42706EE23D6453B00E9CC27 /* ChannelInteractor.swift in Sources */,
 				A42706FC23DA65E400E9CC27 /* PostInteractor.swift in Sources */,
 				7597321323D0A61A00F9EFA5 /* TagsCollectionViewCell.swift in Sources */,

@@ -27,7 +27,17 @@ class CreatePostViewController: UIViewController {
     
     var postName: String?
     
+    
     var viewModel = PostModel(id: "id", title: "title", body: "body", author: nil, tags: ["tag1", "tag2"], readBy: [], validated: true, createdAt: nil, editedAt: nil, channels: [])
+    
+    init(viewModel: PostModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

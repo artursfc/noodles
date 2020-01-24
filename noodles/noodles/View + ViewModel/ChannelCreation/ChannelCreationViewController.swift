@@ -22,8 +22,8 @@ class ChannelCreationViewController: UIViewController {
     }
 
     func setupPostTableView() {
-        postsTableView.dataSource = dataSource
-        postsTableView.register(UINib(nibName: POSTTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: POSTTABLEVIEWCELL)
-        postsTableView.separatorColor = UIColor.clear
+//        postsTableView.dataSource = dataSource
+//        postsTableView.register(UINib(nibName: POSTTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: POSTTABLEVIEWCELL)
+//        postsTableView.separatorColor = UIColor.clear
     }
 }

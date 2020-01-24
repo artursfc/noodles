@@ -16,6 +16,15 @@ class AddPostViewController: UIViewController {
     
     var viewModel = PostModel(id: "id", title: "title", body: "body", author: nil, tags: ["tag1", "tag2"], readBy: [], validated: true, createdAt: nil, editedAt: nil, channels: [])
     
+    init(viewModel: PostModel) {
+           self.viewModel = viewModel
+           super.init(nibName: nil, bundle: nil)
+       }
+       
+       required init?(coder: NSCoder) {
+           fatalError("init(coder:) has not been implemented")
+       }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         feed()
@@ -44,7 +53,8 @@ class AddPostViewController: UIViewController {
 extension CreatePostViewController: AddPostDelegate {
     
     func receiveName(postName: String) {
-        let modalViewController = CreatePostViewController()
+        var viewModel = PostModel(id: "id", title: "title", body: "body", author: nil, tags: ["tag1", "tag2"], readBy: [], validated: true, createdAt: nil, editedAt: nil, channels: [])
+        let modalViewController = CreatePostViewController(viewModel: viewModel)
         modalViewController.postNameTextField.placeholder = postName
         modalViewController.modalPresentationStyle = .overCurrentContext
         present(modalViewController, animated: true, completion: nil)

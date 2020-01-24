@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SomeChannelViewController" customModule="noodles" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZ6-Az-ZOe">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n9-GX-dhK">
+                            <rect key="frame" x="20" y="65" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="moW-GW-4W5"/>
+                                <constraint firstAttribute="height" constant="35" id="vPP-xZ-fww"/>
+                            </constraints>
+                            <state key="normal" image="backIcon"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqA-fl-IYo">
+                            <rect key="frame" x="359" y="65" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="Z2Y-i3-G9j"/>
+                                <constraint firstAttribute="height" constant="35" id="lUu-dO-lJw"/>
+                            </constraints>
+                            <state key="normal" image="plusIcon"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGv-gF-thM">
+                            <rect key="frame" x="75" y="65" width="200" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="VWh-FH-t1Z"/>
+                                <constraint firstAttribute="height" constant="35" id="ieK-vR-teH"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="VD5-jL-Mbh" firstAttribute="bottom" secondItem="zqA-fl-IYo" secondAttribute="bottom" constant="20" id="6xd-K0-mxB"/>
+                        <constraint firstItem="VD5-jL-Mbh" firstAttribute="bottom" secondItem="jGv-gF-thM" secondAttribute="bottom" constant="20" id="969-eu-jJN"/>
+                        <constraint firstItem="VD5-jL-Mbh" firstAttribute="trailing" secondItem="zqA-fl-IYo" secondAttribute="trailing" constant="20" id="Gbi-RP-COb"/>
+                        <constraint firstAttribute="height" constant="120" id="Ok7-lz-Rod"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="RdS-wo-mSt"/>
+                        <constraint firstItem="jGv-gF-thM" firstAttribute="leading" secondItem="5n9-GX-dhK" secondAttribute="trailing" constant="20" id="b4G-7N-M3c"/>
+                        <constraint firstItem="VD5-jL-Mbh" firstAttribute="bottom" secondItem="5n9-GX-dhK" secondAttribute="bottom" constant="20" id="qT8-X2-Jv5"/>
+                        <constraint firstItem="5n9-GX-dhK" firstAttribute="leading" secondItem="VD5-jL-Mbh" secondAttribute="leading" constant="20" id="uqt-Fl-VJf"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="VD5-jL-Mbh"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JSj-lp-Uup">
+                    <rect key="frame" x="0.0" y="120" width="414" height="742"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JSj-lp-Uup" secondAttribute="trailing" id="3OB-XY-Kbd"/>
+                <constraint firstItem="JSj-lp-Uup" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9WS-S4-jSB"/>
+                <constraint firstItem="JSj-lp-Uup" firstAttribute="top" secondItem="uZ6-Az-ZOe" secondAttribute="bottom" id="VbV-vK-pvU"/>
+                <constraint firstItem="uZ6-Az-ZOe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="X8I-rg-DAE"/>
+                <constraint firstItem="uZ6-Az-ZOe" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="etP-yO-wQg"/>
+                <constraint firstItem="uZ6-Az-ZOe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hJ7-3t-hJd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JSj-lp-Uup" secondAttribute="bottom" id="hxU-O8-5cL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backIcon" width="26" height="26"/>
+        <image name="plusIcon" width="26" height="26"/>
+    </resources>
+</document>

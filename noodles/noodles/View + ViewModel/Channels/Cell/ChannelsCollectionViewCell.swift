@@ -12,9 +12,13 @@ class ChannelsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var channelImage: UIImageView!
 
+    @IBOutlet weak var channelTitle: UILabel!
+    
     @IBOutlet weak var badget: UIImageView!
 
     @IBOutlet weak var newPostCount: UILabel!
+
+    var channel: ChannelModel?
     
     override func awakeFromNib() {
         super.awakeFromNib()

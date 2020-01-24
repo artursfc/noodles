@@ -13,6 +13,9 @@
 		4F55FDDC23CFAD110032EF0F /* RankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD823CFAD110032EF0F /* RankModel.swift */; };
 		7519DFBE23D258B700ADDFBA /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7519DFBC23D258B700ADDFBA /* SearchTableViewCell.swift */; };
 		7519DFBF23D258B700ADDFBA /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7519DFBD23D258B700ADDFBA /* SearchTableViewCell.xib */; };
+		758A8F2223DB9FB4005D6530 /* SomeChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A8F2023DB9FB4005D6530 /* SomeChannelViewController.swift */; };
+		758A8F2323DB9FB4005D6530 /* SomeChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 758A8F2123DB9FB4005D6530 /* SomeChannelViewController.xib */; };
+		758A8F2523DBADAA005D6530 /* ChannelCollectionViewDelegatea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A8F2423DBADAA005D6530 /* ChannelCollectionViewDelegatea.swift */; };
 		7597314D23CE6FAF00F9EFA5 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597314B23CE6FAF00F9EFA5 /* ChannelsViewController.swift */; };
 		7597314E23CE6FAF00F9EFA5 /* ChannelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597314C23CE6FAF00F9EFA5 /* ChannelsViewController.xib */; };
 		7597315123CEC2F500F9EFA5 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597314F23CEC2F500F9EFA5 /* CustomTabBarController.swift */; };
@@ -89,6 +92,17 @@
 		4F55FDD823CFAD110032EF0F /* RankModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankModel.swift; sourceTree = "<group>"; };
 		7519DFBC23D258B700ADDFBA /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		7519DFBD23D258B700ADDFBA /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		758A8F0F23DB927D005D6530 /* Rank+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rank+CoreDataClass.swift"; sourceTree = "<group>"; };
+		758A8F1023DB927D005D6530 /* Rank+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rank+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		758A8F1123DB927D005D6530 /* Channel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		758A8F1223DB927D005D6530 /* Channel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		758A8F1323DB927D005D6530 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
+		758A8F1423DB927D005D6530 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		758A8F1523DB927D005D6530 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		758A8F1623DB927D005D6530 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		758A8F2023DB9FB4005D6530 /* SomeChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeChannelViewController.swift; sourceTree = "<group>"; };
+		758A8F2123DB9FB4005D6530 /* SomeChannelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SomeChannelViewController.xib; sourceTree = "<group>"; };
+		758A8F2423DBADAA005D6530 /* ChannelCollectionViewDelegatea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionViewDelegatea.swift; sourceTree = "<group>"; };
 		7597314B23CE6FAF00F9EFA5 /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
 		7597314C23CE6FAF00F9EFA5 /* ChannelsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsViewController.xib; sourceTree = "<group>"; };
 		7597314F23CEC2F500F9EFA5 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -121,14 +135,6 @@
 		A42706F723DA273800E9CC27 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
 		A42706F923DA57F900E9CC27 /* RankInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankInteractor.swift; sourceTree = "<group>"; };
 		A42706FB23DA65E400E9CC27 /* PostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInteractor.swift; sourceTree = "<group>"; };
-		A42706FD23DB115200E9CC27 /* Channel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A42706FE23DB115200E9CC27 /* Channel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A42706FF23DB115200E9CC27 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A427070023DB115200E9CC27 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A427070123DB115200E9CC27 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A427070223DB115200E9CC27 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A427070323DB115200E9CC27 /* Rank+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rank+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A427070423DB115200E9CC27 /* Rank+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rank+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A42EE83C23CE33870046E645 /* noodles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noodles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42EE83F23CE33870046E645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A42EE84123CE33870046E645 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,12 +197,22 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		758A8F1F23DB9F95005D6530 /* SomeChannel */ = {
+			isa = PBXGroup;
+			children = (
+				758A8F2023DB9FB4005D6530 /* SomeChannelViewController.swift */,
+				758A8F2123DB9FB4005D6530 /* SomeChannelViewController.xib */,
+			);
+			path = SomeChannel;
+			sourceTree = "<group>";
+		};
 		7597316C23CF8E5C00F9EFA5 /* Channels */ = {
 			isa = PBXGroup;
 			children = (
 				7597317923CF90E900F9EFA5 /* Cell */,
 				7597314B23CE6FAF00F9EFA5 /* ChannelsViewController.swift */,
 				7597317323CF8F7B00F9EFA5 /* ChannelCollectionViewDataSource.swift */,
+				758A8F2423DBADAA005D6530 /* ChannelCollectionViewDelegatea.swift */,
 				7597314C23CE6FAF00F9EFA5 /* ChannelsViewController.xib */,
 			);
 			path = Channels;
@@ -256,6 +272,7 @@
 				D938226F23DB77E100769420 /* PostCreation */,
 				7597316C23CF8E5C00F9EFA5 /* Channels */,
 				7597316D23CF8E7200F9EFA5 /* Feed */,
+				758A8F1F23DB9F95005D6530 /* SomeChannel */,
 				7597316E23CF8E7F00F9EFA5 /* TabBar */,
 				7597321523D205DE00F9EFA5 /* Navigation */,
 				7597316F23CF8E9700F9EFA5 /* Saved */,
@@ -437,14 +454,14 @@
 		D9FE63B223CE792E004ADC29 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				A42706FD23DB115200E9CC27 /* Channel+CoreDataClass.swift */,
-				A42706FE23DB115200E9CC27 /* Channel+CoreDataProperties.swift */,
-				A42706FF23DB115200E9CC27 /* User+CoreDataClass.swift */,
-				A427070023DB115200E9CC27 /* User+CoreDataProperties.swift */,
-				A427070123DB115200E9CC27 /* Post+CoreDataClass.swift */,
-				A427070223DB115200E9CC27 /* Post+CoreDataProperties.swift */,
-				A427070323DB115200E9CC27 /* Rank+CoreDataClass.swift */,
-				A427070423DB115200E9CC27 /* Rank+CoreDataProperties.swift */,
+				758A8F0F23DB927D005D6530 /* Rank+CoreDataClass.swift */,
+				758A8F1023DB927D005D6530 /* Rank+CoreDataProperties.swift */,
+				758A8F1123DB927D005D6530 /* Channel+CoreDataClass.swift */,
+				758A8F1223DB927D005D6530 /* Channel+CoreDataProperties.swift */,
+				758A8F1323DB927D005D6530 /* Post+CoreDataClass.swift */,
+				758A8F1423DB927D005D6530 /* Post+CoreDataProperties.swift */,
+				758A8F1523DB927D005D6530 /* User+CoreDataClass.swift */,
+				758A8F1623DB927D005D6530 /* User+CoreDataProperties.swift */,
 				A42EE84823CE33870046E645 /* noodles.xcdatamodeld */,
 				D984A3DE23D0D5050045A333 /* CoreDataManager.swift */,
 			);
@@ -566,6 +583,7 @@
 				7597321423D0A61A00F9EFA5 /* TagsCollectionViewCell.xib in Resources */,
 				7597315223CEC2F500F9EFA5 /* CustomTabBarController.xib in Resources */,
 				7597317823CF90DF00F9EFA5 /* ChannelsCollectionViewCell.xib in Resources */,
+				758A8F2323DB9FB4005D6530 /* SomeChannelViewController.xib in Resources */,
 				A42EE84C23CE338A0046E645 /* Assets.xcassets in Resources */,
 				7597316B23CF79AE00F9EFA5 /* SearchViewController.xib in Resources */,
 				7597316323CF76DB00F9EFA5 /* SaveViewController.xib in Resources */,
@@ -622,6 +640,7 @@
 				7597316A23CF79AE00F9EFA5 /* SearchViewController.swift in Sources */,
 				7597318223CFB88E00F9EFA5 /* PostsTableViewDataSource.swift in Sources */,
 				7597317723CF90DF00F9EFA5 /* ChannelsCollectionViewCell.swift in Sources */,
+				758A8F2223DB9FB4005D6530 /* SomeChannelViewController.swift in Sources */,
 				7597315123CEC2F500F9EFA5 /* CustomTabBarController.swift in Sources */,
 				4F55FDDC23CFAD110032EF0F /* RankModel.swift in Sources */,
 				7597316623CF798E00F9EFA5 /* ProfileViewController.swift in Sources */,
@@ -651,6 +670,7 @@
 				7597321323D0A61A00F9EFA5 /* TagsCollectionViewCell.swift in Sources */,
 				D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */,
 				7597317423CF8F7B00F9EFA5 /* ChannelCollectionViewDataSource.swift in Sources */,
+				758A8F2523DBADAA005D6530 /* ChannelCollectionViewDelegatea.swift in Sources */,
 				7597321023D0A55B00F9EFA5 /* TagsCollectionViewDataSource.swift in Sources */,
 				7597317D23CFB4D800F9EFA5 /* PostTableViewCell.swift in Sources */,
 			);

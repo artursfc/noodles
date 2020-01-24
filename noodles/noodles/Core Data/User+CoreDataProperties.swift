@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  noodles
 //
-//  Created by Artur Carneiro on 24/01/20.
+//  Created by Eloisa Falcão on 24/01/20.
 //  Copyright © 2020 Artur Carneiro. All rights reserved.
 //
 //
@@ -17,10 +17,10 @@ extension User {
         return NSFetchRequest<User>(entityName: "User")
     }
 
-    @NSManaged public var id: String?
-    @NSManaged public var name: String?
     @NSManaged public var createdAt: Date?
     @NSManaged public var editedAt: Date?
+    @NSManaged public var id: String?
+    @NSManaged public var name: String?
     @NSManaged public var posts: NSSet?
     @NSManaged public var rank: Rank?
 

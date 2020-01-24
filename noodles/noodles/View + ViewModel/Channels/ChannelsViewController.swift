@@ -10,25 +10,34 @@ import UIKit
 
 class ChannelsViewController: UIViewController {
 
+    @IBOutlet weak var showAddPost: UIButton!
+
     @IBOutlet weak var channelsCollectionView: UICollectionView!
+
     var channelsCollectionViewDataSource =  ChannelCollectionViewDataSource()
+    var channelsCollectionViewDelegate = ChannelCollectionViewDelegate()
     var CHANNELCOLLECTIONVIEWCELL = "ChannelsCollectionViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.fakeWhite
+        channelsCollectionViewDataSource.setUpMock()
         setupChannelsCollectionView()
-        setupNavigation()
     }
 
     func setupChannelsCollectionView() {
         channelsCollectionView.backgroundColor = UIColor.fakeWhite
         channelsCollectionView.register(UINib(nibName: CHANNELCOLLECTIONVIEWCELL, bundle: nil), forCellWithReuseIdentifier: CHANNELCOLLECTIONVIEWCELL)
         channelsCollectionView.dataSource = channelsCollectionViewDataSource
+        channelsCollectionView.delegate = channelsCollectionViewDelegate
     }
+}
 
-    func setupNavigation() {
-        self.navigationController?.navigationBar.tintColor = UIColor.fakeWhite
-        self.navigationController?.navigationBar.topItem?.title = "CHANNEL"
+extension ChannelsViewController: ChannelDelegate {
+    func presentSomeChannel(cell: ChannelsCollectionViewCell) {
+        let someChannelViewController: SomeChannelViewController = SomeChannelViewController()
+
+        someChannelViewController.channel = cell.channel
+       self.navigationController?.pushViewController(someChannelViewController, animated: true)
     }
 }

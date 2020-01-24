@@ -2,13 +2,14 @@
 //  Rank+CoreDataProperties.swift
 //  noodles
 //
-//  Created by Artur Carneiro on 24/01/20.
+//  Created by Eloisa Falcão on 24/01/20.
 //  Copyright © 2020 Artur Carneiro. All rights reserved.
 //
 //
 
 import Foundation
 import CoreData
+
 
 extension Rank {
 
@@ -17,10 +18,10 @@ extension Rank {
     }
 
     @NSManaged public var canCreateChannel: Bool
-    @NSManaged public var id: String?
-    @NSManaged public var title: String?
     @NSManaged public var createdAt: Date?
     @NSManaged public var editedAt: Date?
+    @NSManaged public var id: String?
+    @NSManaged public var title: String?
     @NSManaged public var canEditChannels: NSSet?
     @NSManaged public var canViewChannels: NSSet?
     @NSManaged public var users: NSSet?

@@ -9,7 +9,7 @@
 import UIKit
 
 class AddPostViewController: UIViewController {
-
+    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     var postName: String?

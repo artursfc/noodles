@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct UserModel {
+struct UserModel: Parseable {
     var id: String
     var name: String
-    var canEdit: [ChannelModel]
-    var canView: [ChannelModel]
-    var canCreateChannel: Bool
+    var rank: RankModel?
+    var createdAt: Date?
+    var editedAt: Date?
 }

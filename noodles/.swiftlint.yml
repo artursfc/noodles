@@ -3,6 +3,7 @@ disabled_rules:
   - trailing_whitespace
   - explicit_type_interface
   - identifier_name
+  - cyclomatic_complexity
 
 excluded:
   - noodlesTests

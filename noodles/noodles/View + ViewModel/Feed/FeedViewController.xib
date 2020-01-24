@@ -18,22 +18,58 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zhe-cg-Eh4">
-                    <rect key="frame" x="20" y="262" width="374" height="600"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFe-d9-acU">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feedTabBarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="6Dl-cV-nPI">
+                            <rect key="frame" x="20" y="65" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="lLx-m3-vYV"/>
+                                <constraint firstAttribute="width" constant="35" id="yIi-Gl-Tq8"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTe-pz-wbi">
+                            <rect key="frame" x="65" y="65" width="200" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="3Ky-oa-B6t"/>
+                                <constraint firstAttribute="width" constant="200" id="LW3-0D-2Nn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="600" id="GWJ-Uq-pxi"/>
+                        <constraint firstAttribute="bottom" secondItem="nTe-pz-wbi" secondAttribute="bottom" constant="20" id="K6W-2N-2j2"/>
+                        <constraint firstItem="6Dl-cV-nPI" firstAttribute="leading" secondItem="GFe-d9-acU" secondAttribute="leading" constant="20" id="bjs-Id-lOk"/>
+                        <constraint firstAttribute="height" constant="120" id="cM6-hc-xOR"/>
+                        <constraint firstAttribute="bottom" secondItem="6Dl-cV-nPI" secondAttribute="bottom" constant="20" id="e2z-ga-pPd"/>
+                        <constraint firstItem="nTe-pz-wbi" firstAttribute="leading" secondItem="6Dl-cV-nPI" secondAttribute="trailing" constant="10" id="uWQ-M1-qhJ"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zhe-cg-Eh4">
+                    <rect key="frame" x="20" y="120" width="374" height="776"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="776" id="24x-Y2-psk"/>
                     </constraints>
                 </tableView>
             </subviews>
             <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Zhe-cg-Eh4" secondAttribute="bottom" id="cfD-DB-b4b"/>
-                <constraint firstItem="Zhe-cg-Eh4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pLQ-oK-kHU"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zhe-cg-Eh4" secondAttribute="trailing" constant="20" id="xaJ-FZ-GYf"/>
+                <constraint firstItem="GFe-d9-acU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0Cd-MS-4cd"/>
+                <constraint firstItem="GFe-d9-acU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8U4-QT-oVT"/>
+                <constraint firstItem="Zhe-cg-Eh4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Bwy-EL-r5b"/>
+                <constraint firstItem="GFe-d9-acU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FoY-nF-Pfn"/>
+                <constraint firstItem="Zhe-cg-Eh4" firstAttribute="top" secondItem="GFe-d9-acU" secondAttribute="bottom" id="Wnh-Jy-8jC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zhe-cg-Eh4" secondAttribute="trailing" constant="20" id="pZw-gd-5Ay"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="125"/>
+            <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
         </view>
     </objects>
+    <resources>
+        <image name="feedTabBarIcon" width="29" height="26"/>
+    </resources>
 </document>

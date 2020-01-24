@@ -8,18 +8,18 @@
 
 import Foundation
 
-public class CoreDataStatus{
-    public private(set) var successful:Bool
-    public private(set) var description:String
-    public var channelIdentifier:Channel?
+public class CoreDataStatus {
+    public private(set) var successful: Bool
+    public private(set) var description: String
+    public var channelIdentifier: Channel?
 
-    init(successful:Bool, description:String) {
+    init(successful: Bool, description: String) {
         self.successful = successful
         self.description = description
     }
 
-    convenience init(successful:Bool){
-        self.init(successful:successful, description:"")
+    convenience init(successful: Bool) {
+        self.init(successful: successful, description: "")
     }
 
 }

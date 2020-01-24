@@ -27,19 +27,13 @@ final class RankInteractor {
         case .cloudkit:
             fetch(with: rankID) { (rank) in
                 if let rank = rank {
-                    DispatchQueue.main.async {
-                        completionHandler(rank)
-                    }
+                    completionHandler(rank)
                 } else {
-                    DispatchQueue.main.async {
-                        completionHandler(nil)
-                    }
+                    completionHandler(nil)
                 }
             }
         case .coredata:
-            DispatchQueue.main.async {
-                completionHandler(nil)
-            }
+            completionHandler(nil)
         }
     }
     public func fetchAll(from provider: DataProvider, completionHandler: @escaping (([RankModel]?) -> Void)) {
@@ -48,24 +42,18 @@ final class RankInteractor {
             let query = cloudkit.generateQuery(of: .ranks, with: NSPredicate(value: true), sortedBy: NSSortDescriptor(key: "creationDate", ascending: false))
             cloudkit.query(using: query, on: .publicDB) { [weak self] (response) in
                 if response.error != nil {
-                    DispatchQueue.main.async {
-                         completionHandler(nil)
-                    }
+                    completionHandler(nil)
                 } else {
                     if let records = response.records {
                         let rankModels = self?.parser.parse(records: records, into: .ranks)
                         if let ranks = rankModels as? [RankModel] {
-                            DispatchQueue.main.async {
-                                completionHandler(ranks)
-                            }
+                            completionHandler(ranks)
                         }
                     }
                 }
             }
         case .coredata:
-            DispatchQueue.main.async {
-                completionHandler(nil)
-            }
+            completionHandler(nil)
         }
     }
 
@@ -73,20 +61,14 @@ final class RankInteractor {
         let models = [rank]
         let records = parser.parse(models: models, of: .ranks)
         if records.isEmpty {
-            DispatchQueue.main.async {
-                completionHandler(false)
-            }
+            completionHandler(false)
         }
         if let record = records.first {
             cloudkit.save(record: record, on: .publicDB) { (response) in
                 if response.error == nil && response.records == nil {
-                    DispatchQueue.main.async {
-                        completionHandler(true)
-                    }
+                    completionHandler(true)
                 } else {
-                    DispatchQueue.main.async {
-                        completionHandler(false)
-                    }
+                    completionHandler(false)
                 }
             }
         }
@@ -97,20 +79,14 @@ final class RankInteractor {
         let models = [newRank]
         let records = parser.parse(models: models, of: .ranks)
         if records.isEmpty {
-            DispatchQueue.main.async {
-                completionHandler(false)
-            }
+            completionHandler(false)
         }
         if let record = records.first {
             cloudkit.update(recordID: recordID, with: record, on: .publicDB) { (response) in
                 if response.error == nil && response.records == nil {
-                    DispatchQueue.main.async {
-                        completionHandler(true)
-                    }
+                    completionHandler(true)
                 } else {
-                    DispatchQueue.main.async {
-                        completionHandler(false)
-                    }
+                    completionHandler(false)
                 }
             }
         }
@@ -120,13 +96,9 @@ final class RankInteractor {
         let recordID = CKRecord.ID(recordName: rank.id)
         cloudkit.delete(recordID: recordID, on: .publicDB) { (response) in
             if response.error == nil && response.records == nil {
-                DispatchQueue.main.async {
-                    completionHandler(true)
-                }
+                completionHandler(true)
             } else {
-                DispatchQueue.main.async {
-                    completionHandler(false)
-                }
+                completionHandler(false)
             }
         }
     }
@@ -206,9 +178,7 @@ final class RankInteractor {
                     completionHandler(rank)
                 }
             } else {
-                DispatchQueue.main.async {
-                    completionHandler(nil)
-                }
+                completionHandler(nil)
             }
         }
     }

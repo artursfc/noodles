@@ -27,45 +27,34 @@ final class PostInteractor {
         case .cloudkit:
             fetch(with: postID) { (post) in
                 if let post = post {
-                    DispatchQueue.main.async {
-                        completionHandler(post)
-                    }
+                    completionHandler(post)
                 } else {
-                    DispatchQueue.main.async {
-                        completionHandler(nil)
-                    }
+                    completionHandler(nil)
                 }
             }
         case .coredata:
-            DispatchQueue.main.async {
-                completionHandler(nil)
-            }
+            completionHandler(nil)
         }
     }
     public func fetchAll(from provider: DataProvider, completionHandler: @escaping (([PostModel]?) -> Void)) {
         switch provider {
         case .cloudkit:
-            let query = cloudkit.generateQuery(of: .posts, with: NSPredicate(value: true), sortedBy: NSSortDescriptor(key: "creationDate", ascending: false))
+            let query = cloudkit.generateQuery(of: .posts, with: NSPredicate(value: true),
+                                               sortedBy: NSSortDescriptor(key: "creationDate", ascending: false))
             cloudkit.query(using: query, on: .publicDB) { [weak self] (response) in
                 if response.error != nil {
-                    DispatchQueue.main.async {
-                        completionHandler(nil)
-                    }
+                    completionHandler(nil)
                 } else {
                     if let records = response.records {
                         let postModels = self?.parser.parse(records: records, into: .posts)
                         if let posts = postModels as? [PostModel] {
-                            DispatchQueue.main.async {
-                                completionHandler(posts)
-                            }
+                            completionHandler(posts)
                         }
                     }
                 }
             }
         case .coredata:
-            DispatchQueue.main.async {
-                completionHandler(nil)
-            }
+            completionHandler(nil)
         }
     }
 
@@ -73,20 +62,14 @@ final class PostInteractor {
         let models = [post]
         let records = parser.parse(models: models, of: .posts)
         if records.isEmpty {
-            DispatchQueue.main.async {
-                completionHandler(false)
-            }
+            completionHandler(false)
         }
         if let record = records.first {
             cloudkit.save(record: record, on: .publicDB) { (response) in
                 if response.error == nil && response.records == nil {
-                    DispatchQueue.main.async {
-                        completionHandler(true)
-                    }
+                    completionHandler(true)
                 } else {
-                    DispatchQueue.main.async {
-                        completionHandler(false)
-                    }
+                    completionHandler(false)
                 }
             }
         }
@@ -97,20 +80,14 @@ final class PostInteractor {
         let models = [newPost]
         let records = parser.parse(models: models, of: .posts)
         if records.isEmpty {
-            DispatchQueue.main.async {
-                completionHandler(false)
-            }
+            completionHandler(false)
         }
         if let record = records.first {
             cloudkit.update(recordID: recordID, with: record, on: .publicDB) { (response) in
                 if response.error == nil && response.records == nil {
-                    DispatchQueue.main.async {
-                        completionHandler(true)
-                    }
+                    completionHandler(true)
                 } else {
-                    DispatchQueue.main.async {
-                        completionHandler(false)
-                    }
+                    completionHandler(false)
                 }
             }
         }
@@ -120,13 +97,9 @@ final class PostInteractor {
         let recordID = CKRecord.ID(recordName: post.id)
         cloudkit.delete(recordID: recordID, on: .publicDB) { (response) in
             if response.error == nil && response.records == nil {
-                DispatchQueue.main.async {
-                    completionHandler(true)
-                }
+                completionHandler(true)
             } else {
-                DispatchQueue.main.async {
-                    completionHandler(false)
-                }
+                completionHandler(false)
             }
         }
     }
@@ -202,9 +175,7 @@ final class PostInteractor {
                     completionHandler(post)
                 }
             } else {
-                DispatchQueue.main.async {
-                    completionHandler(nil)
-                }
+                completionHandler(nil)
             }
         }
     }

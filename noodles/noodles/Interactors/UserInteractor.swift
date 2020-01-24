@@ -26,19 +26,13 @@ final class UserInteractor {
         case .cloudkit:
             fetch(with: userID) { (user) in
                 if let user = user {
-                    DispatchQueue.main.async {
-                        completionHandler(user)
-                    }
+                    completionHandler(user)
                 } else {
-                    DispatchQueue.main.async {
-                        completionHandler(nil)
-                    }
+                    completionHandler(nil)
                 }
             }
         case .coredata:
-            DispatchQueue.main.async {
-                completionHandler(nil)
-            }
+            completionHandler(nil)
         }
     }
     
@@ -49,24 +43,18 @@ final class UserInteractor {
                                                sortedBy: NSSortDescriptor(key: "creationDate", ascending: false))
             cloudkit.query(using: query, on: .publicDB) { [weak self] (response) in
                 if response.error != nil {
-                    DispatchQueue.main.async {
-                        completionHandler(nil)
-                    }
+                    completionHandler(nil)
                 } else {
                     if let records = response.records {
                         let userModels = self?.parser.parse(records: records, into: .users)
                         if let users = userModels as? [UserModel] {
-                            DispatchQueue.main.async {
-                                completionHandler(users)
-                            }
+                            completionHandler(users)
                         }
                     }
                 }
             }
         case .coredata:
-            DispatchQueue.main.async {
-                completionHandler(nil)
-            }
+            completionHandler(nil)
         }
     }
 
@@ -74,20 +62,14 @@ final class UserInteractor {
         let models = [user]
         let records = parser.parse(models: models, of: .users)
         if records.isEmpty {
-            DispatchQueue.main.async {
-                completionHandler(false)
-            }
+            completionHandler(false)
         }
         if let record = records.first {
             cloudkit.save(record: record, on: .publicDB) { (response) in
                 if response.error == nil && response.records == nil {
-                    DispatchQueue.main.async {
-                        completionHandler(true)
-                    }
+                    completionHandler(true)
                 } else {
-                    DispatchQueue.main.async {
-                        completionHandler(false)
-                    }
+                    completionHandler(false)
                 }
             }
         }
@@ -98,20 +80,14 @@ final class UserInteractor {
         let models = [newUser]
         let records = parser.parse(models: models, of: .users)
         if records.isEmpty {
-            DispatchQueue.main.async {
-                completionHandler(false)
-            }
+            completionHandler(false)
         }
         if let record = records.first {
             cloudkit.update(recordID: recordID, with: record, on: .publicDB) { (response) in
                 if response.error == nil && response.records == nil {
-                    DispatchQueue.main.async {
-                        completionHandler(true)
-                    }
+                    completionHandler(true)
                 } else {
-                    DispatchQueue.main.async {
-                        completionHandler(false)
-                    }
+                    completionHandler(false)
                 }
             }
         }
@@ -136,24 +112,21 @@ final class UserInteractor {
                 guard let record = response.records?.first else {
                     return
                 }
-                var user = UserModel(id: userID, name: record["name"] ?? "", rank: nil, createdAt: record["createdAt"] ?? nil, editedAt: record["modifiedAt"] ?? nil)
+                var user = UserModel(id: userID, name: record["name"] ?? "", rank: nil, createdAt: record["createdAt"] ?? nil,
+                                     editedAt: record["modifiedAt"] ?? nil)
                 if let rankRef = record["rank"] as? CKRecord.Reference {
                     self?.cloudkit.fetch(recordID: rankRef.recordID, on: .publicDB, completionHandler: { [weak self] (response) in
                         if let record = response.records {
                             let rankModel = self?.parser.parse(records: record, into: .ranks)
                             if let rank = rankModel?.first as? RankModel {
                                 user.rank = rank
-                                DispatchQueue.main.async {
-                                    completionHandler(user)
-                                }
+                                completionHandler(user)
                             }
                         }
                     })
                 }
             } else {
-                DispatchQueue.main.async {
-                    completionHandler(nil)
-                }
+                completionHandler(nil)
             }
         }
     }

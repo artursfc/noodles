@@ -45,6 +45,11 @@
 		A42706F823DA273800E9CC27 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42706F723DA273800E9CC27 /* UserInteractor.swift */; };
 		A42706FA23DA57F900E9CC27 /* RankInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42706F923DA57F900E9CC27 /* RankInteractor.swift */; };
 		A42706FC23DA65E400E9CC27 /* PostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42706FB23DA65E400E9CC27 /* PostInteractor.swift */; };
+		A427070F23DB77FC00E9CC27 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A427070E23DB77FC00E9CC27 /* FeedViewModel.swift */; };
+		A427071123DBAEDB00E9CC27 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A427071023DBAEDB00E9CC27 /* Coordinator.swift */; };
+		A427071323DBAF9400E9CC27 /* ChannelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A427071223DBAF9400E9CC27 /* ChannelsViewModel.swift */; };
+		A427071523DBB16200E9CC27 /* ChannelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A427071423DBB16200E9CC27 /* ChannelViewModel.swift */; };
+		A427071723DBB36C00E9CC27 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A427071623DBB36C00E9CC27 /* PostViewModel.swift */; };
 		A42EE84023CE33870046E645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE83F23CE33870046E645 /* AppDelegate.swift */; };
 		A42EE84223CE33870046E645 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE84123CE33870046E645 /* SceneDelegate.swift */; };
 		A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A42EE84823CE33870046E645 /* noodles.xcdatamodeld */; };
@@ -129,6 +134,11 @@
 		A427070223DB115200E9CC27 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A427070323DB115200E9CC27 /* Rank+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rank+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A427070423DB115200E9CC27 /* Rank+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rank+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A427070E23DB77FC00E9CC27 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		A427071023DBAEDB00E9CC27 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A427071223DBAF9400E9CC27 /* ChannelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewModel.swift; sourceTree = "<group>"; };
+		A427071423DBB16200E9CC27 /* ChannelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewModel.swift; sourceTree = "<group>"; };
+		A427071623DBB36C00E9CC27 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		A42EE83C23CE33870046E645 /* noodles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noodles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42EE83F23CE33870046E645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A42EE84123CE33870046E645 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -253,6 +263,7 @@
 		7597317223CF8EDB00F9EFA5 /* View + ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A427070D23DB77E700E9CC27 /* ViewModels */,
 				D938225A23DA020F00769420 /* AddPost */,
 				7597316C23CF8E5C00F9EFA5 /* Channels */,
 				7597316D23CF8E7200F9EFA5 /* Feed */,
@@ -300,6 +311,17 @@
 				7597321723D2060D00F9EFA5 /* CustomNavigationViewController.xib */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		A427070D23DB77E700E9CC27 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A427070E23DB77FC00E9CC27 /* FeedViewModel.swift */,
+				A427071223DBAF9400E9CC27 /* ChannelsViewModel.swift */,
+				A427071423DBB16200E9CC27 /* ChannelViewModel.swift */,
+				A427071623DBB36C00E9CC27 /* PostViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		A42EE83323CE33870046E645 = {
@@ -374,6 +396,7 @@
 		A483A20E23CFAB1200C7EB56 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				A427071023DBAEDB00E9CC27 /* Coordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -616,7 +639,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A427071523DBB16200E9CC27 /* ChannelViewModel.swift in Sources */,
+				A427070F23DB77FC00E9CC27 /* FeedViewModel.swift in Sources */,
 				7597314D23CE6FAF00F9EFA5 /* ChannelsViewController.swift in Sources */,
+				A427071323DBAF9400E9CC27 /* ChannelsViewModel.swift in Sources */,
+				A427071123DBAEDB00E9CC27 /* Coordinator.swift in Sources */,
 				4F55FDDB23CFAD110032EF0F /* PostModel.swift in Sources */,
 				A42706EC23D644FA00E9CC27 /* CloudKit+Helpers.swift in Sources */,
 				7597316A23CF79AE00F9EFA5 /* SearchViewController.swift in Sources */,
@@ -632,6 +659,7 @@
 				A42706F823DA273800E9CC27 /* UserInteractor.swift in Sources */,
 				A42706FA23DA57F900E9CC27 /* RankInteractor.swift in Sources */,
 				D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */,
+				A427071723DBB36C00E9CC27 /* PostViewModel.swift in Sources */,
 				D938226323DA73E900769420 /* CreatePostViewController.swift in Sources */,
 				D984A3DF23D0D5050045A333 /* CoreDataManager.swift in Sources */,
 				A42706F023D9F82F00E9CC27 /* ParseableProtocol.swift in Sources */,

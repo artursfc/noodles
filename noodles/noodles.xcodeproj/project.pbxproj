@@ -297,11 +297,9 @@
 		7597317223CF8EDB00F9EFA5 /* View + ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
+
 				4F99DE1D23D8DB44009DA867 /* ChannelCreation */,
-=======
-				D938225A23DA020F00769420 /* AddPost */,
->>>>>>> dev
+				D938226F23DB77E100769420 /* PostCreation */,
 				7597316C23CF8E5C00F9EFA5 /* Channels */,
 				7597316D23CF8E7200F9EFA5 /* Feed */,
 				7597316E23CF8E7F00F9EFA5 /* TabBar */,
@@ -471,7 +469,7 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		D938225A23DA020F00769420 /* AddPost */ = {
+		D938226F23DB77E100769420 /* PostCreation */ = {
 			isa = PBXGroup;
 			children = (
 				D938225B23DA058100769420 /* AddPostViewController.swift */,
@@ -479,7 +477,7 @@
 				D938226123DA73E900769420 /* CreatePostViewController.swift */,
 				D938226223DA73E900769420 /* CreatePostViewController.xib */,
 			);
-			name = AddPost;
+			path = PostCreation;
 			sourceTree = "<group>";
 		};
 		D9FE63B223CE792E004ADC29 /* Core Data */ = {

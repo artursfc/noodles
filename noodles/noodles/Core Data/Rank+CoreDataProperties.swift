@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension Rank {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Rank> {

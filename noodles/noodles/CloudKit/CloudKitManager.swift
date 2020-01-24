@@ -13,7 +13,7 @@ final class CloudKitManager {
 
     init() {}
 
-    public func query(using query: CKQuery, on database: Database, completionHandler: @escaping (Response) -> Void) {
+    public func query(using query: CKQuery, on database: Database, completionHandler: @escaping (CloudKitResponse) -> Void) {
         let container = CKContainer.default()
         var db: CKDatabase?
         switch database {
@@ -25,18 +25,14 @@ final class CloudKitManager {
         if let db = db {
             db.perform(query, inZoneWith: .default) { (records, error) in
                 if let error = error as? CKError {
-                    DispatchQueue.main.async {
-                        completionHandler(Response(error: error, records: nil))
-                    }
+                    completionHandler(CloudKitResponse(error: error, records: nil))
                 }
-                DispatchQueue.main.async {
-                    completionHandler(Response(error: nil, records: records))
-                }
+                completionHandler(CloudKitResponse(error: nil, records: records))
             }
         }
     }
 
-    public func save(record: CKRecord, on database: Database, completionHandler: @escaping ((Response) -> Void)) {
+    public func save(record: CKRecord, on database: Database, completionHandler: @escaping ((CloudKitResponse) -> Void)) {
         let container = CKContainer.default()
         var db: CKDatabase?
         switch database {
@@ -48,18 +44,15 @@ final class CloudKitManager {
         if let db = db {
             db.save(record) { (_, error) in
                 if let error = error as? CKError {
-                    DispatchQueue.main.async {
-                        completionHandler(Response(error: error, records: nil))
-                    }
+                    completionHandler(CloudKitResponse(error: error, records: nil))
                 }
-                DispatchQueue.main.async {
-                    completionHandler(Response(error: nil, records: nil))
-                }
+                completionHandler(CloudKitResponse(error: nil, records: nil))
             }
         }
     }
 
-    public func update(recordID: CKRecord.ID, with newRecord: CKRecord, on database: Database, completionHandler: @escaping ((Response) -> Void)) {
+    public func update(recordID: CKRecord.ID, with newRecord: CKRecord, on database: Database,
+                       completionHandler: @escaping ((CloudKitResponse) -> Void)) {
         let container = CKContainer.default()
         var db: CKDatabase?
         switch database {
@@ -71,33 +64,25 @@ final class CloudKitManager {
         if let db = db {
             db.fetch(withRecordID: recordID) { (record, error) in
                 if let error = error as? CKError {
-                    DispatchQueue.main.async {
-                        completionHandler(Response(error: error, records: nil))
-                    }
+                    completionHandler(CloudKitResponse(error: error, records: nil))
                 }
                 if let record = record {
                     let keys = newRecord.allKeys()
                     for key in keys {
                         record.setValue(newRecord.value(forKey: key), forKey: key)
                     }
-                    DispatchQueue.main.async {
-                        db.save(record) { (_, error) in
-                            if let error = error as? CKError {
-                                DispatchQueue.main.async {
-                                    completionHandler(Response(error: error, records: nil))
-                                }
-                            }
-                            DispatchQueue.main.async {
-                                completionHandler(Response(error: nil, records: nil))
-                            }
+                    db.save(record) { (_, error) in
+                        if let error = error as? CKError {
+                            completionHandler(CloudKitResponse(error: error, records: nil))
                         }
+                        completionHandler(CloudKitResponse(error: nil, records: nil))
                     }
                 }
             }
         }
     }
 
-    public func delete(recordID: CKRecord.ID, on database: Database, completionHandler: @escaping ((Response) -> Void)) {
+    public func delete(recordID: CKRecord.ID, on database: Database, completionHandler: @escaping ((CloudKitResponse) -> Void)) {
         let container = CKContainer.default()
         var db: CKDatabase?
         switch database {
@@ -109,18 +94,14 @@ final class CloudKitManager {
         if let db = db {
             db.delete(withRecordID: recordID) { (_, error) in
                 if let error = error as? CKError {
-                    DispatchQueue.main.async {
-                        completionHandler(Response(error: error, records: nil))
-                    }
+                    completionHandler(CloudKitResponse(error: error, records: nil))
                 }
-                DispatchQueue.main.async {
-                    completionHandler(Response(error: nil, records: nil))
-                }
+                completionHandler(CloudKitResponse(error: nil, records: nil))
             }
         }
     }
 
-    public func fetch(recordID: CKRecord.ID, on database: Database, completionHandler: @escaping ((Response) -> Void)) {
+    public func fetch(recordID: CKRecord.ID, on database: Database, completionHandler: @escaping ((CloudKitResponse) -> Void)) {
         let container = CKContainer.default()
         var db: CKDatabase?
         switch database {
@@ -132,22 +113,18 @@ final class CloudKitManager {
         if let db = db {
             db.fetch(withRecordID: recordID) { (record, error) in
                 if let error = error as? CKError {
-                    DispatchQueue.main.async {
-                        completionHandler(Response(error: error, records: nil))
-                    }
+                    completionHandler(CloudKitResponse(error: error, records: nil))
                 }
                 if let record = record {
-                    DispatchQueue.main.async {
-                        var records = [CKRecord]()
-                        records.append(record)
-                        completionHandler(Response(error: nil, records: records))
-                    }
+                    var records = [CKRecord]()
+                    records.append(record)
+                    completionHandler(CloudKitResponse(error: nil, records: records))
                 }
             }
         }
     }
 
-    public func operate(with operation: CKQueryOperation, on database: Database, completionHandler: @escaping ((Response) -> Void)) {
+    public func operate(with operation: CKQueryOperation, on database: Database, completionHandler: @escaping ((CloudKitResponse) -> Void)) {
         let container = CKContainer.default()
         var db: CKDatabase?
         switch database {
@@ -164,13 +141,11 @@ final class CloudKitManager {
             }
 
             operation.queryCompletionBlock = { (cursor, error) in
-                DispatchQueue.main.async {
                     if error == nil {
-                        completionHandler(Response(error: nil, records: records))
+                        completionHandler(CloudKitResponse(error: nil, records: records))
                     } else if let error = error as? CKError {
-                        completionHandler(Response(error: error, records: nil))
+                        completionHandler(CloudKitResponse(error: error, records: nil))
                     }
-                }
             }
 
             db.add(operation)
@@ -198,7 +173,7 @@ final class CloudKitManager {
         }
     }
 
-    public func fetchReferences(of recordIDs: [CKRecord.ID], on database: Database, completionHandler: @escaping ((Response) -> Void)) {
+    public func fetchReferences(of recordIDs: [CKRecord.ID], on database: Database, completionHandler: @escaping ((CloudKitResponse) -> Void)) {
         let container = CKContainer.default()
         var db: CKDatabase?
         switch database {
@@ -211,18 +186,14 @@ final class CloudKitManager {
             let fetchOperation = CKFetchRecordsOperation(recordIDs: recordIDs)
             fetchOperation.fetchRecordsCompletionBlock = { (recordsDict, error) in
                 if let error = error as? CKError {
-                    DispatchQueue.main.async {
-                        completionHandler(Response(error: error, records: nil))
-                    }
+                    completionHandler(CloudKitResponse(error: error, records: nil))
                 }
-                DispatchQueue.main.async {
-                    if let recordsDict = recordsDict {
-                        var records = [CKRecord]()
-                        for (_, record) in recordsDict {
-                            records.append(record)
-                        }
-                        completionHandler(Response(error: nil, records: records))
+                if let recordsDict = recordsDict {
+                    var records = [CKRecord]()
+                    for (_, record) in recordsDict {
+                        records.append(record)
                     }
+                    completionHandler(CloudKitResponse(error: nil, records: records))
                 }
             }
             db.add(fetchOperation)

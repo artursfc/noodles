@@ -10,16 +10,23 @@ import UIKit
 
 class AddPostViewController: UIViewController {
 
-
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
+    var postName: String?
     
-//    let viewModel = PostModel(id: "id", uniqueID: "uniqueID", title: "title", body: "Body", author: "author", authorID: UserModel(id: "id1", name: "name", canEdit: <#T##[ChannelModel]#>, canView: <#T##[ChannelModel]#>, canCreateChannel: true), tags: ["tag 1", "tag 2"], readBy: [UserModel(id: "id1", name: "name", canEdit: <#T##[ChannelModel]#>, canView: <#T##[ChannelModel]#>, canCreateChannel: true)], validated: true, createdAt: 02.01.2020, editedAt: 02.02.2020, channels: [ChannelModel(id: "channelId", posts: [], cratedBy: <#T##UserModel#>, canBeEditedBy: <#T##[RankModel]#>, canBeViewedBy: <#T##[RankModel]#>, createdAt: <#T##Date#>, editedAt: <#T##Date#>)])    
-//    
+    var viewModel = PostModel(id: "id", title: "title", body: "body", author: nil, tags: ["tag1", "tag2"], readBy: [], validated: true, createdAt: nil, editedAt: nil, channels: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        feed()
+        setup()
+        
+    }
+    
+    func feed() {
+        viewModel.title = titleTextField.text ?? ""
+        viewModel.body = bodyTextView.text
+        postName = titleTextField.text
     }
     
     func setup() {
@@ -30,7 +37,16 @@ class AddPostViewController: UIViewController {
         
         bodyTextView.textColor = UIColor.gammaGray
         
-        
     }
     
+}
+
+extension CreatePostViewController: AddPostDelegate {
+    
+    func receiveName(postName: String) {
+        let modalViewController = CreatePostViewController()
+        modalViewController.postNameTextField.placeholder = postName
+        modalViewController.modalPresentationStyle = .overCurrentContext
+        present(modalViewController, animated: true, completion: nil)
+    }
 }

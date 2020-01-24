@@ -11,6 +11,12 @@
 		4F55FDDA23CFAD110032EF0F /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD623CFAD110032EF0F /* ChannelModel.swift */; };
 		4F55FDDB23CFAD110032EF0F /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD723CFAD110032EF0F /* PostModel.swift */; };
 		4F55FDDC23CFAD110032EF0F /* RankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD823CFAD110032EF0F /* RankModel.swift */; };
+		4F678DCC23DAAA8C00A20396 /* RankSelectionTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F678DCB23DAAA8C00A20396 /* RankSelectionTableViewDataSource.swift */; };
+		4F678DCE23DAAC1400A20396 /* RankSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F678DCD23DAAC1400A20396 /* RankSelectionTableViewCell.swift */; };
+		4F99DE1F23D8DBD7009DA867 /* ChannelCreationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F99DE1E23D8DBD7009DA867 /* ChannelCreationViewController.xib */; };
+		4F99DE2223D8DFD3009DA867 /* RankSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F99DE2123D8DFD3009DA867 /* RankSelectionTableViewCell.xib */; };
+		4F99DE2723D8E303009DA867 /* CheckBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F99DE2623D8E303009DA867 /* CheckBox.xib */; };
+		4F99DE2923D8E35D009DA867 /* CheckBoxCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F99DE2823D8E35D009DA867 /* CheckBoxCustomView.swift */; };
 		7519DFBE23D258B700ADDFBA /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7519DFBC23D258B700ADDFBA /* SearchTableViewCell.swift */; };
 		7519DFBF23D258B700ADDFBA /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7519DFBD23D258B700ADDFBA /* SearchTableViewCell.xib */; };
 		7597314D23CE6FAF00F9EFA5 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597314B23CE6FAF00F9EFA5 /* ChannelsViewController.swift */; };
@@ -74,6 +80,12 @@
 		4F55FDD623CFAD110032EF0F /* ChannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
 		4F55FDD723CFAD110032EF0F /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		4F55FDD823CFAD110032EF0F /* RankModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankModel.swift; sourceTree = "<group>"; };
+		4F678DCB23DAAA8C00A20396 /* RankSelectionTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankSelectionTableViewDataSource.swift; sourceTree = "<group>"; };
+		4F678DCD23DAAC1400A20396 /* RankSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		4F99DE1E23D8DBD7009DA867 /* ChannelCreationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCreationViewController.xib; sourceTree = "<group>"; };
+		4F99DE2123D8DFD3009DA867 /* RankSelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankSelectionTableViewCell.xib; sourceTree = "<group>"; };
+		4F99DE2623D8E303009DA867 /* CheckBox.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBox.xib; sourceTree = "<group>"; };
+		4F99DE2823D8E35D009DA867 /* CheckBoxCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxCustomView.swift; sourceTree = "<group>"; };
 		7519DFBC23D258B700ADDFBA /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		7519DFBD23D258B700ADDFBA /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		7597314B23CE6FAF00F9EFA5 /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +168,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F99DE1D23D8DB44009DA867 /* ChannelCreation */ = {
+			isa = PBXGroup;
+			children = (
+				4F99DE2323D8E26F009DA867 /* UiView */,
+				4F99DE2023D8DE88009DA867 /* Cell */,
+				4F99DE1E23D8DBD7009DA867 /* ChannelCreationViewController.xib */,
+				4F678DCB23DAAA8C00A20396 /* RankSelectionTableViewDataSource.swift */,
+			);
+			path = ChannelCreation;
+			sourceTree = "<group>";
+		};
+		4F99DE2023D8DE88009DA867 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4F99DE2123D8DFD3009DA867 /* RankSelectionTableViewCell.xib */,
+				4F678DCD23DAAC1400A20396 /* RankSelectionTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4F99DE2323D8E26F009DA867 /* UiView */ = {
+			isa = PBXGroup;
+			children = (
+				4F99DE2823D8E35D009DA867 /* CheckBoxCustomView.swift */,
+				4F99DE2623D8E303009DA867 /* CheckBox.xib */,
+			);
+			path = UiView;
+			sourceTree = "<group>";
+		};
 		7519DFBB23D2589800ADDFBA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +268,7 @@
 		7597317223CF8EDB00F9EFA5 /* View + ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4F99DE1D23D8DB44009DA867 /* ChannelCreation */,
 				7597316C23CF8E5C00F9EFA5 /* Channels */,
 				7597316D23CF8E7200F9EFA5 /* Feed */,
 				7597316E23CF8E7F00F9EFA5 /* TabBar */,
@@ -513,12 +555,15 @@
 				7597321923D2060D00F9EFA5 /* CustomNavigationViewController.xib in Resources */,
 				7597317E23CFB4D800F9EFA5 /* PostTableViewCell.xib in Resources */,
 				A42EE84F23CE338A0046E645 /* LaunchScreen.storyboard in Resources */,
+				4F99DE2723D8E303009DA867 /* CheckBox.xib in Resources */,
 				7597315623CECC9B00F9EFA5 /* FeedViewController.xib in Resources */,
+				4F99DE1F23D8DBD7009DA867 /* ChannelCreationViewController.xib in Resources */,
 				7597314E23CE6FAF00F9EFA5 /* ChannelsViewController.xib in Resources */,
 				7597321423D0A61A00F9EFA5 /* TagsCollectionViewCell.xib in Resources */,
 				7597315223CEC2F500F9EFA5 /* CustomTabBarController.xib in Resources */,
 				7597317823CF90DF00F9EFA5 /* ChannelsCollectionViewCell.xib in Resources */,
 				A42EE84C23CE338A0046E645 /* Assets.xcassets in Resources */,
+				4F99DE2223D8DFD3009DA867 /* RankSelectionTableViewCell.xib in Resources */,
 				7597316B23CF79AE00F9EFA5 /* SearchViewController.xib in Resources */,
 				7597316323CF76DB00F9EFA5 /* SaveViewController.xib in Resources */,
 				7519DFBF23D258B700ADDFBA /* SearchTableViewCell.xib in Resources */,
@@ -567,6 +612,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F678DCE23DAAC1400A20396 /* RankSelectionTableViewCell.swift in Sources */,
 				7597314D23CE6FAF00F9EFA5 /* ChannelsViewController.swift in Sources */,
 				4F55FDDB23CFAD110032EF0F /* PostModel.swift in Sources */,
 				7597316A23CF79AE00F9EFA5 /* SearchViewController.swift in Sources */,
@@ -575,7 +621,9 @@
 				7597317723CF90DF00F9EFA5 /* ChannelsCollectionViewCell.swift in Sources */,
 				7597315123CEC2F500F9EFA5 /* CustomTabBarController.swift in Sources */,
 				4F55FDDC23CFAD110032EF0F /* RankModel.swift in Sources */,
+				4F99DE2923D8E35D009DA867 /* CheckBoxCustomView.swift in Sources */,
 				7597316623CF798E00F9EFA5 /* ProfileViewController.swift in Sources */,
+				4F678DCC23DAAA8C00A20396 /* RankSelectionTableViewDataSource.swift in Sources */,
 				7519DFBE23D258B700ADDFBA /* SearchTableViewCell.swift in Sources */,
 				A42EE84A23CE33870046E645 /* noodles.xcdatamodeld in Sources */,
 				D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */,
@@ -760,7 +808,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = noodles/noodles.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L76X5KFZD9;
+				DEVELOPMENT_TEAM = 93JG72P729;
 				INFOPLIST_FILE = noodles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -780,7 +828,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = noodles/noodles.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L76X5KFZD9;
+				DEVELOPMENT_TEAM = 93JG72P729;
 				INFOPLIST_FILE = noodles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

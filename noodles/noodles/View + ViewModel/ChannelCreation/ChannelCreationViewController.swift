@@ -14,7 +14,8 @@ class ChannelCreationViewController: UIViewController {
     @IBOutlet weak var rankSelectionTableView: UITableView!
     var RANKSELECTIONTABLEVIEWCELL = "RankSelectionTableViewCell"
     let dataSource = RankSelectionTableViewDataSource()
-    var selectedRanks: [RankSelectionTableViewCell] = [RankSelectionTableViewCell]()
+    let delegate = RankSelectionTableViewDelegate()
+    var selectedRanks: [RankModel] = [RankModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +25,23 @@ class ChannelCreationViewController: UIViewController {
 
     func setupRankSelectionTableView() {
         rankSelectionTableView.dataSource = dataSource
+        rankSelectionTableView.delegate = delegate
         rankSelectionTableView.register(UINib(nibName: RANKSELECTIONTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: RANKSELECTIONTABLEVIEWCELL)
         rankSelectionTableView.separatorColor = UIColor.clear
     }
 }
 
 extension ChannelCreationViewController: ChannelCreationDelegate {
-    func getSelectedRanks() {
-        
+    func selectRank(indexPath: IndexPath) -> [RankModel] {
+        selectedRanks.append(selectedRanks[indexPath.row])
+        return selectedRanks
     }
     
-    
+    func unselectRank(indexPath: IndexPath) {
+         selectedRanks.removeAll { (rank) -> Bool in
+            let rankUnselected = selectedRanks[indexPath.row].id
+            return rank.id == rankUnselected
+               }
+        delegate.selectedRanks = selectedRanks
+    }
 }

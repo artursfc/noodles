@@ -26,19 +26,13 @@ final class ChannelInteractor {
         case .cloudkit:
             fetch(with: channelID) { (channel) in
                 if let channel = channel {
-                    DispatchQueue.main.async {
-                        completionHandler(channel)
-                    }
+                    completionHandler(channel)
                 } else {
-                    DispatchQueue.main.async {
-                        completionHandler(nil)
-                    }
+                    completionHandler(nil)
                 }
             }
         case .coredata:
-            DispatchQueue.main.async {
-                completionHandler(nil)
-            }
+            completionHandler(nil)
         }
 
     }
@@ -50,25 +44,19 @@ final class ChannelInteractor {
                                                sortedBy: NSSortDescriptor(key: "creationDate", ascending: false))
             cloudkit.query(using: query, on: .publicDB) { [weak self] (response) in
                 if response.error != nil {
-                    DispatchQueue.main.async {
-                        completionHandler(nil)
-                    }
+                    completionHandler(nil)
                 } else {
                     if let records = response.records {
                         let channelModels = self?.parser.parse(records: records, into: .channels)
                         if let channels = channelModels as? [ChannelModel] {
-                            DispatchQueue.main.async {
-                                completionHandler(channels)
-                            }
+                            completionHandler(channels)
                         }
 
                     }
                 }
             }
         case .coredata:
-            DispatchQueue.main.async {
-                completionHandler(nil)
-            }
+            completionHandler(nil)
         }
     }
 
@@ -76,20 +64,14 @@ final class ChannelInteractor {
         let models = [channel]
         let records = parser.parse(models: models, of: .channels)
         if records.isEmpty {
-            DispatchQueue.main.async {
-                completionHandler(false)
-            }
+            completionHandler(false)
         }
         if let record = records.first {
             cloudkit.save(record: record, on: .publicDB) { (response) in
                 if response.error == nil && response.records == nil {
-                    DispatchQueue.main.async {
-                        completionHandler(true)
-                    }
+                    completionHandler(true)
                 } else {
-                    DispatchQueue.main.async {
-                        completionHandler(false)
-                    }
+                    completionHandler(false)
                 }
             }
         }
@@ -100,20 +82,14 @@ final class ChannelInteractor {
         let models = [newChannel]
         let records = parser.parse(models: models, of: .channels)
         if records.isEmpty {
-            DispatchQueue.main.async {
-                completionHandler(false)
-            }
+            completionHandler(false)
         }
         if let record = records.first {
             cloudkit.update(recordID: recordID, with: record, on: .publicDB) { (response) in
                 if response.error == nil && response.records == nil {
-                    DispatchQueue.main.async {
-                        completionHandler(true)
-                    }
+                    completionHandler(true)
                 } else {
-                    DispatchQueue.main.async {
-                        completionHandler(false)
-                    }
+                    completionHandler(false)
                 }
             }
         }
@@ -215,9 +191,7 @@ final class ChannelInteractor {
                     completionHandler(channel)
                 }
             } else {
-                DispatchQueue.main.async {
-                    completionHandler(nil)
-                }
+                completionHandler(nil)
             }
         }
     }

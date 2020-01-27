@@ -1,18 +1,18 @@
 //
-//  FeedViewModel.swift
+//  BookmarksViewModel.swift
 //  noodles
 //
-//  Created by Artur Carneiro on 24/01/20.
+//  Created by Artur Carneiro on 26/01/20.
 //  Copyright © 2020 Artur Carneiro. All rights reserved.
 //
 
 import Foundation
 
-protocol FeedViewModelDelegate: class {
+protocol BookmarksViewModelDelegate: class {
     func reloadUI()
 }
 
-final class FeedViewModel {
+final class BookmarksViewModel {
     private let interactor: PostInteractor
     private let coordinator: Coordinator
     private var models = [PostModel]() {
@@ -21,7 +21,7 @@ final class FeedViewModel {
         }
     }
 
-    weak var delegate: FeedViewModelDelegate?
+    weak var delegate: BookmarksViewModelDelegate?
 
     init(interactor: PostInteractor, coordinator: Coordinator) {
         self.interactor = interactor

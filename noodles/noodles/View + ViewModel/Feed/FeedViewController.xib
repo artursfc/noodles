@@ -56,7 +56,7 @@
                     </constraints>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="GFe-d9-acU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0Cd-MS-4cd"/>
                 <constraint firstItem="GFe-d9-acU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8U4-QT-oVT"/>

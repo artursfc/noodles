@@ -10,19 +10,29 @@ import UIKit
 
 class PresentPostViewController: UIViewController {
 
-//    let viewModel: PostViewModel
-//
-//    init(viewModel: PostViewModel) {
-//        self.viewModel = viewModel
-//    }
+    @IBOutlet weak var postTitle: UILabel!
+    @IBOutlet weak var postAuthor: UILabel!
+    @IBOutlet weak var tagsCollectionView: UICollectionView!
+    @IBOutlet weak var text: UITextView!
 
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    let viewModel: PostViewModel
+
+    init(viewModel: PostViewModel) {
+        self.viewModel = viewModel
+         super.init(nibName: "PresentPostViewController", bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupPresentPost()
     }
 
+    func setupPresentPost() {
+    
+
+    }
 }

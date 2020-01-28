@@ -14,18 +14,16 @@ protocol ChannelViewModelDelegate: class {
 
 final class ChannelViewModel {
     private let interactor: ChannelInteractor
-    private let coordinator: Coordinator
     private var model: ChannelModel {
         didSet {
-
+            delegate?.reloadUI()
         }
     }
 
     weak var delegate: ChannelsViewModelDelegate?
 
-    init(interactor: ChannelInteractor, coordinator: Coordinator, model: ChannelModel) {
+    init(interactor: ChannelInteractor, model: ChannelModel) {
         self.interactor = interactor
-        self.coordinator = coordinator
         self.model = model
     }
 
@@ -39,18 +37,58 @@ final class ChannelViewModel {
         }
     }
 
-    public func data(at index: Int) -> PostModel? {
+    // MARK: Public functions
+    /*
+     The public functions below should be used to get access to each post info.
+     They should return a ready-to-use value.
+     */
+    public func title(at index: Int) -> String {
         if let post = model.posts?[index] {
-            return post
+            return post.title
         }
-        return nil
+        return ""
     }
 
+    public func author(at index: Int) -> String {
+        if let post = model.posts?[index] {
+            if let author = post.author {
+                return author.name
+            }
+        }
+        return ""
+    }
+
+    public func tags(at index: Int) -> [String] {
+        if let post = model.posts?[index] {
+            return post.tags
+        }
+        return []
+    }
+
+    public func creationDate(at index: Int) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        if let post = model.posts?[index] {
+            if let date = post.createdAt {
+                return dateFormatter.string(from: date)
+            }
+        }
+        return ""
+    }
+
+    /*
+     The public functions below should be used by the view to either build the layout
+     or respond to the user's input.
+     */
     public func numberOfRows() -> Int {
         return model.posts?.count ?? 0
     }
 
-    public func selected(index: Int) {
-        // Coordinator -> Single Post from Channel
+    /*
+     Use this function to get the PostModel chosen by the user. The returning model should be
+     used by the function in the View that asks the Coordinator for the next screen
+    */
+    public func selected(at index: Int) -> PostModel? {
+        return model.posts?[index] ?? nil
     }
 }

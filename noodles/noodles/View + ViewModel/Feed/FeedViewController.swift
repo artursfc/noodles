@@ -41,11 +41,3 @@ class FeedViewController: UIViewController {
         postsTableView.separatorColor = UIColor.clear
     }
 }
-
-extension FeedViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
-    }
-
-}

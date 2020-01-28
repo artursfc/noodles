@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="noodles" customModuleProvider="target">
             <connections>
+                <outlet property="addChannel" destination="EM1-2v-mq6" id="Igj-fn-Wzr"/>
                 <outlet property="channelsCollectionView" destination="UvA-B9-uVv" id="Ohe-tf-M3o"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -38,19 +39,15 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Anb-0G-Fpv">
-                            <rect key="frame" x="359" y="65" width="35" height="35"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="35" id="JBu-TX-EDZ"/>
-                                <constraint firstAttribute="width" constant="35" id="RXl-ws-XzS"/>
-                            </constraints>
-                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EM1-2v-mq6">
+                            <rect key="frame" x="370" y="72" width="26" height="26"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="plusIcon"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="Anb-0G-Fpv" secondAttribute="trailing" constant="20" id="3DV-ci-MKK"/>
                         <constraint firstAttribute="height" constant="120" id="9VD-1B-nxu"/>
-                        <constraint firstAttribute="bottom" secondItem="Anb-0G-Fpv" secondAttribute="bottom" constant="20" id="Bft-Zr-Mqm"/>
                         <constraint firstAttribute="bottom" secondItem="rZ4-Qg-3IW" secondAttribute="bottom" constant="20" id="Jef-Fy-bZn"/>
                         <constraint firstAttribute="bottom" secondItem="mYA-M5-GnE" secondAttribute="bottom" constant="20" id="j9W-Xe-kFo"/>
                         <constraint firstItem="mYA-M5-GnE" firstAttribute="leading" secondItem="rZ4-Qg-3IW" secondAttribute="trailing" constant="10" id="oS2-DU-ut1"/>

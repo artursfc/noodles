@@ -12,7 +12,7 @@ import UIKit
 class CustomTabBarController: UITabBarController {
 
     let channelsViewController = ChannelsViewController()
-    let feedViewController = FeedViewController()
+    let feedViewController = FeedViewController(viewModel: nil)
     let searchViewController = SearchViewController()
     let saveViewController = SaveViewController()
     let profileViewController = ProfileViewController()

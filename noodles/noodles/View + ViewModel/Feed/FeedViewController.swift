@@ -26,3 +26,4 @@ class FeedViewController: UIViewController {
         postsTableView.separatorColor = UIColor.clear
     }
 }
+

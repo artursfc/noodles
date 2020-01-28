@@ -14,7 +14,7 @@ protocol FeedViewModelDelegate: class {
 
 final class FeedViewModel {
     private let interactor: PostInteractor
-    private let coordinator: Coordinator
+//    private let coordinator: Coordinator
     private var models = [PostModel]() {
         didSet {
             delegate?.reloadUI()
@@ -23,9 +23,9 @@ final class FeedViewModel {
 
     weak var delegate: FeedViewModelDelegate?
 
-    init(interactor: PostInteractor, coordinator: Coordinator) {
+    init(interactor: PostInteractor) {
         self.interactor = interactor
-        self.coordinator = coordinator
+//        self.coordinator = coordinator
         fetch()
     }
 

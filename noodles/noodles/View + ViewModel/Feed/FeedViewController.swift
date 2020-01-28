@@ -12,10 +12,12 @@ class FeedViewController: UIViewController {
 
     @IBOutlet weak var postsTableView: UITableView!
     var POSTTABLEVIEWCELL = "PostTableViewCell"
-    let dataSource = PostsTableViewDataSource()
+    var dataSource: PostsTableViewDataSource?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataSource = PostsTableViewDataSource(tableView: postsTableView)
+
         setupPostTableView()
         view.backgroundColor = UIColor.fakeWhite
     }

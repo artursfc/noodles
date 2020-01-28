@@ -12,11 +12,13 @@ class SaveViewController: UIViewController {
 
     @IBOutlet weak var postsTableView: UITableView!
     var POSTTABLEVIEWCELL = "PostTableViewCell"
-    let dataSource = PostsTableViewDataSource()
+    var dataSource: PostsTableViewDataSource?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.fakeWhite
+        dataSource = PostsTableViewDataSource(tableView: postsTableView)
+
         setupPostTableView()
     }
 

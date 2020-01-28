@@ -10,6 +10,8 @@ import UIKit
 
 class ChannelsViewController: UIViewController {
 
+    @IBOutlet weak var addChannel: UIButton!
+
     @IBOutlet weak var channelsCollectionView: UICollectionView!
     var channelsCollectionViewDataSource =  ChannelCollectionViewDataSource()
     var CHANNELCOLLECTIONVIEWCELL = "ChannelsCollectionViewCell"
@@ -18,17 +20,11 @@ class ChannelsViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.fakeWhite
         setupChannelsCollectionView()
-        setupNavigation()
     }
 
     func setupChannelsCollectionView() {
         channelsCollectionView.backgroundColor = UIColor.fakeWhite
         channelsCollectionView.register(UINib(nibName: CHANNELCOLLECTIONVIEWCELL, bundle: nil), forCellWithReuseIdentifier: CHANNELCOLLECTIONVIEWCELL)
         channelsCollectionView.dataSource = channelsCollectionViewDataSource
-    }
-
-    func setupNavigation() {
-        self.navigationController?.navigationBar.tintColor = UIColor.fakeWhite
-        self.navigationController?.navigationBar.topItem?.title = "CHANNEL"
     }
 }

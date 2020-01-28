@@ -21,6 +21,7 @@
 		4F99DE2923D8E35D009DA867 /* CheckBoxCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F99DE2823D8E35D009DA867 /* CheckBoxCustomView.swift */; };
 		7519DFBE23D258B700ADDFBA /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7519DFBC23D258B700ADDFBA /* SearchTableViewCell.swift */; };
 		7519DFBF23D258B700ADDFBA /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7519DFBD23D258B700ADDFBA /* SearchTableViewCell.xib */; };
+		758A8F2923DF5BD1005D6530 /* MainCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A8F2823DF5BD1005D6530 /* MainCoodinator.swift */; };
 		7597314D23CE6FAF00F9EFA5 /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597314B23CE6FAF00F9EFA5 /* ChannelsViewController.swift */; };
 		7597314E23CE6FAF00F9EFA5 /* ChannelsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597314C23CE6FAF00F9EFA5 /* ChannelsViewController.xib */; };
 		7597315123CEC2F500F9EFA5 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597314F23CEC2F500F9EFA5 /* CustomTabBarController.swift */; };
@@ -110,6 +111,7 @@
 		4F99DE2823D8E35D009DA867 /* CheckBoxCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxCustomView.swift; sourceTree = "<group>"; };
 		7519DFBC23D258B700ADDFBA /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		7519DFBD23D258B700ADDFBA /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		758A8F2823DF5BD1005D6530 /* MainCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoodinator.swift; sourceTree = "<group>"; };
 		7597314B23CE6FAF00F9EFA5 /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
 		7597314C23CE6FAF00F9EFA5 /* ChannelsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsViewController.xib; sourceTree = "<group>"; };
 		7597314F23CEC2F500F9EFA5 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				A427071023DBAEDB00E9CC27 /* Coordinator.swift */,
+				758A8F2823DF5BD1005D6530 /* MainCoodinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				A42706EC23D644FA00E9CC27 /* CloudKit+Helpers.swift in Sources */,
 				7597316A23CF79AE00F9EFA5 /* SearchViewController.swift in Sources */,
 				7597318223CFB88E00F9EFA5 /* PostsTableViewDataSource.swift in Sources */,
+				758A8F2923DF5BD1005D6530 /* MainCoodinator.swift in Sources */,
 				4F678DD523DB714400A20396 /* RankSelectionTableViewDelegate.swift in Sources */,
 				7597317723CF90DF00F9EFA5 /* ChannelsCollectionViewCell.swift in Sources */,
 				7597315123CEC2F500F9EFA5 /* CustomTabBarController.swift in Sources */,

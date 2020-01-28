@@ -22,7 +22,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = CustomTabBarController()
         window?.makeKeyAndVisible()
-        
+
+        let navController = UINavigationController()
+
+        let mainCoordinator = MainCoordinator(navController: navController)
+        mainCoordinator.start()
+
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

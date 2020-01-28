@@ -13,10 +13,12 @@ class ChannelViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var POSTTABLEVIEWCELL = "PostTableViewCell"
     var viewModel: ChannelViewModel
+    let coordinator: Coordinator
 
-    init(viewModel: ChannelViewModel) {
+    init(viewModel: ChannelViewModel, coordinator: Coordinator) {
         self.viewModel = viewModel
-         super.init(nibName: "ChannelViewController", bundle: nil)
+        self.coordinator = coordinator
+        super.init(nibName: "ChannelViewController", bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -39,16 +41,16 @@ class ChannelViewController: UIViewController {
 extension ChannelViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows() ?? 0
+        return viewModel.numberOfRows()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: POSTTABLEVIEWCELL) as? PostTableViewCell ?? PostTableViewCell()
 
-        let post = viewModel.data(at: indexPath.row)
-        
+        let post = viewModel.selected(at: indexPath.row)
+
         cell.postTitle.text = post?.title
-        cell.author.text = post?.title
+        cell.author.text = post?.author?.name
         cell.date.text = post?.title
 
         return cell

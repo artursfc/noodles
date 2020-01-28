@@ -16,13 +16,9 @@ class PostsTableViewDataSource: NSObject, UITableViewDataSource {
     var tableView: UITableView?
     var viewModel: FeedViewModel
 
-    init(tableView: UITableView) {
+    init(tableView: UITableView, viewModel: FeedViewModel) {
 
-        let cloudKit = CloudKitManager()
-        let coreData = CoreDataManager()
-        let interactor = PostInteractor(cloudkit: cloudKit, coredata: coreData)
-        viewModel = FeedViewModel(interactor: interactor)
-
+        self.viewModel = viewModel
         super.init()
         self.tableView = tableView
         self.viewModel.delegate = self

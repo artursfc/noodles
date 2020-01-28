@@ -13,10 +13,23 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var postsTableView: UITableView!
     var POSTTABLEVIEWCELL = "PostTableViewCell"
     var dataSource: PostsTableViewDataSource?
+    var viewModel: FeedViewModel?
+
+    init(viewModel: FeedViewModel?) {
+        self.viewModel = viewModel
+        super.init(nibName: "FeedViewController", bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = PostsTableViewDataSource(tableView: postsTableView)
+
+        guard let viewModel = viewModel else { return  }
+
+        dataSource = PostsTableViewDataSource(tableView: postsTableView, viewModel: viewModel)
 
         setupPostTableView()
         view.backgroundColor = UIColor.fakeWhite
@@ -27,4 +40,12 @@ class FeedViewController: UIViewController {
         postsTableView.register(UINib(nibName: POSTTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: POSTTABLEVIEWCELL)
         postsTableView.separatorColor = UIColor.clear
     }
+}
+
+extension FeedViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      
+    }
+
 }

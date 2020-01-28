@@ -10,36 +10,36 @@ import Foundation
 import UIKit
 
 class ChannelCollectionViewDataSource: NSObject, UICollectionViewDataSource {
-
+    
     var CHANNELCOLLECTIONVIEWCELL = "ChannelsCollectionViewCell"
-    var fakeViewModel: [(String, Int)] = [("channelPlaceholder", 0),
-                                          ("channelPlaceholder", 23),
-                                          ("channelPlaceholder", 0),
-                                          ("channelPlaceholder", 99),
-                                          ("channelPlaceholder", 78),
-                                          ("channelPlaceholder", 23),
-                                          ("channelPlaceholder", 90),
-                                          ("channelPlaceholder", 8),
-                                          ("channelPlaceholder", 10),
-                                          ("channelPlaceholder", 0),
-                                          ("channelPlaceholder", 113),]
+    
+    private let tableView: UITableView
+    private let viewModel: ChannelsViewModel
+    private let coordinator: Coordinator
+    
+    init(tableView: UITableView, viewModel: ChannelsViewModel, coordinator: Coordinator) {
+        self.tableView = tableView
+        self.viewModel = viewModel
+        self.coordinator = coordinator
+        super.init()
+        self.viewModel.delegate = self
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fakeViewModel.count
+        return viewModel.numberOfSections()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CHANNELCOLLECTIONVIEWCELL, for: indexPath) as? ChannelsCollectionViewCell ?? ChannelsCollectionViewCell()
 
-        cell.channelImage.image = UIImage(named: fakeViewModel[indexPath.row].0)
-
-        if fakeViewModel[indexPath.row].1 == 0 {
-            cell.badget.isHidden = true
-            cell.newPostCount.isHidden = true
-        } else {
-            cell.newPostCount.text = String(fakeViewModel[indexPath.row].1)
-        }
-
+        cell.channelImage.image = UIImage(named: "channelPlaceholder")
+        cell.channelTitle.text = viewModel.name(at: indexPath.row)
         return cell
+    }
+}
+
+extension ChannelCollectionViewDataSource: ChannelsViewModelDelegate {
+    func reloadUI() {
+     tableView.reloadData()
     }
 }

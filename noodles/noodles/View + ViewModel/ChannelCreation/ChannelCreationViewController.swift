@@ -20,7 +20,7 @@ class ChannelCreationViewController: UIViewController {
     let delegateCanView = RankSelectionTableViewDelegate()
     var selectedRanks: [RankModel] = [RankModel]()
     
-//    init(veiwModel: ChannelCreationViewModel, viewController: ViewController) {
+//    init(viewModel: ChannelCreationViewModel, viewController: ViewController) {
 //        <#statements#>
 //    }
 

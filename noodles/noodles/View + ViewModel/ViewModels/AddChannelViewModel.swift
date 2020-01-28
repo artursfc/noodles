@@ -16,6 +16,7 @@ enum AddChannelField {
 protocol AddChannelViewModelDelegate: class {
     func reject(field: AddChannelField)
     func accept(field: AddChannelField)
+    func saved()
 }
 
 final class AddChannelViewModel {
@@ -34,24 +35,21 @@ final class AddChannelViewModel {
     // MARK: Public attributes
     public var name: String = ""
 
-    // ID of Ranks that can edit the channel
-    public var canBeEditedBy = [String]()
+    // Chosen index of ranks array
+    public var canBeEditedBy = [Int]()
 
-    // ID of Ranks that can view the channel
-    public var canBeViewedBy = [String]()
+    // Chosen index of ranks array
+    public var canBeViewedBy = [Int]()
 
     // MARK: Private attributes
     private var createdBy: String = ""
 
     // MARK: Public functions
-    public func rankNames() -> [(String, String)] {
-        var result = [(String, String)]()
+    public func rankNames(at index: Int) -> (String, String) {
         if !ranks.isEmpty {
-            for rank in ranks {
-                result.append((rank.id, rank.title))
-            }
+            return (ranks[index].id, ranks[index].title)
         }
-        return result
+        return ("", "")
     }
 
     public func create() {
@@ -64,11 +62,36 @@ final class AddChannelViewModel {
                     self.delegate?.reject(field: .name)
                 } else {
                     self.delegate?.accept(field: .channel)
+                    var channel = ChannelModel(id: "", name: self.name, posts: nil,
+                                               createdBy: nil, canBeEditedBy: nil, canBeViewedBy: nil,
+                                               createdAt: nil, editedAt: nil)
+
+                    var beEditedByArr = [RankModel]()
+                    for index in self.canBeEditedBy {
+                        beEditedByArr.append(self.ranks[index])
+                    }
+                    channel.canBeEditedBy = beEditedByArr
+
+                    var beViewedByArr = [RankModel]()
+                    for index in self.canBeViewedBy {
+                        beViewedByArr.append(self.ranks[index])
+                    }
+                    channel.canBeViewedBy = beViewedByArr
+
+                    self.channelInteractor.save(channel: channel) { (bool) in
+                        if bool {
+                            self.delegate?.saved()
+                        }
+                    }
                 }
             }
         } else {
             delegate?.reject(field: .channel)
         }
+    }
+
+    public func ranksNumberOfRows() -> Int {
+        return ranks.count
     }
 
     // MARK: Private functions

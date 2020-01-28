@@ -14,17 +14,14 @@ protocol ChannelsViewModelDelegate: class {
 
 final class ChannelsViewModel {
     private let interactor: ChannelInteractor
-    private let coordinator: Coordinator
     private var models = [ChannelModel]()
 
     weak var delegate: ChannelsViewModelDelegate?
 
-    init(interactor: ChannelInteractor, coordinator: Coordinator) {
+    init(interactor: ChannelInteractor) {
         self.interactor = interactor
-        self.coordinator = coordinator
         fetch()
     }
-
 
     // MARK: Public functions
     // fetch() should be used for pull-to-refresh
@@ -50,7 +47,11 @@ final class ChannelsViewModel {
         return models.count
     }
 
-    public func selected(index: Int) {
-        // Coordinator -> Single Post
+    /*
+     Use this function to get the ChannelModel chosen by the user. The returning model should be
+     used by the function in the View that asks the Coordinator for the next screen
+    */
+    public func selected(at index: Int) -> ChannelModel {
+        return models[index]
     }
 }

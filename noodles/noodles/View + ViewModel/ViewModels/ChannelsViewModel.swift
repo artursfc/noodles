@@ -25,6 +25,9 @@ final class ChannelsViewModel {
         fetch()
     }
 
+
+    // MARK: Public functions
+    // fetch() should be used for pull-to-refresh
     public func fetch() {
         interactor.fetchAll(from: .cloudkit) { [weak self] (channels) in
             if let channels = channels {
@@ -35,11 +38,14 @@ final class ChannelsViewModel {
         }
     }
 
-    public func data(at index: Int) -> ChannelModel {
-        let channel = models[index]
-        return channel
+    public func name(at index: Int) -> String {
+        return models[index].name
     }
 
+    /*
+    The public functions below are all to be used by the view to either build the
+    layout or respond to the user's input
+    */
     public func numberOfSections() -> Int {
         return models.count
     }

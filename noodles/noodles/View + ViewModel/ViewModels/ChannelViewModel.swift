@@ -14,18 +14,16 @@ protocol ChannelViewModelDelegate: class {
 
 final class ChannelViewModel {
     private let interactor: ChannelInteractor
-    private let coordinator: Coordinator
     private var model: ChannelModel {
         didSet {
-
+            delegate?.reloadUI()
         }
     }
 
     weak var delegate: ChannelsViewModelDelegate?
 
-    init(interactor: ChannelInteractor, coordinator: Coordinator, model: ChannelModel) {
+    init(interactor: ChannelInteractor, model: ChannelModel) {
         self.interactor = interactor
-        self.coordinator = coordinator
         self.model = model
     }
 

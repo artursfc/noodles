@@ -34,7 +34,6 @@ final class ChannelInteractor {
         case .coredata:
             completionHandler(nil)
         }
-
     }
 
     public func fetchAll(from provider: DataProvider, completionHandler: @escaping (([ChannelModel]?) -> Void)) {
@@ -99,6 +98,18 @@ final class ChannelInteractor {
         let recordID = CKRecord.ID(recordName: channel.id)
         cloudkit.delete(recordID: recordID, on: .publicDB) { (response) in
             if response.error == nil && response.records == nil {
+                completionHandler(true)
+            } else {
+                completionHandler(false)
+            }
+        }
+    }
+
+    public func isTaken(name: String, completionHandler: @escaping ((Bool) -> Void)) {
+        let query = cloudkit.generateQuery(of: .channels, with: NSPredicate(format: "name ==[c] %@", name),
+                                           sortedBy: NSSortDescriptor(key: "creationDate", ascending: false))
+        cloudkit.query(using: query, on: .publicDB) { (response) in
+            if response.error != nil {
                 completionHandler(true)
             } else {
                 completionHandler(false)

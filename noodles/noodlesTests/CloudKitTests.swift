@@ -155,4 +155,9 @@ class CloudKitTests: XCTestCase {
 
         XCTAssertTrue(assertion)
     }
+
+    func testOi() {
+        let bob = "bob is tall"
+        print(bob.capitalized)
+    }
 }

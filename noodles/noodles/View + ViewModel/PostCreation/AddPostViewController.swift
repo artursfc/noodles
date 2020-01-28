@@ -36,7 +36,6 @@ class AddPostViewController: UIViewController {
         titleTextField.placeholder = "Insira um Titulo"
         
         bodyTextView.textColor = UIColor.gammaGray
-        
     }
     
 }

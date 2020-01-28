@@ -19,6 +19,10 @@ class ChannelCreationViewController: UIViewController {
     let dataSourceCanView = RankSelectionTableViewDataSource()
     let delegateCanView = RankSelectionTableViewDelegate()
     var selectedRanks: [RankModel] = [RankModel]()
+    
+//    init(veiwModel: ChannelCreationViewModel, viewController: ViewController) {
+//        <#statements#>
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

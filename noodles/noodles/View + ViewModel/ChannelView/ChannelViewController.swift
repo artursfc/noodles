@@ -28,7 +28,9 @@ class ChannelViewController: UIViewController {
         view.backgroundColor = UIColor.fakeWhite
         setupPostTableView()
     }
-
+    /**
+     Setup Post table view used for show all posts from certain channel
+     */
     func setupPostTableView() {
         tableView.dataSource = self
         tableView.register(UINib(nibName: POSTTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: POSTTABLEVIEWCELL)
@@ -44,8 +46,6 @@ extension ChannelViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: POSTTABLEVIEWCELL) as? PostTableViewCell ?? PostTableViewCell()
-
-        let post = viewModel.data(at: indexPath.row)
         
         cell.postTitle.text = post?.title
         cell.author.text = post?.title

@@ -15,14 +15,14 @@ class PostsTableViewDataSource: NSObject, UITableViewDataSource {
     var POSTTABLEVIEWCELL = "PostTableViewCell"
     var tableView: UITableView?
     var viewModel: FeedViewModel
-
-    init(tableView: UITableView, viewModel: FeedViewModel) {
-
-        self.viewModel = viewModel
-        super.init()
+    private let coordinator: Coordinator
+    
+    init(tableView: UITableView, viewModel: FeedViewModel, coordinator: Coordinator) {
         self.tableView = tableView
+        self.viewModel = viewModel
+        self.coordinator = coordinator
+        super.init()
         self.viewModel.delegate = self
-
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,11 +32,9 @@ class PostsTableViewDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: POSTTABLEVIEWCELL) as? PostTableViewCell ?? PostTableViewCell()
 
-        let post = viewModel.data(at: indexPath.row)
-
-        cell.postTitle.text = post.title
-        cell.author.text = post.title
-        cell.date.text = post.title
+        cell.postTitle.text = viewModel.title(at: indexPath.row)
+        cell.author.text = viewModel.author(at: indexPath.row)
+        cell.date.text = viewModel.creationDate(at: indexPath.row)
 
         return cell
     }

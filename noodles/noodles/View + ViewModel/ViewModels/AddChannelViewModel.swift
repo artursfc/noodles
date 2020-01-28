@@ -45,11 +45,11 @@ final class AddChannelViewModel {
     private var createdBy: String = ""
 
     // MARK: Public functions
-    public func rankNames(at index: Int) -> (String, String) {
+    public func rankNames(at index: Int) -> String {
         if !ranks.isEmpty {
-            return (ranks[index].id, ranks[index].title)
+            return ranks[index].title
         }
-        return ("", "")
+        return ""
     }
 
     public func create() {
@@ -89,7 +89,7 @@ final class AddChannelViewModel {
             delegate?.reject(field: .channel)
         }
     }
-
+    
     public func ranksNumberOfRows() -> Int {
         return ranks.count
     }

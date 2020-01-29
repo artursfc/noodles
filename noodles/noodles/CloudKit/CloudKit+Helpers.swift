@@ -34,4 +34,5 @@ public enum RecordType {
     case users
     case posts
     case ranks
+    case profile
 }

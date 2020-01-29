@@ -19,13 +19,15 @@ protocol AddPostViewModelDelegate: class {
     func accept(field: AddPostField)
 }
 
-final class AddPostViewModel {
+final class AddPostViewModel: ViewModel {
     private let postInteractor: PostInteractor
+    private let coordinator: Coordinator
 
     weak var delegate: AddPostViewModelDelegate?
 
-    init(postInteractor: PostInteractor) {
+    init(postInteractor: PostInteractor, coordinator: Coordinator) {
         self.postInteractor = postInteractor
+        self.coordinator = coordinator
     }
 
     // MARK: Public attributes
@@ -36,9 +38,13 @@ final class AddPostViewModel {
     public var tags = [String]()
 
     // MARK: Private attributes
+    private let defaults = UserDefaults.standard
+
     private var validated: Bool = true
 
-    private var author: String = ""
+    private var author: String {
+        return defaults.string(forKey: "UserID") ?? ""
+    }
 
     // MARK: Public functions
     public func create() {

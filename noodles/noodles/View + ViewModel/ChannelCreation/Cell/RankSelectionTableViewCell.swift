@@ -12,10 +12,11 @@ import UIKit
 class RankSelectionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var rankTitle: UILabel!
-    
     @IBOutlet weak var checkImg: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        checkImg.image = UIImage(named: "waitingInputPlaceHolder")
+
     }
 }

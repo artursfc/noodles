@@ -119,8 +119,14 @@ final class PostViewModel: ViewModel {
         return ""
     }
 
-    public func bookmark() {
-
+    public func bookmark() -> Bool {
+        var result = false
+        interactor.update(bookmarks: [id]) { (bool) in
+            if bool {
+                result = true
+            }
+        }
+        return result
     }
 
     // MARK: Private functions

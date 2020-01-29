@@ -213,17 +213,13 @@ final class CoreDataManager {
         - type: Enum used to determine which record type is being used in the function.
         - completionHandler: Returns a CoreDataResponse as the result of the async function.
      */
-    public func update(object: NSManagedObject, with newObject: NSManagedObject, of type: RecordType,
+    public func update(object: NSManagedObject, with newObject: Parseable, of type: RecordType,
                        completionHandler: @escaping ((CoreDataResponse) -> Void)) {
         container.performBackgroundTask { (pvtContext) in
             switch type {
             case .channels:
-                if let newChannel = newObject as? Channel, let oldChannel = object as? Channel {
+                if let newChannel = newObject as? ChannelModel, let oldChannel = object as? Channel {
                     oldChannel.name = newChannel.name
-                    oldChannel.posts = newChannel.posts
-                    oldChannel.createdBy = newChannel.createdBy
-                    oldChannel.canBeEditedBy = newChannel.canBeEditedBy
-                    oldChannel.canBeViewedBy = newChannel.canBeViewedBy
                     oldChannel.editedAt = newChannel.editedAt
                     do {
                         try pvtContext.save()
@@ -233,13 +229,10 @@ final class CoreDataManager {
                     completionHandler(CoreDataResponse(objects: nil, error: nil))
                 }
             case .ranks:
-                if let newRank = newObject as? Rank, let oldRank = object as? Rank {
+                if let newRank = newObject as? RankModel, let oldRank = object as? Rank {
                     oldRank.title = newRank.title
-                    oldRank.canEditChannels = newRank.canEditChannels
-                    oldRank.canViewChannels = newRank.canViewChannels
                     oldRank.canCreateChannel = newRank.canCreateChannel
                     oldRank.editedAt = newRank.editedAt
-                    oldRank.users = newRank.users
                     do {
                         try pvtContext.save()
                     } catch let error as NSError {
@@ -248,9 +241,8 @@ final class CoreDataManager {
                     completionHandler(CoreDataResponse(objects: nil, error: nil))
                 }
             case .users:
-                if let newUser = newObject as? User, let oldUser = object as? User {
+                if let newUser = newObject as? UserModel, let oldUser = object as? User {
                     oldUser.name = newUser.name
-                    oldUser.rank = newUser.rank
                     oldUser.editedAt = newUser.editedAt
                     do {
                         try pvtContext.save()
@@ -260,15 +252,12 @@ final class CoreDataManager {
                     completionHandler(CoreDataResponse(objects: nil, error: nil))
                 }
             case .posts:
-                if let newPost = newObject as? Post, let oldPost = object as? Post {
+                if let newPost = newObject as? PostModel, let oldPost = object as? Post {
                     oldPost.title = newPost.title
                     oldPost.body = newPost.body
-                    oldPost.author = newPost.author
                     oldPost.tags = newPost.tags
-                    oldPost.readBy = newPost.readBy
                     oldPost.validated = newPost.validated
                     oldPost.editedAt = newPost.editedAt
-                    oldPost.channels = newPost.channels
                     do {
                         try pvtContext.save()
                     } catch let error as NSError {

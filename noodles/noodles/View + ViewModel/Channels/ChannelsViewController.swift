@@ -14,11 +14,9 @@ class ChannelsViewController: UIViewController {
     @IBOutlet weak var channelsCollectionView: UICollectionView!
     var CHANNELCOLLECTIONVIEWCELL = "ChannelsCollectionViewCell"
     let viewModel: ChannelsViewModel
-    let coordinator: Coordinator
 
-    init(viewModel: ChannelsViewModel, coordinator: Coordinator) {
+    init(viewModel: ChannelsViewModel) {
           self.viewModel = viewModel
-          self.coordinator = coordinator
           super.init(nibName: "ChannelsViewController", bundle: nil)
           self.viewModel.delegate = self
       }

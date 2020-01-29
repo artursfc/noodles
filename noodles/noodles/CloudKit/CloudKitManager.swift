@@ -14,8 +14,11 @@ import CloudKit
  */
 final class CloudKitManager {
 
-    init() {}
+    init() {
+        userSetup()
+    }
 
+    // MARK: Public functions
     /**
      Queries CloudKit's public or private database. Async function.
      - Parameters:
@@ -223,6 +226,10 @@ final class CloudKitManager {
             let query = CKQuery(recordType: "Posts", predicate: predicate)
             query.sortDescriptors = [sortedBy]
             return query
+        case .profile:
+            let query = CKQuery(recordType: "Users", predicate: predicate)
+            query.sortDescriptors = [sortedBy]
+            return query
         }
     }
 
@@ -257,6 +264,40 @@ final class CloudKitManager {
                 }
             }
             db.add(fetchOperation)
+        }
+    }
+
+    // MARK: Private functions
+    /**
+     Saves the current user's ID on UserDefaults to be accessed by the key "userID".
+     */
+    private func userSetup() {
+        fetch { (userID, error) in
+            if error != nil {
+                let defaults = UserDefaults.standard
+                defaults.set(userID?.recordName, forKey: "UserID")
+            }  else {
+                // TODO: Work on better error treatment
+                fatalError("Could not get a valid user ID.")
+            }
+        }
+    }
+
+    /**
+     Fetches the current user's ID from CloudKit. Async function.
+     - Parameters:
+        - completionHandler: Returns a userID of type CKRecord.ID? and an optional error of type Error.
+        - userID: The current user's ID.
+        - error: An optional error of type Error.
+     */
+    private func fetch(userID completionHandler: @escaping (_ userID: CKRecord.ID?, _ error: Error?) -> Void) {
+        let container = CKContainer.default()
+        container.fetchUserRecordID { (recordID, error) in
+            if error != nil {
+                completionHandler(recordID,nil)
+            } else {
+                completionHandler(nil, error)
+            }
         }
     }
 }

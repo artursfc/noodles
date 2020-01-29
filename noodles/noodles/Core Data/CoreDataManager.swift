@@ -116,10 +116,23 @@ final class CoreDataManager {
                     }
                     completionHandler(CoreDataResponse(objects: nil, error: nil))
                 }
+            case .profile:
+                if let profile = object as? Profile {
+                    let saveProfile = Profile(context: pvtContext)
+                    saveProfile.id = profile.id
+                    saveProfile.name = profile.name
+                    saveProfile.bookmarks = profile.bookmarks
+                    do {
+                        try pvtContext.save()
+                    } catch let error as NSError {
+                        completionHandler(CoreDataResponse(objects: nil, error: error))
+                    }
+                    completionHandler(CoreDataResponse(objects: nil, error: nil))
+                }
             }
         }
     }
-
+    
     /**
      Fetches all objects of any record type. Async function.
      - Parameters:
@@ -169,6 +182,18 @@ final class CoreDataManager {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Post")
             let asyncReq = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result) in
                 if let result = result.finalResult as? [Post] {
+                    completionHandler(CoreDataResponse(objects: result, error: nil))
+                }
+            }
+            do {
+                try pvtContext.execute(asyncReq)
+            } catch let error as NSError {
+                completionHandler(CoreDataResponse(objects: nil, error: error))
+            }
+        case .profile:
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
+            let asyncReq = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result) in
+                if let result = result.finalResult as? [Profile] {
                     completionHandler(CoreDataResponse(objects: result, error: nil))
                 }
             }
@@ -251,6 +276,18 @@ final class CoreDataManager {
                     }
                     completionHandler(CoreDataResponse(objects: nil, error: nil))
                 }
+            case .profile:
+                if let newProfile = newObject as? Profile, let oldProfile = object as? Profile {
+                    oldProfile.id = newProfile.id
+                    oldProfile.name = newProfile.name
+                    oldProfile.bookmarks = newProfile.bookmarks
+                }
+                do {
+                    try pvtContext.save()
+                } catch let error as NSError {
+                    completionHandler(CoreDataResponse(objects: nil, error: error))
+                }
+                completionHandler(CoreDataResponse(objects: nil, error: nil))
             }
         }
     }
@@ -298,6 +335,16 @@ final class CoreDataManager {
                 if let user = object as? User {
                     do {
                         pvtContext.delete(user)
+                        try pvtContext.save()
+                    } catch let error as NSError {
+                        completionHandler(CoreDataResponse(objects: nil, error: error))
+                    }
+                    completionHandler(CoreDataResponse(objects: nil, error: nil))
+                }
+            case .profile:
+                if let profile = object as? Profile {
+                    do {
+                        pvtContext.delete(profile)
                         try pvtContext.save()
                     } catch let error as NSError {
                         completionHandler(CoreDataResponse(objects: nil, error: error))

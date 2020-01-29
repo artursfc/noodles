@@ -38,5 +38,8 @@ class ProfileViewController: UIViewController {
         profileBackgroundView.backgroundColor = UIColor.fakeWhite
 
         profilePicture.layer.cornerRadius = cornerRadius
+        profilePicture.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([ profilePicture.centerYAnchor.constraint(equalTo: backgroundView.bottomAnchor)
+        ])
     }
 }

@@ -19,16 +19,18 @@ protocol AddChannelViewModelDelegate: class {
     func saved()
 }
 
-final class AddChannelViewModel {
+final class AddChannelViewModel: ViewModel {
     private let channelInteractor: ChannelInteractor
     private let rankInteractor: RankInteractor
+    private let coordinator: Coordinator
     private var ranks = [RankModel]()
 
     weak var delegate: AddChannelViewModelDelegate?
 
-    init(channelInteractor: ChannelInteractor, rankInteractor: RankInteractor) {
+    init(channelInteractor: ChannelInteractor, rankInteractor: RankInteractor, coordinator: Coordinator) {
         self.channelInteractor = channelInteractor
         self.rankInteractor = rankInteractor
+        self.coordinator = coordinator
         self.ranks = fetchRanks() ?? []
     }
 

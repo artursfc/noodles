@@ -17,13 +17,11 @@ class ChannelCreationViewController: UIViewController {
     @IBOutlet weak var rankTableView: UITableView!
     var RANKSELECTIONTABLEVIEWCELL = "RankSelectionTableViewCell"
     private let viewModel: AddChannelViewModel
-    private let coordinator: Coordinator
     var selectedRanksThatCanEditIndex: [Int] = []
     var selectedRanksThatCanViewIndex: [Int] = []
     
-    init(viewModel: AddChannelViewModel, coordinator: Coordinator) {
+    init(viewModel: AddChannelViewModel) {
         self.viewModel = viewModel
-        self.coordinator = coordinator
         super.init(nibName: "ChannelCreationViewController", bundle: nil)
     }
 
@@ -106,18 +104,18 @@ extension ChannelCreationViewController: UITableViewDelegate {
     }
 }
 
-extension ChannelCreationViewController: AddChannelViewModelDelegate {
+    extension ChannelCreationViewController: AddChannelViewModelDelegate {
 
-    func reject(field: AddChannelField) {
-        // criar situação de rejeitado
-    }
+        func reject(field: AddChannelField) {
+            // criar situação de rejeitado
+        }
 
-    func accept(field: AddChannelField) {
-        // criar situação de aceito
-    }
+        func accept(field: AddChannelField) {
+            // criar situação de aceito
+        }
 
-    func saved() {
-        //mandar dados para Coordinators
+        func saved() {
+            //mandar dados para Coordinators
+        }
     }
-}
 

@@ -11,10 +11,10 @@ import UIKit
 
 class CustomTabBarController: UITabBarController {
 
-    let channelsViewController = ChannelsViewController()
-    let feedViewController = FeedViewController(viewModel: nil)
+    let channelsViewController = ChannelsViewController(viewModel: <#T##ChannelsViewModel#>)
+    let feedViewController = FeedViewController(viewModel: <#T##FeedViewModel#>)
     let searchViewController = SearchViewController()
-    let saveViewController = SaveViewController()
+    let saveViewController = SaveViewController(viewModel: <#T##FeedViewModel#>)
     let profileViewController = ProfileViewController()
 
     override func viewDidLoad() {

@@ -141,6 +141,12 @@ final class PostInteractor {
         }
     }
 
+    public func update(bookmarks: [String], completionHandler: @escaping ((Bool) -> Void)) {
+        let defaults = UserDefaults.standard
+        
+
+    }
+
     // MARK: Private functions
 
     /**

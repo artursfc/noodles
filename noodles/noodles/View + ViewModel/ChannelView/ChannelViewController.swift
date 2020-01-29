@@ -13,11 +13,9 @@ class ChannelViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var POSTTABLEVIEWCELL = "PostTableViewCell"
     var viewModel: ChannelViewModel
-    let coordinator: Coordinator
-
-    init(viewModel: ChannelViewModel, coordinator: Coordinator) {
+    
+    init(viewModel: ChannelViewModel) {
         self.viewModel = viewModel
-        self.coordinator = coordinator
         super.init(nibName: "ChannelViewController", bundle: nil)
     }
     

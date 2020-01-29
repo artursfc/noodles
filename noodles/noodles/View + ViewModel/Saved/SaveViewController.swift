@@ -13,11 +13,9 @@ class SaveViewController: UIViewController {
     @IBOutlet weak var postsTableView: UITableView!
     var POSTTABLEVIEWCELL = "PostTableViewCell"
     var viewModel: FeedViewModel
-    let coordinator: Coordinator
 
-    init(viewModel: FeedViewModel, coordinator: Coordinator) {
+    init(viewModel: FeedViewModel) {
         self.viewModel = viewModel
-        self.coordinator = coordinator
         super.init(nibName: "SaveViewController", bundle: nil)
         self.viewModel.delegate = self
     }

@@ -11,7 +11,6 @@
 		4F55FDDA23CFAD110032EF0F /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD623CFAD110032EF0F /* ChannelModel.swift */; };
 		4F55FDDB23CFAD110032EF0F /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD723CFAD110032EF0F /* PostModel.swift */; };
 		4F55FDDC23CFAD110032EF0F /* RankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55FDD823CFAD110032EF0F /* RankModel.swift */; };
-		4F678DCC23DAAA8C00A20396 /* RankSelectionTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F678DCB23DAAA8C00A20396 /* RankSelectionTableViewDataSource.swift */; };
 		4F678DCE23DAAC1400A20396 /* RankSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F678DCD23DAAC1400A20396 /* RankSelectionTableViewCell.swift */; };
 		4F678DD023DAB55700A20396 /* ChannelCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F678DCF23DAB55700A20396 /* ChannelCreationViewController.swift */; };
 		4F678DD523DB714400A20396 /* RankSelectionTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F678DD423DB714400A20396 /* RankSelectionTableViewDelegate.swift */; };
@@ -105,7 +104,6 @@
 		4F55FDD623CFAD110032EF0F /* ChannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
 		4F55FDD723CFAD110032EF0F /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		4F55FDD823CFAD110032EF0F /* RankModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankModel.swift; sourceTree = "<group>"; };
-		4F678DCB23DAAA8C00A20396 /* RankSelectionTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankSelectionTableViewDataSource.swift; sourceTree = "<group>"; };
 		4F678DCD23DAAC1400A20396 /* RankSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		4F678DCF23DAB55700A20396 /* ChannelCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCreationViewController.swift; sourceTree = "<group>"; };
 		4F678DD423DB714400A20396 /* RankSelectionTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankSelectionTableViewDelegate.swift; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 				4F99DE2323D8E26F009DA867 /* UiView */,
 				4F99DE2023D8DE88009DA867 /* Cell */,
 				4F99DE1E23D8DBD7009DA867 /* ChannelCreationViewController.xib */,
-				4F678DCB23DAAA8C00A20396 /* RankSelectionTableViewDataSource.swift */,
 				4F678DCF23DAB55700A20396 /* ChannelCreationViewController.swift */,
 				4F678DD423DB714400A20396 /* RankSelectionTableViewDelegate.swift */,
 			);
@@ -736,7 +733,6 @@
 				4F55FDDC23CFAD110032EF0F /* RankModel.swift in Sources */,
 				4F99DE2923D8E35D009DA867 /* CheckBoxCustomView.swift in Sources */,
 				7597316623CF798E00F9EFA5 /* ProfileViewController.swift in Sources */,
-				4F678DCC23DAAA8C00A20396 /* RankSelectionTableViewDataSource.swift in Sources */,
 				7519DFBE23D258B700ADDFBA /* SearchTableViewCell.swift in Sources */,
 				A42706F223D9F84B00E9CC27 /* Interactors+Helpers.swift in Sources */,
 				753C68A123E09D19002E2355 /* PresentPostViewController.swift in Sources */,

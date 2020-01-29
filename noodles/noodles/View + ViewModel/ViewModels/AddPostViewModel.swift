@@ -8,9 +8,15 @@
 
 import Foundation
 
+enum AddPostField {
+    case title
+    case body
+    case post
+}
+
 protocol AddPostViewModelDelegate: class {
-    func reject()
-    func accept()
+    func reject(field: AddPostField)
+    func accept(field: AddPostField)
 }
 
 final class AddPostViewModel {
@@ -27,32 +33,19 @@ final class AddPostViewModel {
 
     public var body: String = ""
 
-    public var author: String = ""
-
     public var tags = [String]()
 
     // MARK: Private attributes
-    private var validated: Bool = false
+    private var validated: Bool = true
 
-    /*
-     var id: String
-     var title: String
-     var body: String
-     var author: UserModel?
-     var tags: [String]
-     var readBy: [UserModel]?
-     var validated: Bool
-     var createdAt: Date?
-     var editedAt: Date?
-     var channels: [ChannelModel]?
-     */
+    private var author: String = ""
 
     // MARK: Public functions
     public func create() {
         if !title.isEmpty && !body.isEmpty {
-            delegate?.accept()
+            delegate?.accept(field: .post)
         } else {
-            delegate?.reject()
+            delegate?.reject(field: .post)
         }
     }
 }

@@ -10,6 +10,9 @@ import Foundation
 import CloudKit
 import CoreData
 
+/**
+ Interactor used by Post-related ViewModels to connect with Core Data and CloudKit through a common struct(PostModel).
+ */
 final class PostInteractor {
     private let cloudkit: CloudKitManager
     private let coredata: CoreDataManager
@@ -22,6 +25,14 @@ final class PostInteractor {
     }
 
     // MARK: Public fucntions
+
+    /**
+     Fetches a post from a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - postID: A post's ID as a string.
+        - provider: Enum used to determine from which Data Provider to fetch data.
+        - completionHandler: Returns a PostModel as the result of the async function.
+     */
     public func fetch(with postID: String, from provider: DataProvider, completionHandler: @escaping ((PostModel?) -> Void)) {
         switch provider {
         case .cloudkit:
@@ -36,6 +47,13 @@ final class PostInteractor {
             completionHandler(nil)
         }
     }
+
+    /**
+     Fetches all ranks from a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - provider: Enum used to determine from which Data Provider to fetch data.
+        - completionHandler: Returns an array of RankModel as the result of the async function.
+     */
     public func fetchAll(from provider: DataProvider, completionHandler: @escaping (([PostModel]?) -> Void)) {
         switch provider {
         case .cloudkit:
@@ -58,6 +76,12 @@ final class PostInteractor {
         }
     }
 
+    /**
+     Saves a rank on Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - post: A PostModel that will be saved as CKRecord.
+        - completionHandler: Returns a Bool as the result of the async function.
+     */
     public func save(post: PostModel, completionHandler: @escaping ((Bool) -> Void)) {
         let models = [post]
         let records = parser.parse(models: models, of: .posts)
@@ -75,6 +99,13 @@ final class PostInteractor {
         }
     }
 
+    /**
+     Updates a post on a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - post: A PostModel that will be updated.
+        - newPost: A Postmodel that will be used to update the post.
+        - completionHandler: Returns a Bool as the result of the asynce function.
+     */
     public func update(post: PostModel, with newPost: PostModel, completionHandler: @escaping ((Bool) -> Void)) {
         let recordID = CKRecord.ID(recordName: post.id)
         let models = [newPost]
@@ -93,6 +124,12 @@ final class PostInteractor {
         }
     }
 
+    /**
+     Deletes a post on a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - post: A PostModel that will be deleted.
+        - completionHandler: Returns a Bool as the result of the async function.
+     */
     public func delete(post: PostModel, completionHandler: @escaping ((Bool) -> Void)) {
         let recordID = CKRecord.ID(recordName: post.id)
         cloudkit.delete(recordID: recordID, on: .publicDB) { (response) in
@@ -105,6 +142,13 @@ final class PostInteractor {
     }
 
     // MARK: Private functions
+
+    /**
+     Fetches a complete CKRecord with its references. Async function.
+     - Parameters:
+        - rankID: A rank's ID as a string.
+        - completionHandler: Returns a complete RankModel as the result of the async function.
+     */
     private func fetch(with postID: String, completionHandler: @escaping ((PostModel?) -> Void)) {
         let recordID = CKRecord.ID(recordName: postID)
         cloudkit.fetch(recordID: recordID, on: .publicDB) { [weak self] (response) in

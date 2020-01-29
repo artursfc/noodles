@@ -11,37 +11,43 @@ import UIKit
 
 class ChannelCreationViewController: UIViewController {
     
-    @IBOutlet weak var rankSelectionTableView: UITableView!
+    @IBOutlet weak var rankCanEditTableView: UITableView!
+    @IBOutlet weak var rankCanViewTableView: UITableView!
     var RANKSELECTIONTABLEVIEWCELL = "RankSelectionTableViewCell"
-    let dataSource = RankSelectionTableViewDataSource()
-    let delegate = RankSelectionTableViewDelegate()
+    let dataSourceCanEdit = RankSelectionTableViewDataSource()
+    let delegateCanEdit = RankSelectionTableViewDelegate()
+    let dataSourceCanView = RankSelectionTableViewDataSource()
+    let delegateCanView = RankSelectionTableViewDelegate()
     var selectedRanks: [RankModel] = [RankModel]()
+    
+//    init(viewModel: ChannelCreationViewModel, viewController: ViewController) {
+//        <#statements#>
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupRankSelectionTableView()
+        setupRankCanEditTableView()
+        setupRankCanViewTableView()
         view.backgroundColor = UIColor.fakeWhite
     }
 
-    func setupRankSelectionTableView() {
-        rankSelectionTableView.dataSource = dataSource
-        rankSelectionTableView.delegate = delegate
-        rankSelectionTableView.register(UINib(nibName: RANKSELECTIONTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: RANKSELECTIONTABLEVIEWCELL)
-        rankSelectionTableView.separatorColor = UIColor.clear
-    }
-}
-
-extension ChannelCreationViewController: ChannelCreationDelegate {
-    func selectRank(indexPath: IndexPath) -> [RankModel] {
-        selectedRanks.append(selectedRanks[indexPath.row])
-        return selectedRanks
+    /**
+    Setup Rank Selection table view used for select ranks that can edit the channel
+     */
+    func setupRankCanEditTableView() {
+        rankCanEditTableView.dataSource = dataSourceCanEdit
+        rankCanEditTableView.delegate = delegateCanEdit
+        rankCanEditTableView.register(UINib(nibName: RANKSELECTIONTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: RANKSELECTIONTABLEVIEWCELL)
+        rankCanEditTableView.separatorColor = UIColor.clear
     }
     
-    func unselectRank(indexPath: IndexPath) {
-         selectedRanks.removeAll { (rank) -> Bool in
-            let rankUnselected = selectedRanks[indexPath.row].id
-            return rank.id == rankUnselected
-               }
-        delegate.selectedRanks = selectedRanks
+    /**
+    Setup Rank Selection table view used for select ranks that can view the channel
+     */
+    func setupRankCanViewTableView() {
+        rankCanEditTableView.dataSource = dataSourceCanView
+        rankCanEditTableView.delegate = delegateCanView
+        rankCanEditTableView.register(UINib(nibName: RANKSELECTIONTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: RANKSELECTIONTABLEVIEWCELL)
+        rankCanEditTableView.separatorColor = UIColor.clear
     }
 }

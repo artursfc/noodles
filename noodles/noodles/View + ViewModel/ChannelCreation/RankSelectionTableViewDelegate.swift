@@ -9,24 +9,19 @@
 import Foundation
 import UIKit
 
-protocol ChannelCreationDelegate {
-    func selectRank(indexPath: IndexPath) -> [RankModel]
-    func unselectRank(indexPath: IndexPath)
-}
-
 class RankSelectionTableViewDelegate: NSObject, UITableViewDelegate {
-    
-    var delegate: ChannelCreationDelegate?
-    var selectedRanks: [RankModel]?
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? RankSelectionTableViewCell else { return }
+        /**
+         Verfication for change chackbox image
+         */
         if cell.isSelected {
-            selectedRanks = delegate?.selectRank(indexPath: indexPath) ?? []
+//            selectedRanks = delegate?.selectRank(indexPath: indexPath) ?? []
             cell.isSelected = false
             cell.checkImg.image = UIImage(named: "uncheckedButton")
         } else {
-            delegate?.unselectRank(indexPath: indexPath)
+//            delegate?.unselectRank(indexPath: indexPath)
             cell.isSelected = true
             cell.checkImg.image = UIImage(named: "checkedButton")
         }

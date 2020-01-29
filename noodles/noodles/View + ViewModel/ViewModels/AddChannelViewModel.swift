@@ -89,7 +89,7 @@ final class AddChannelViewModel {
             delegate?.reject(field: .channel)
         }
     }
-
+    
     public func ranksNumberOfRows() -> Int {
         return ranks.count
     }

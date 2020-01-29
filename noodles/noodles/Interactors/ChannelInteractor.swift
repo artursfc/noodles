@@ -55,6 +55,7 @@ final class ChannelInteractor {
     public func fetchAll(from provider: DataProvider, completionHandler: @escaping (([ChannelModel]?) -> Void)) {
         switch provider {
         case .cloudkit:
+            let defaults = UserDefaults.standard
             let query = cloudkit.generateQuery(of: .channels, with: NSPredicate(value: true),
                                                sortedBy: NSSortDescriptor(key: "creationDate", ascending: false))
             cloudkit.query(using: query, on: .publicDB) { [weak self] (response) in

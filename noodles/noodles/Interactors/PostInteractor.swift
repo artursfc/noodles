@@ -48,6 +48,33 @@ final class PostInteractor {
         }
     }
 
+    public func fetch(with postIDs: [String], from provider: DataProvider, completionHandler: @escaping (([PostModel]?) -> Void)) {
+        switch provider {
+        case .cloudkit:
+            var postRefs: [CKRecord.ID]?
+            for postID in postIDs {
+                let ref = CKRecord.ID(recordName: postID)
+                postRefs?.append(ref)
+            }
+            if let postRefs = postRefs {
+                cloudkit.fetchReferences(of: postRefs, on: .publicDB) { [weak self] (response) in
+                    if response.error != nil {
+                        completionHandler(nil)
+                    } else {
+                        if let records = response.records {
+                            let postModels = self?.parser.parse(records: records, into: .posts)
+                            if let posts = postModels as? [PostModel] {
+                                completionHandler(posts)
+                            }
+                        }
+                    }
+                }
+            }
+        case .coredata:
+            completionHandler(nil)
+        }
+    }
+
     /**
      Fetches all ranks from a Data Provider, either CloudKit or Core Data. Async function.
      - Parameters:
@@ -143,8 +170,40 @@ final class PostInteractor {
 
     public func update(bookmarks: [String], completionHandler: @escaping ((Bool) -> Void)) {
         let defaults = UserDefaults.standard
-        
+        var oldProfile: Profile?
+        coredata.fetchAll(objects: .profile) { (response) in
+            if response.error != nil {
+                completionHandler(false)
+            } else {
+                if let profile = response.objects?.first as? Profile {
+                    oldProfile = profile
+                }
+            }
+        }
+        var profile = ProfileModel(id: defaults.object(forKey: "userID") as? String ?? "", name: oldProfile?.name ?? "", bookmarks: [String]())
+        for bookmark in bookmarks {
+            profile.bookmarks.append(bookmark)
+        }
+        if let oldProfile = oldProfile {
+            coredata.update(object: oldProfile, with: profile, of: .profile) { (response) in
+                if response.error == nil && response.objects == nil {
+                    completionHandler(true)
+                }
+            }
+        }
+        completionHandler(false)
+    }
 
+    public func bookmarks(completionHandler: @escaping (([String]?) -> Void)) {
+        coredata.fetchAll(objects: .profile) { (response) in
+            if response.error != nil {
+                completionHandler(nil)
+            } else {
+                if let profile = response.objects?.first as? Profile {
+                    completionHandler(profile.bookmarks)
+                }
+            }
+        }
     }
 
     // MARK: Private functions

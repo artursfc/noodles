@@ -16,34 +16,36 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spy-1K-x9b">
-                        <rect key="frame" x="20" y="0.0" width="331" height="44"/>
+                        <rect key="frame" x="20" y="0.0" width="321" height="44"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVU-ck-yAV">
-                        <rect key="frame" x="361" y="7" width="33" height="30"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unchekedButton" translatesAutoresizingMaskIntoConstraints="NO" id="4nH-jb-oJn">
+                        <rect key="frame" x="361" y="5.5" width="33" height="33"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="8fU-Ef-AF7"/>
-                            <constraint firstAttribute="width" constant="33" id="nUX-ZZ-xjn"/>
+                            <constraint firstAttribute="width" constant="33" id="Ene-s6-zG1"/>
+                            <constraint firstAttribute="height" constant="33" id="st7-Lc-K76"/>
                         </constraints>
-                        <state key="normal" title="Button"/>
-                    </button>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="4nH-jb-oJn" firstAttribute="centerY" secondItem="NaZ-cI-Kgc" secondAttribute="centerY" id="2h6-nf-Ws5"/>
                     <constraint firstItem="Spy-1K-x9b" firstAttribute="leading" secondItem="NaZ-cI-Kgc" secondAttribute="leading" constant="20" id="2x3-Gd-I9P"/>
-                    <constraint firstAttribute="trailing" secondItem="zVU-ck-yAV" secondAttribute="trailing" constant="20" id="Bo5-X0-RmV"/>
-                    <constraint firstAttribute="bottom" secondItem="zVU-ck-yAV" secondAttribute="bottom" constant="7" id="RTD-Jk-Kmd"/>
+                    <constraint firstAttribute="trailing" secondItem="4nH-jb-oJn" secondAttribute="trailing" constant="20" id="6f6-Dn-pdJ"/>
+                    <constraint firstItem="4nH-jb-oJn" firstAttribute="leading" secondItem="Spy-1K-x9b" secondAttribute="trailing" constant="20" id="Apb-3S-e0i"/>
                     <constraint firstItem="Spy-1K-x9b" firstAttribute="top" secondItem="NaZ-cI-Kgc" secondAttribute="top" id="Rvg-Fy-Ilo"/>
-                    <constraint firstItem="zVU-ck-yAV" firstAttribute="leading" secondItem="Spy-1K-x9b" secondAttribute="trailing" constant="10" id="Tcx-oW-Lk3"/>
                     <constraint firstAttribute="bottom" secondItem="Spy-1K-x9b" secondAttribute="bottom" id="ZMS-uH-M8d"/>
-                    <constraint firstItem="zVU-ck-yAV" firstAttribute="top" secondItem="NaZ-cI-Kgc" secondAttribute="top" constant="7" id="dm6-iz-W60"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="checkImg" destination="4nH-jb-oJn" id="Mai-uA-UhH"/>
                 <outlet property="rankTitle" destination="Spy-1K-x9b" id="ljy-cS-e3Z"/>
             </connections>
             <point key="canvasLocation" x="195.6521739130435" y="85.714285714285708"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="unchekedButton" width="33" height="33"/>
+    </resources>
 </document>

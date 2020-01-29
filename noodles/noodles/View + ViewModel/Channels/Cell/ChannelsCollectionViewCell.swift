@@ -16,6 +16,8 @@ class ChannelsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var newPostCount: UILabel!
     
+    @IBOutlet weak var channelTitle: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

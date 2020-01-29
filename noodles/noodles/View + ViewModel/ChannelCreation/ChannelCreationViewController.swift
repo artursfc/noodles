@@ -11,19 +11,43 @@ import UIKit
 
 class ChannelCreationViewController: UIViewController {
     
-    @IBOutlet weak var rankSelectionTableView: UITableView!
-    var POSTTABLEVIEWCELL = "PostTableViewCell"
-    let dataSource = PostsTableViewDataSource()
+    @IBOutlet weak var rankCanEditTableView: UITableView!
+    @IBOutlet weak var rankCanViewTableView: UITableView!
+    var RANKSELECTIONTABLEVIEWCELL = "RankSelectionTableViewCell"
+    let dataSourceCanEdit = RankSelectionTableViewDataSource()
+    let delegateCanEdit = RankSelectionTableViewDelegate()
+    let dataSourceCanView = RankSelectionTableViewDataSource()
+    let delegateCanView = RankSelectionTableViewDelegate()
+    var selectedRanks: [RankModel] = [RankModel]()
+    
+//    init(viewModel: ChannelCreationViewModel, viewController: ViewController) {
+//        <#statements#>
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupPostTableView()
+        setupRankCanEditTableView()
+        setupRankCanViewTableView()
         view.backgroundColor = UIColor.fakeWhite
     }
 
-    func setupPostTableView() {
-        postsTableView.dataSource = dataSource
-        postsTableView.register(UINib(nibName: POSTTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: POSTTABLEVIEWCELL)
-        postsTableView.separatorColor = UIColor.clear
+    /**
+    Setup Rank Selection table view used for select ranks that can edit the channel
+     */
+    func setupRankCanEditTableView() {
+        rankCanEditTableView.dataSource = dataSourceCanEdit
+        rankCanEditTableView.delegate = delegateCanEdit
+        rankCanEditTableView.register(UINib(nibName: RANKSELECTIONTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: RANKSELECTIONTABLEVIEWCELL)
+        rankCanEditTableView.separatorColor = UIColor.clear
+    }
+    
+    /**
+    Setup Rank Selection table view used for select ranks that can view the channel
+     */
+    func setupRankCanViewTableView() {
+        rankCanEditTableView.dataSource = dataSourceCanView
+        rankCanEditTableView.delegate = delegateCanView
+        rankCanEditTableView.register(UINib(nibName: RANKSELECTIONTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: RANKSELECTIONTABLEVIEWCELL)
+        rankCanEditTableView.separatorColor = UIColor.clear
     }
 }

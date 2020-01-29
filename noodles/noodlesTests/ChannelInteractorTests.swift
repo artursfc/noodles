@@ -34,27 +34,4 @@ class ChannelInteractorTests: XCTestCase {
         XCTAssertTrue(assertion)
     }
 
-    func testCoreFetch() {
-        let coredata = CoreDataManager()
-        let user = User(context: coredata.container.viewContext)
-        let exp = expectation(description: "CoreData Fetch")
-        user.id = "pokadpokae"
-        user.name = "memes"
-
-        coredata.save(object: user, of: .users) { (response) in
-            print(response)
-        }
-
-        coredata.fetchAll(objects: .users) { (response) in
-            if let user = response.objects?.last as? User {
-                print(user.id)
-                print(user.name)
-            }
-            exp.fulfill()
-        }
-
-        waitForExpectations(timeout: 5) { (_) in
-        }
-    }
-
 }

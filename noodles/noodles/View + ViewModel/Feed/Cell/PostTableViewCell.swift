@@ -15,19 +15,33 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var flag: UIImageView!
     @IBOutlet weak var date: UILabel!
 
-    @IBOutlet weak var tagsCollectionView: UICollectionView!
-    var dataSource = TagsCollectionViewDataSource()
-
+    var tags: [String] = []
     let TAGSCOLLECTIONVIEWCELL = "TagsCollectionViewCell"
+    @IBOutlet weak var tagsCollectionView: UICollectionView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        tagsCollectionView.dataSource = dataSource
+        tagsCollectionView.dataSource = self
         tagsCollectionView.register(UINib(nibName: TAGSCOLLECTIONVIEWCELL, bundle: nil), forCellWithReuseIdentifier: TAGSCOLLECTIONVIEWCELL)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+    }
+}
+
+extension PostTableViewCell: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tags.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TAGSCOLLECTIONVIEWCELL, for: indexPath) as? TagsCollectionViewCell ?? TagsCollectionViewCell()
+
+        cell.tagTitle.text = tags[indexPath.row]
+
+        return cell
     }
 }

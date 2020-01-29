@@ -22,6 +22,11 @@
         <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="posts" inverseEntity="User"/>
         <relationship name="channels" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Channel" inverseName="posts" inverseEntity="Channel"/>
     </entity>
+    <entity name="Profile" representedClassName="Profile" syncable="YES" codeGenerationType="class">
+        <attribute name="bookmarks" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Rank" representedClassName="Rank" syncable="YES" codeGenerationType="class">
         <attribute name="canCreateChannel" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -45,5 +50,6 @@
         <element name="Post" positionX="444.2578125" positionY="-275.9296875" width="128" height="193"/>
         <element name="Rank" positionX="-266.94921875" positionY="-46.25390625" width="128" height="163"/>
         <element name="User" positionX="-31.94921875" positionY="113.453125" width="128" height="133"/>
+        <element name="Profile" positionX="-63" positionY="-144" width="128" height="88"/>
     </elements>
 </model>

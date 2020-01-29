@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="noodles" customModuleProvider="target">
             <connections>
+                <outlet property="addChannel" destination="EM1-2v-mq6" id="Igj-fn-Wzr"/>
                 <outlet property="channelsCollectionView" destination="UvA-B9-uVv" id="Ohe-tf-M3o"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,8 +19,43 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nag-Pb-ZVK">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="channelTabBarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rZ4-Qg-3IW">
+                            <rect key="frame" x="20" y="65" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="BJc-PP-jDp"/>
+                                <constraint firstAttribute="width" constant="35" id="xxW-kh-1Rf"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CANAIS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYA-M5-GnE">
+                            <rect key="frame" x="65" y="65" width="200" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="7Ut-BM-WTR"/>
+                                <constraint firstAttribute="height" constant="35" id="8aN-N2-4e2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EM1-2v-mq6">
+                            <rect key="frame" x="370" y="72" width="26" height="26"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="plusIcon"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="9VD-1B-nxu"/>
+                        <constraint firstAttribute="bottom" secondItem="rZ4-Qg-3IW" secondAttribute="bottom" constant="20" id="Jef-Fy-bZn"/>
+                        <constraint firstAttribute="bottom" secondItem="mYA-M5-GnE" secondAttribute="bottom" constant="20" id="j9W-Xe-kFo"/>
+                        <constraint firstItem="mYA-M5-GnE" firstAttribute="leading" secondItem="rZ4-Qg-3IW" secondAttribute="trailing" constant="10" id="oS2-DU-ut1"/>
+                        <constraint firstItem="rZ4-Qg-3IW" firstAttribute="leading" secondItem="nag-Pb-ZVK" secondAttribute="leading" constant="20" id="pB0-Ls-SaT"/>
+                    </constraints>
+                </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UvA-B9-uVv">
-                    <rect key="frame" x="20" y="184" width="384" height="713"/>
+                    <rect key="frame" x="20" y="120" width="384" height="713"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="713" id="noZ-li-cml"/>
@@ -35,12 +71,31 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="nag-Pb-ZVK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="K8L-uc-rT4"/>
                 <constraint firstItem="UvA-B9-uVv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="PAc-5T-Kir"/>
-                <constraint firstItem="UvA-B9-uVv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="140" id="Soi-Le-99b"/>
+                <constraint firstItem="nag-Pb-ZVK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aCF-K6-cb2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nag-Pb-ZVK" secondAttribute="trailing" id="cx3-ms-P2D"/>
+                <constraint firstItem="UvA-B9-uVv" firstAttribute="top" secondItem="nag-Pb-ZVK" secondAttribute="bottom" id="cx7-sK-LkZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UvA-B9-uVv" secondAttribute="trailing" constant="10" id="evc-Ac-dD4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
         </view>
+        <navigationController id="Eu7-0a-wqa">
+            <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JkC-Ay-uZm">
+                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </navigationBar>
+            <viewControllers>
+                <tableViewController id="1zS-wB-1Mg">
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Xxg-wX-k9d"/>
+                </tableViewController>
+            </viewControllers>
+            <point key="canvasLocation" x="-604" y="125"/>
+        </navigationController>
     </objects>
+    <resources>
+        <image name="channelTabBarIcon" width="28" height="24"/>
+        <image name="plusIcon" width="26" height="26"/>
+    </resources>
 </document>

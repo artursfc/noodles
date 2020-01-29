@@ -61,7 +61,7 @@ class CreatePostViewController: UIViewController {
     
     func feed() {
         
-        if let tags = tagsTextField.text {
+        if let tags = tagsTextField.text?.prefix(3) {
             viewModel.tags = tags.components(separatedBy: ", ")
         }
         

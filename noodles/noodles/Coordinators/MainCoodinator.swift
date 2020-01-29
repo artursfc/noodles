@@ -47,6 +47,7 @@ class MainCoordinator: Coordinator {
 print("Artur")
         // TO DO passar viewModel para data source dessa controller
 
+
         navController.pushViewController(vc, animated: true)
     }
 }

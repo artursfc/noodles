@@ -129,6 +129,29 @@ class CloudKitTests: XCTestCase {
         XCTAssertTrue(assertion)
     }
 
+    func testFetchAll() {
+        let exp = expectation(description: "CloudKit NSPredicate")
+        let manager = CloudKitManager()
+        let coredata = CoreDataManager()
+        let channelInteractor = ChannelInteractor(cloudkit: manager, coredata: coredata)
+
+        channelInteractor.fetchAll(from: .cloudkit) { (channels) in
+            print(channels)
+            exp.fulfill()
+        }
+
+        waitForExpectations(timeout: 5) { (_) in
+        }
+    }
+
+    func testUserDefaults() {
+        let manager = CloudKitManager()
+
+        manager.userID()
+        manager.rankID()
+
+    }
+
     func testOperation() {
         let exp = expectation(description: "CloudKit Async Operation")
         let manager = CloudKitManager()

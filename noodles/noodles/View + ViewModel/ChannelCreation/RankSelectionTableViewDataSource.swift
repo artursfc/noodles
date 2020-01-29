@@ -37,15 +37,22 @@ class RankSelectionTableViewDataSource: NSObject, UITableViewDataSource {
 }
 
 extension RankSelectionTableViewDataSource: AddChannelViewModelDelegate {
+    /**
+     Function calls if the response of AddChannelViewModelDelegate protocol was rejected
+     */
     func reject(field: AddChannelField) {
         // criar situação de rejeitado
     }
-    
+    /**
+     Function calls if the response of AddChannelViewModelDelegate protocol was accepted
+     */
     func accept(field: AddChannelField) {
         // criar situação de aceito
     }
-    
+    /**
+     Function that save data and send to Corrdinator class
+     */
     func saved() {
-        //mandar dados para Coordinators
+        //mandar dados para Coordinator
     }
 }

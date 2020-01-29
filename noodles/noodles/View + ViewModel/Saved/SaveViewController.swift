@@ -31,7 +31,9 @@ class SaveViewController: UIViewController {
         view.backgroundColor = UIColor.fakeWhite
         setupPostTableView()
     }
-
+    /**
+     Setup Post table view used for show saved posts
+     */
     func setupPostTableView() {
         postsTableView.dataSource = self
         postsTableView.register(UINib(nibName: POSTTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: POSTTABLEVIEWCELL)

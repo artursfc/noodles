@@ -31,6 +31,9 @@ class ChannelCreationViewController: UIViewController {
         view.backgroundColor = UIColor.fakeWhite
     }
 
+    /**
+    Setup Rank Selection table view used for select ranks that can edit the channel
+     */
     func setupRankCanEditTableView() {
         rankCanEditTableView.dataSource = dataSourceCanEdit
         rankCanEditTableView.delegate = delegateCanEdit
@@ -38,6 +41,9 @@ class ChannelCreationViewController: UIViewController {
         rankCanEditTableView.separatorColor = UIColor.clear
     }
     
+    /**
+    Setup Rank Selection table view used for select ranks that can view the channel
+     */
     func setupRankCanViewTableView() {
         rankCanEditTableView.dataSource = dataSourceCanView
         rankCanEditTableView.delegate = delegateCanView

@@ -32,7 +32,9 @@ class ChannelsViewController: UIViewController {
         view.backgroundColor = UIColor.fakeWhite
         setupChannelsCollectionView()
     }
-
+    /**
+     Function that setup Channels collection view
+     */
     func setupChannelsCollectionView() {
         channelsCollectionView.backgroundColor = UIColor.fakeWhite
         channelsCollectionView.register(UINib(nibName: CHANNELCOLLECTIONVIEWCELL, bundle: nil), forCellWithReuseIdentifier: CHANNELCOLLECTIONVIEWCELL)

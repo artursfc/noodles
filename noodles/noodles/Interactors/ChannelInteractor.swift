@@ -9,6 +9,9 @@
 import Foundation
 import CloudKit
 
+/**
+ Interactor used by Channel-related ViewModels to connect with Core Data and CloudKit through a common struct(ChannelModel).
+ */
 final class ChannelInteractor {
     private let cloudkit: CloudKitManager
     private let coredata: CoreDataManager
@@ -21,6 +24,13 @@ final class ChannelInteractor {
     }
 
     // MARK: Public functions
+    /**
+     Fetches a channel from a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - channelID: A channel's ID as a string.
+        - provider: Enum used to determine from which Data Provider to fetch data.
+        - completionHandler: Returns a ChannelModel as the result of the async function.
+     */
     public func fetch(with channelID: String, from provider: DataProvider, completionHandler: @escaping ((ChannelModel?) -> Void)) {
         switch provider {
         case .cloudkit:
@@ -36,6 +46,12 @@ final class ChannelInteractor {
         }
     }
 
+    /**
+     Fetches all channels from a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - provider: Enum used to determine from which Data Provider to fetch data.
+        - completionHandler: Returns an array of ChannelModel as the result of the async function.
+     */
     public func fetchAll(from provider: DataProvider, completionHandler: @escaping (([ChannelModel]?) -> Void)) {
         switch provider {
         case .cloudkit:
@@ -59,6 +75,12 @@ final class ChannelInteractor {
         }
     }
 
+    /**
+     Saves a channel on a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - channel: A ChannelModel that will be saved as CKRecord.
+        - completionHandler: Returns a Bool as the result of the async function.
+     */
     public func save(channel: ChannelModel, completionHandler: @escaping ((Bool) -> Void)) {
         let models = [channel]
         let records = parser.parse(models: models, of: .channels)
@@ -76,6 +98,13 @@ final class ChannelInteractor {
         }
     }
 
+    /**
+     Updates a channel on a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - channel: A ChannelModel that will be updated.
+        - newChannel: A ChannelModel that will be used to update the channel.
+        - completionHandler: Returns a Bool as the result of the async function.
+     */
     public func update(channel: ChannelModel, with newChannel: ChannelModel, completionHandler: @escaping ((Bool) -> Void)) {
         let recordID = CKRecord.ID(recordName: channel.id)
         let models = [newChannel]
@@ -94,6 +123,12 @@ final class ChannelInteractor {
         }
     }
 
+    /**
+     Deletes a channel on a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - channel: A ChannelModel that will be deleted.
+        - completionHandler: Returns a Bool as the result of the async function.
+     */
     public func delete(channel: ChannelModel, completionHandler: @escaping ((Bool) -> Void)) {
         let recordID = CKRecord.ID(recordName: channel.id)
         cloudkit.delete(recordID: recordID, on: .publicDB) { (response) in
@@ -105,6 +140,12 @@ final class ChannelInteractor {
         }
     }
 
+    /**
+     Checks the availability of a given name. Async function.
+     - Parameters:
+        - name: A name that will be checked for availability against CloudKit's public database.
+        - completionHandler: Returns a Bool as the result of the async function.
+     */
     public func isTaken(name: String, completionHandler: @escaping ((Bool) -> Void)) {
         let query = cloudkit.generateQuery(of: .channels, with: NSPredicate(format: "name ==[c] %@", name),
                                            sortedBy: NSSortDescriptor(key: "creationDate", ascending: false))
@@ -119,6 +160,12 @@ final class ChannelInteractor {
 
     // MARK: Private functions
 
+    /**
+     Fetches a complete CKRecord with its references. Async function.
+     - Parameters:
+        - channelID: A channel's ID as a string.
+        - completionHandler: Returns a complete ChannelModel as the result of the async function.
+     */
     private func fetch(with channelID: String, completionHandler: @escaping ((ChannelModel?) -> Void)) {
         let recordID = CKRecord.ID(recordName: channelID)
         cloudkit.fetch(recordID: recordID, on: .publicDB) { [weak self] (response) in

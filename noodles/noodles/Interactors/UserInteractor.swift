@@ -9,6 +9,10 @@
 import Foundation
 import CloudKit
 
+/**
+ Interactor used by User-related ViewModels to connect with Core Data
+ and CloudKit through a common struct(UserModel).
+ */
 final class UserInteractor {
     private let cloudkit: CloudKitManager
     private let coredata: CoreDataManager
@@ -21,6 +25,13 @@ final class UserInteractor {
     }
 
     // MARK: Public functions
+    /**
+     Fetches a user from a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - userID: A user's ID as a string.
+        - provider: Enum used to determine from which Data Provider to fetch data.
+        - completionHandler: Returns a UserModel as the result of the async function.
+     */
     public func fetch(with userID: String, from provider: DataProvider, completionHandler: @escaping ((UserModel?) -> Void)) {
         switch provider {
         case .cloudkit:
@@ -35,7 +46,13 @@ final class UserInteractor {
             completionHandler(nil)
         }
     }
-    
+
+    /**
+     Fetches all users from a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - provider: Enum used to determine from which Data Provider to fetch data.
+        - completionHandler: Returns an array UserModel as the result of the async function.
+     */
     public func fetchAll(from provider: DataProvider, completionHandler: @escaping (([UserModel]?) -> Void)) {
         switch provider {
         case .cloudkit:
@@ -58,6 +75,12 @@ final class UserInteractor {
         }
     }
 
+    /**
+     Saves a user on a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - user: A UserModel that will be saved to CKRecord.
+        - completionHandler: Returns a Bool as the result of the async function.
+     */
     public func save(user: UserModel, completionHandler: @escaping ((Bool) -> Void)) {
         let models = [user]
         let records = parser.parse(models: models, of: .users)
@@ -75,6 +98,13 @@ final class UserInteractor {
         }
     }
 
+    /**
+     Updates a user on a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - user: A UserModel that will be updated.
+        - newUser: A UserModel that will be used to update the user.
+        - completionHandler: Returns a Bool as the result of the async function.
+     */
     public func update(user: UserModel, with newUser: UserModel, completionHandler: @escaping ((Bool) -> Void)) {
         let recordID = CKRecord.ID(recordName: user.id)
         let models = [newUser]
@@ -93,6 +123,12 @@ final class UserInteractor {
         }
     }
 
+    /**
+     Deletes a user on a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - user: A UserModel that will be deleted.
+        - completionHandler: Returns a Bool as the result of the async function.
+     */
     public func delete(user: UserModel, completionHandler: @escaping ((Bool) -> Void)) {
         let recordID = CKRecord.ID(recordName: user.id)
         cloudkit.delete(recordID: recordID, on: .publicDB) { (response) in
@@ -105,6 +141,13 @@ final class UserInteractor {
     }
 
     // MARK: Private functions
+
+    /**
+     Fetches a complete CKRecord with its references. Async function.
+     - Parameters:
+        - userID: A user's as a string.
+        - completionHandler: Returns a complete UserModel as the result of the async function.
+     */
     private func fetch(with userID: String, completionHandler: @escaping ((UserModel?) -> Void)) {
         let recordID = CKRecord.ID(recordName: userID)
         cloudkit.fetch(recordID: recordID, on: .publicDB) { [weak self] (response) in

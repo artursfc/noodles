@@ -12,7 +12,7 @@ protocol BookmarksViewModelDelegate: class {
     func reloadUI()
 }
 
-final class BookmarksViewModel {
+final class BookmarksViewModel: ViewModel {
     private let interactor: PostInteractor
     private let coordinator: Coordinator
     private var models = [PostModel]() {
@@ -29,17 +29,19 @@ final class BookmarksViewModel {
         fetch()
     }
 
-    public func fetch() {
-        interactor.fetchAll(from: .cloudkit) { [weak self] (posts) in
-            if let posts = posts {
-                DispatchQueue.main.async {
-                    self?.models = posts
-                }
-            }
-        }
-    }
+    private let defaults = UserDefaults.standard
 
     // MARK: Public functions
+
+    public func fetch() {
+           interactor.fetchAll(from: .cloudkit) { [weak self] (posts) in
+               if let posts = posts {
+                   DispatchQueue.main.async {
+                       self?.models = posts
+                   }
+               }
+           }
+       }
 
     /*
      Public functions to access data from models in a ready-to-use format.

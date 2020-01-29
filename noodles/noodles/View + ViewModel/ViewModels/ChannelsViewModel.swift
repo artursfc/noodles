@@ -12,14 +12,16 @@ protocol ChannelsViewModelDelegate: class {
     func reloadUI()
 }
 
-final class ChannelsViewModel {
+final class ChannelsViewModel: ViewModel {
     private let interactor: ChannelInteractor
+    private let coordinator: Coordinator
     private var models = [ChannelModel]()
 
     weak var delegate: ChannelsViewModelDelegate?
 
-    init(interactor: ChannelInteractor) {
+    init(interactor: ChannelInteractor, coordinator: Coordinator) {
         self.interactor = interactor
+        self.coordinator = coordinator
         fetch()
     }
 

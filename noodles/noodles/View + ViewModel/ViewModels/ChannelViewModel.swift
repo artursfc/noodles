@@ -12,8 +12,9 @@ protocol ChannelViewModelDelegate: class {
     func reloadUI()
 }
 
-final class ChannelViewModel {
+final class ChannelViewModel: ViewModel {
     private let interactor: ChannelInteractor
+    private let coordinator: Coordinator
     private var model: ChannelModel {
         didSet {
             delegate?.reloadUI()
@@ -22,8 +23,9 @@ final class ChannelViewModel {
 
     weak var delegate: ChannelsViewModelDelegate?
 
-    init(interactor: ChannelInteractor, model: ChannelModel) {
+    init(interactor: ChannelInteractor, model: ChannelModel, coordinator: Coordinator) {
         self.interactor = interactor
+        self.coordinator = coordinator
         self.model = model
     }
 

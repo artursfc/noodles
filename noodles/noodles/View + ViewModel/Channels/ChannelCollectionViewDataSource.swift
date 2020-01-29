@@ -39,6 +39,9 @@ class ChannelCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 }
 
 extension ChannelCollectionViewDataSource: ChannelsViewModelDelegate {
+    /**
+     Function called when ChannelsViewModelDelegate protocol needs to reload the table view
+     */
     func reloadUI() {
      tableView.reloadData()
     }

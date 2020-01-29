@@ -34,7 +34,9 @@ class FeedViewController: UIViewController {
         setupPostTableView()
         view.backgroundColor = UIColor.fakeWhite
     }
-
+    /**
+     Setup Post table view used in feed
+     */
     func setupPostTableView() {
         postsTableView.dataSource = dataSource
         postsTableView.register(UINib(nibName: POSTTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: POSTTABLEVIEWCELL)

@@ -20,7 +20,9 @@ class SaveViewController: UIViewController {
 
         setupPostTableView()
     }
-
+    /**
+     Setup Post table view used for show saved posts
+     */
     func setupPostTableView() {
         postsTableView.dataSource = dataSource
         postsTableView.register(UINib(nibName: POSTTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: POSTTABLEVIEWCELL)

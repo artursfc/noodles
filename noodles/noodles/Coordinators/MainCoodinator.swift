@@ -34,17 +34,17 @@ class MainCoordinator: Coordinator {
 
     func presentChannelPosts(channelModel: ChannelModel) {
         let interactor = ChannelInteractor(cloudkit: cloudKit, coredata: coreData)
-        let viewModel = ChannelViewModel(interactor: interactor, coordinator: self, model: channelModel)
+        let viewModel = ChannelViewModel(interactor: interactor, model: channelModel)
          let vc = ChannelViewController(viewModel: viewModel)
 
         navController.pushViewController(vc, animated: true)
     }
 
-    func presentPost(postModel: PostModel) {
-        let vc = PresentPostViewController()
+    func presentPost(postModel: PostViewModel) {
+        let vc = PresentPostViewController(viewModel: postModel)
         let interactor = PostInteractor(cloudkit: cloudKit, coredata: coreData)
         let viewModel = PostViewModel(interactor: interactor, coordinator: self, model: postModel)
-
+print("Artur")
         // TO DO passar viewModel para data source dessa controller
 
         navController.pushViewController(vc, animated: true)

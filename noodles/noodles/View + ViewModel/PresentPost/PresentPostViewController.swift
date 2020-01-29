@@ -17,11 +17,9 @@ class PresentPostViewController: UIViewController {
     let TAGSCOLLECTIONVIEWCELL = "TagsCollectionViewCell"
 
     let viewModel: PostViewModel
-    let coordinator: Coordinator
 
-    init(viewModel: PostViewModel, coordinator: Coordinator) {
+    init(viewModel: PostViewModel) {
         self.viewModel = viewModel
-        self.coordinator = coordinator
         super.init(nibName: "PresentPostViewController", bundle: nil)
     }
 

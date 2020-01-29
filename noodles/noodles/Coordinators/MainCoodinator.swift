@@ -44,7 +44,7 @@ class MainCoordinator: Coordinator {
         let vc = PresentPostViewController(viewModel: postModel)
         let interactor = PostInteractor(cloudkit: cloudKit, coredata: coreData)
         let viewModel = PostViewModel(interactor: interactor, coordinator: self, model: postModel)
-
+print("Artur")
         // TO DO passar viewModel para data source dessa controller
 
         navController.pushViewController(vc, animated: true)

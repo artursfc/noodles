@@ -21,10 +21,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let navController = UINavigationController()
-        let mainCoordinator = MainCoordinator(navController: navController)
+        let cloudKit = CloudKitManager()
+        let coreData = CoreDataManager()
+        let mainCoordinator = MainCoordinator(navController: navController, cloudKit: cloudKit, coreData: coreData)
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let mainView = CustomTabBarController()
+        let mainView = CustomTabBarController(coordinator: mainCoordinator, cloudKit: cloudKit, coreData: coreData)
         navController.viewControllers = [mainView]
         self.window?.rootViewController = navController
         self.window?.makeKeyAndVisible()

@@ -15,15 +15,15 @@ class MainCoordinator: Coordinator {
     let cloudKit: CloudKitManager
     let coreData: CoreDataManager
 
-    init(navController: UINavigationController) {
+    init(navController: UINavigationController, cloudKit: CloudKitManager, coreData: CoreDataManager) {
         self.navController = navController
-        cloudKit = CloudKitManager()
-        coreData = CoreDataManager()
+        self.cloudKit = cloudKit
+        self.coreData = coreData
     }
 
     func start() {
         let interactor = PostInteractor(cloudkit: cloudKit, coredata: coreData)
-        let viewModel = FeedViewModel(interactor: interactor)
+        let viewModel = FeedViewModel(interactor: interactor, coordinator: self)
         let vc = FeedViewController(viewModel: viewModel)
         navController.pushViewController(vc, animated: false)
     }
@@ -34,16 +34,16 @@ class MainCoordinator: Coordinator {
 
     func presentChannelPosts(channelModel: ChannelModel) {
         let interactor = ChannelInteractor(cloudkit: cloudKit, coredata: coreData)
-        let viewModel = ChannelViewModel(interactor: interactor, model: channelModel)
+        let viewModel = ChannelViewModel(interactor: interactor, model: channelModel, coordinator: self)
          let vc = ChannelViewController(viewModel: viewModel)
 
         navController.pushViewController(vc, animated: true)
     }
 
-    func presentPost(postModel: PostViewModel) {
-        let vc = PresentPostViewController(viewModel: postModel)
+    func presentPost(postModel: PostModel) {
         let interactor = PostInteractor(cloudkit: cloudKit, coredata: coreData)
         let viewModel = PostViewModel(interactor: interactor, coordinator: self, model: postModel)
+        let vc = PresentPostViewController(viewModel: viewModel)
 print("Artur")
         // TO DO passar viewModel para data source dessa controller
 

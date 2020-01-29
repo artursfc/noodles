@@ -9,10 +9,20 @@
 import Foundation
 import CloudKit
 
+/**
+ Gives access to CloudKit's public and private database.
+ */
 final class CloudKitManager {
 
     init() {}
 
+    /**
+     Queries CloudKit's public or private database. Async function.
+     - Parameters:
+         - query: A query of type CKQuery. Make use of the generateQuery function.
+         - database: Enum used to choose between public or private database.
+         - completionHandler: Returns a CloudKitReponse as the result of the async function.
+     */
     public func query(using query: CKQuery, on database: Database, completionHandler: @escaping (CloudKitResponse) -> Void) {
         let container = CKContainer.default()
         var db: CKDatabase?
@@ -32,6 +42,13 @@ final class CloudKitManager {
         }
     }
 
+    /**
+     Saves a record on Cloudkit's public or private database. Async function.
+     - Parameters:
+        - record: CKRecord to be saved.
+        - database: Enum used to choose between public or private database.
+        - completionHandler: Returns a CloudKitReponse as the result of the async function.
+     */
     public func save(record: CKRecord, on database: Database, completionHandler: @escaping ((CloudKitResponse) -> Void)) {
         let container = CKContainer.default()
         var db: CKDatabase?
@@ -51,6 +68,14 @@ final class CloudKitManager {
         }
     }
 
+    /**
+     Updates a record on Cloudkit's public or private database. Async function.
+     - Parameters:
+        - recordID: ID of the record of type CKRecord being saved. Should have the same ID as newRecord.
+        - newRecord: Record of type CKRecord being saved. Should have the same ID as recordID.
+        - database: Enum used to choose between public or private database.
+        - completionHandler: Returns a CloudKitResponse as the result of the async function.
+     */
     public func update(recordID: CKRecord.ID, with newRecord: CKRecord, on database: Database,
                        completionHandler: @escaping ((CloudKitResponse) -> Void)) {
         let container = CKContainer.default()
@@ -82,6 +107,13 @@ final class CloudKitManager {
         }
     }
 
+    /**
+     Deletes a record on Cloudkit's public or private database. Async function.
+     - Parameters:
+        - recordID: ID of the record of type CKRecord being deleted.
+        - database: Enum used to choose between public or private database.
+        - completionHandler: Returns a CloudKitResponse as the result of the async function.
+     */
     public func delete(recordID: CKRecord.ID, on database: Database, completionHandler: @escaping ((CloudKitResponse) -> Void)) {
         let container = CKContainer.default()
         var db: CKDatabase?
@@ -101,6 +133,13 @@ final class CloudKitManager {
         }
     }
 
+    /**
+     Fetches a record on CloudKit's public or private database. Async function.
+     - Parameters:
+        - recordID: ID of the record of type CKRecord being fetched.
+        - database: Enum used to choose between public or private database.
+        - completionHandler: Returns a CloudKitResponse as the result of the async function.
+     */
     public func fetch(recordID: CKRecord.ID, on database: Database, completionHandler: @escaping ((CloudKitResponse) -> Void)) {
         let container = CKContainer.default()
         var db: CKDatabase?
@@ -124,6 +163,13 @@ final class CloudKitManager {
         }
     }
 
+    /**
+     Queries CloudKit's public or private database using an operation. Async function.
+     - Parameters:
+        - operation: Operation of type CKQueryOperation used to query the database.
+        - database: Enum used to choose between public or private database.
+        - completionHandler: Returns a CloudKitResponse as the result of the async function.
+     */
     public func operate(with operation: CKQueryOperation, on database: Database, completionHandler: @escaping ((CloudKitResponse) -> Void)) {
         let container = CKContainer.default()
         var db: CKDatabase?
@@ -152,6 +198,13 @@ final class CloudKitManager {
         }
     }
 
+    /**
+     Generates a query to be used with the query function.
+     - Parameters:
+        - record: Enum of types of records available on CloudKit
+        - predicate: A NSPredicate that determines the logic behind the query.
+        - sortedBy: Describes how the result of the query will be organized/sorted.
+     */
     public func generateQuery(of record: RecordType, with predicate: NSPredicate, sortedBy: NSSortDescriptor) -> CKQuery {
         switch record {
         case .users:
@@ -173,6 +226,13 @@ final class CloudKitManager {
         }
     }
 
+    /**
+     Fetches records based off their records IDs. Used to retrieve references from other CKRecords.
+     - Parameters:
+        - recordIDs: Array of CKRecord IDs used to fetch the records.
+        - database: Enum used to choose between public or private database.
+        - completionHandler: Returns a CloudKitResponse as the result of the async function.
+     */
     public func fetchReferences(of recordIDs: [CKRecord.ID], on database: Database, completionHandler: @escaping ((CloudKitResponse) -> Void)) {
         let container = CKContainer.default()
         var db: CKDatabase?

@@ -13,6 +13,9 @@ class RankSelectionTableViewDelegate: NSObject, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? RankSelectionTableViewCell else { return }
+        /**
+         Verfication for change chackbox image
+         */
         if cell.isSelected {
 //            selectedRanks = delegate?.selectRank(indexPath: indexPath) ?? []
             cell.isSelected = false

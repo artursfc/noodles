@@ -22,6 +22,14 @@ final class RankInteractor {
     }
 
     // MARK: Public functions
+
+    /**
+     Fetches a rank from a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - rankID: A rank's ID as a string.
+        - provider: Enum used to determine from which Data Provider to fetch data.
+        - completionHandler: Returns a RankModel as the result of the async function.
+     */
     public func fetch(with rankID: String, from provider: DataProvider, completionHandler: @escaping ((RankModel?) -> Void)) {
         switch provider {
         case .cloudkit:
@@ -36,6 +44,13 @@ final class RankInteractor {
             completionHandler(nil)
         }
     }
+
+    /**
+     Fetches all ranks from a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - provider: Enum used to determine from which Data Provider to fetch data.
+        - completionHandler: Returns an array of RankModel as the result of the async function.
+     */
     public func fetchAll(from provider: DataProvider, completionHandler: @escaping (([RankModel]?) -> Void)) {
         switch provider {
         case .cloudkit:
@@ -57,6 +72,12 @@ final class RankInteractor {
         }
     }
 
+    /**
+     Saves a rank on a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - rank: A RankModel that will be saved to CKRecord.
+        - completionHandler: Returns a Bool as the result of the async function.
+     */
     public func save(rank: RankModel, completionHandler: @escaping ((Bool) -> Void)) {
         let models = [rank]
         let records = parser.parse(models: models, of: .ranks)
@@ -74,6 +95,13 @@ final class RankInteractor {
         }
     }
 
+    /**
+     Updates a rank on a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - rank: A RankModel that will be updated.
+        - newRank: A RankModel that will be used to update the rank.
+        - completionHandler: Returns a Bool as the result of the async function.
+     */
     public func update(rank: RankModel, with newRank: RankModel, completionHandler: @escaping ((Bool) -> Void)) {
         let recordID = CKRecord.ID(recordName: rank.id)
         let models = [newRank]
@@ -92,6 +120,12 @@ final class RankInteractor {
         }
     }
 
+    /**
+     Deletes a rank on a Data Provider, either CloudKit or Core Data. Async function.
+     - Parameters:
+        - rank: A RankModel that will be deleted.
+        - completionHandler: Returns a Bool as the result of the async function.
+     */
     public func delete(rank: RankModel, completionHandler: @escaping ((Bool) -> Void)) {
         let recordID = CKRecord.ID(recordName: rank.id)
         cloudkit.delete(recordID: recordID, on: .publicDB) { (response) in
@@ -105,6 +139,12 @@ final class RankInteractor {
 
     // MARK: Private functions
 
+    /**
+     Fetches a complete CKRecord with its references. Async function.
+     - Parameters:
+        - rankID: A rank's ID as a string.
+        - completionHandler: Returns a complete RankModel as the result of the async function.
+     */
     private func fetch(with rankID: String, completionHandler: @escaping ((RankModel?) -> Void)) {
         let recordID = CKRecord.ID(recordName: rankID)
         cloudkit.fetch(recordID: recordID, on: .publicDB) { [weak self] (response) in

@@ -9,11 +9,18 @@
 import Foundation
 import CoreData
 
+/**
+ Used by CoreDataManager's functions completionHandler.
+ Creates an unified response from Core Data.
+ */
 struct CoreDataResponse {
     var objects: [NSManagedObject]?
     var error: NSError?
 }
 
+/**
+ Gives access to Core Data's objects/functionalities through async functions.
+ */
 final class CoreDataManager {    
     private let context: NSManagedObjectContext
     private let container: NSPersistentContainer
@@ -28,6 +35,13 @@ final class CoreDataManager {
         context = container.viewContext
     }
 
+    /**
+     Saves an object into Core Data. Asyn function.
+     - Parameters:
+        - object: Any NSManagedObject described in the *.xcdatamodeld file.
+        - type: Enum used to determine which record type is being used in the function.
+        - completionHandler: Returns a CoreDataResponse as the result of the async function.
+     */
     public func save(object: NSManagedObject, of type: RecordType, completionHandler: @escaping ((CoreDataResponse) -> Void)) {
         container.performBackgroundTask { (pvtContext) in
             switch type {
@@ -106,6 +120,12 @@ final class CoreDataManager {
         }
     }
 
+    /**
+     Fetches all objects of any record type. Async function.
+     - Parameters:
+        - objects: Enum used to determine which record type is being used in the function.
+        - completionHandler: Returns a CoreDataResponse as the result of the async function.
+     */
     public func fetchAll(objects: RecordType, completionHandler: @escaping ((CoreDataResponse) -> Void)) {
         let pvtContext = container.newBackgroundContext()
         switch objects {
@@ -160,10 +180,18 @@ final class CoreDataManager {
         }
     }
 
-    public func update(object: NSManagedObject, with newObject: NSManagedObject, of types: RecordType,
+    /**
+     Updates object of any record type. Asyn function.
+     - Parameters:
+        - object: Any NSManagedObject described in the *.xcdatamodeld file.
+        - newObject: New object of any NSManagedObject described in the *.xcdatamodeld file.
+        - type: Enum used to determine which record type is being used in the function.
+        - completionHandler: Returns a CoreDataResponse as the result of the async function.
+     */
+    public func update(object: NSManagedObject, with newObject: NSManagedObject, of type: RecordType,
                        completionHandler: @escaping ((CoreDataResponse) -> Void)) {
         container.performBackgroundTask { (pvtContext) in
-            switch types {
+            switch type {
             case .channels:
                 if let newChannel = newObject as? Channel, let oldChannel = object as? Channel {
                     oldChannel.name = newChannel.name
@@ -226,7 +254,13 @@ final class CoreDataManager {
             }
         }
     }
-
+    /**
+     Deletes an object from Core Data. Async function.
+     - Parameters:
+        - object: Any NSManagedObject described in the *.xcdatamodeld file.
+        - type: Enum used to determine which record type is being used in the function.
+        - completionHandler: Returns a CoreDataResponse as the result of the async function.
+     */
     public func delete(object: NSManagedObject, of type: RecordType, completionHandler: @escaping ((CoreDataResponse) -> Void)) {
         container.performBackgroundTask { (pvtContext) in
             switch type {

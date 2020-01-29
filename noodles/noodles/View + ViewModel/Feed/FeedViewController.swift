@@ -12,12 +12,14 @@ class FeedViewController: UIViewController {
 
     @IBOutlet weak var postsTableView: UITableView!
     var POSTTABLEVIEWCELL = "PostTableViewCell"
-    var dataSource: PostsTableViewDataSource?
-    var viewModel: FeedViewModel?
+    var viewModel: FeedViewModel
+    let coordinator: Coordinator
 
-    init(viewModel: FeedViewModel?) {
+    init(viewModel: FeedViewModel, coordinator: Coordinator) {
         self.viewModel = viewModel
+        self.coordinator = coordinator
         super.init(nibName: "FeedViewController", bundle: nil)
+        self.viewModel.delegate = self
     }
 
     required init?(coder: NSCoder) {
@@ -26,11 +28,6 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        guard let viewModel = viewModel else { return  }
-
-        dataSource = PostsTableViewDataSource(tableView: postsTableView, viewModel: viewModel)
-
         setupPostTableView()
         view.backgroundColor = UIColor.fakeWhite
     }
@@ -38,8 +35,32 @@ class FeedViewController: UIViewController {
      Setup Post table view used in feed
      */
     func setupPostTableView() {
-        postsTableView.dataSource = dataSource
+        postsTableView.dataSource = self
         postsTableView.register(UINib(nibName: POSTTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: POSTTABLEVIEWCELL)
         postsTableView.separatorColor = UIColor.clear
+    }
+}
+
+extension FeedViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRows()
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: POSTTABLEVIEWCELL) as? PostTableViewCell ?? PostTableViewCell()
+
+        cell.postTitle.text = viewModel.title(at: indexPath.row)
+        cell.author.text = viewModel.author(at: indexPath.row)
+        cell.date.text = viewModel.creationDate(at: indexPath.row)
+        cell.tags = viewModel.tags(at: indexPath.row)
+
+        return cell
+    }
+}
+
+extension FeedViewController: FeedViewModelDelegate {
+    func reloadUI() {
+        postsTableView.reloadData()
     }
 }

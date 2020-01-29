@@ -35,7 +35,7 @@ class FeedViewController: UIViewController {
         view.backgroundColor = UIColor.fakeWhite
     }
     /**
-     Setup Rank Selection table view used for select ranks that can edit the channel
+     Setup Post table view used in feed
      */
     func setupPostTableView() {
         postsTableView.dataSource = dataSource

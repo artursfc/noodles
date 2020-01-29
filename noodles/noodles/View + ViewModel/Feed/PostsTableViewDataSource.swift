@@ -41,6 +41,9 @@ class PostsTableViewDataSource: NSObject, UITableViewDataSource {
 }
 
 extension PostsTableViewDataSource: FeedViewModelDelegate {
+    /**
+     Reloads the table view used for show posts
+     */
     func reloadUI() {
         tableView?.reloadData()
     }

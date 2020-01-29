@@ -15,7 +15,8 @@ import CloudKit
 final class CloudKitManager {
 
     init() {
-        userSetup()
+        userID()
+        rankID()
     }
 
     // MARK: Public functions
@@ -271,14 +272,32 @@ final class CloudKitManager {
     /**
      Saves the current user's ID on UserDefaults to be accessed by the key "userID".
      */
-    private func userSetup() {
+    public func userID() {
         fetch { (userID, error) in
             if error != nil {
+            } else {
                 let defaults = UserDefaults.standard
-                defaults.set(userID?.recordName, forKey: "UserID")
-            }  else {
-                // TODO: Work on better error treatment
-                fatalError("Could not get a valid user ID.")
+                if let userID = userID {
+                    defaults.set(userID.recordName, forKey: "UserID")
+                }
+            }
+        }
+    }
+
+    public func rankID() {
+        if let userID = UserDefaults.standard.object(forKey: "UserID") as? String {
+            fetch(recordID: CKRecord.ID(recordName: userID), on: .publicDB) { (response) in
+                if response.error != nil {
+                    //error
+                } else {
+                    let defaults = UserDefaults.standard
+                    if let record = response.records?.first {
+                        let rankID = record["rank"] as? CKRecord.Reference
+                        if let rank = rankID?.recordID.recordName {
+                            defaults.set(rank, forKey: "RankID")
+                        }
+                    }
+                }
             }
         }
     }
@@ -294,9 +313,9 @@ final class CloudKitManager {
         let container = CKContainer.default()
         container.fetchUserRecordID { (recordID, error) in
             if error != nil {
-                completionHandler(recordID,nil)
-            } else {
                 completionHandler(nil, error)
+            } else {
+                completionHandler(recordID, nil)
             }
         }
     }

@@ -20,6 +20,11 @@ final class BookmarksViewModel: ViewModel {
             delegate?.reloadUI()
         }
     }
+    private var bookmarks = [String]() {
+        didSet {
+            updateModel()
+        }
+    }
 
     weak var delegate: BookmarksViewModelDelegate?
 
@@ -34,14 +39,12 @@ final class BookmarksViewModel: ViewModel {
     // MARK: Public functions
 
     public func fetch() {
-           interactor.fetchAll(from: .cloudkit) { [weak self] (posts) in
-               if let posts = posts {
-                   DispatchQueue.main.async {
-                       self?.models = posts
-                   }
-               }
-           }
-       }
+        interactor.bookmarks { [weak self] (result) in
+            if let bookmarks = result {
+                self?.bookmarks = bookmarks
+            }
+        }
+    }
 
     /*
      Public functions to access data from models in a ready-to-use format.
@@ -71,11 +74,6 @@ final class BookmarksViewModel: ViewModel {
         return ""
     }
 
-    public func bookmarked(at index: Int) -> Bool {
-        // Bookmarks are not yet implemented
-        return false
-    }
-
     /*
      The public functions below are all to be used by the view to either build the
      layout or respond to the user's input
@@ -84,11 +82,19 @@ final class BookmarksViewModel: ViewModel {
         return models.count
     }
 
-    public func selected(index: Int) {
+    public func selected(at index: Int) {
         // Coordinator -> Single Post
     }
 
-    public func bookmark(index: Int) {
-        // Bookmarks are not yet implemented
+    // MARK: Private function
+    
+    private func updateModel() {
+        interactor.fetch(with: bookmarks, from: .cloudkit) { [weak self] (result) in
+            if let posts = result {
+                DispatchQueue.main.async {
+                    self?.models = posts
+                }
+            }
+        }
     }
 }

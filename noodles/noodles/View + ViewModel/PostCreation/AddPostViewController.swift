@@ -13,9 +13,12 @@ class AddPostViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     var postName: String?
+    weak var delegate: AddPostDelegate?
     private let viewModel: AddPostViewModel
     
-    required init(viewModel: AddPostViewModel){
+    @IBOutlet weak var testView: UIView!
+    
+    init(viewModel: AddPostViewModel){
         self.viewModel = viewModel
         super.init(nibName: "AddPostViewController", bundle: nil)
     }
@@ -48,16 +51,38 @@ class AddPostViewController: UIViewController {
         bodyTextView.textColor = UIColor.gammaGray
     }
     
+    func setupGesture() {
+        let openModalGesture = UITapGestureRecognizer(target: self, action: #selector(openModal))
+        testView.addGestureRecognizer(openModalGesture)
+    }
+    
+    @objc func openModal(){
+         guard let postName = postName else {return}
+        delegate?.receiveName(postName: postName)
+        
+//         delegate?.receivePlate(restaurantName: restaurantName ?? String(), plate: plate)
+     }
+     
+    
 }
 
-extension CreatePostViewController: AddPostDelegate {
+extension AddPostViewController: AddPostDelegate {
     /**
      Function that receive the post name
      */
     func receiveName(postName: String) {
         let modalViewController = CreatePostViewController()
-        modalViewController.postNameTextField.placeholder = postName
+        modalViewController.delegate = self
+        modalViewController.postName = postName
         modalViewController.modalPresentationStyle = .overCurrentContext
+//        let modalViewController = CreatePostViewController()
+//        let postTextField = modalViewController.postNameTextField.placeholder
+//        if postTextField != nil {
+//            postName = postTextField
+//        } else {
+//            postName = ""
+//        }
+//        modalViewController.modalPresentationStyle = .overCurrentContext
         present(modalViewController, animated: true, completion: nil)
     }
 }

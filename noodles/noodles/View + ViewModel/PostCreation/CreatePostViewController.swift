@@ -27,6 +27,8 @@ class CreatePostViewController: UIViewController {
     
     var postName: String?
     
+    var delegate: AddPostDelegate?
+    
     var viewModel = PostModel(id: "id", title: "title", body: "body", author: nil, tags: ["tag1", "tag2"], readBy: [], validated: true, createdAt: nil, editedAt: nil, channels: [])
     
     override func viewDidLoad() {

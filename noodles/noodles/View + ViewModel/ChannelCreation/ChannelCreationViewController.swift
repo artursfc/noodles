@@ -103,6 +103,7 @@ extension ChannelCreationViewController: UITableViewDelegate {
         default:
             break
         }
+    }
 }
 
 extension ChannelCreationViewController: AddChannelViewModelDelegate {

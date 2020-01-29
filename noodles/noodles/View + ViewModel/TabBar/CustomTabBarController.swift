@@ -32,7 +32,9 @@ class CustomTabBarController: UITabBarController {
 
         self.viewControllers = controllers
     }
-
+    /**
+     Setup intens on tab bar
+     */
     func setupTabBarItens() {
 
         let channelsIcon = UITabBarItem(title: "", image: UIImage(named: "channelTabBarIcon"), tag: 0)
@@ -47,7 +49,9 @@ class CustomTabBarController: UITabBarController {
         saveViewController.tabBarItem = saveIcon
         profileViewController.tabBarItem = profileIcon
     }
-
+    /**
+     Setup the interface of tab bar
+     */
     func setup() {
         self.tabBar.isTranslucent = true
         self.tabBar.barTintColor = UIColor.fakeBlack

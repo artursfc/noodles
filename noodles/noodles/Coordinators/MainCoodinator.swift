@@ -15,10 +15,10 @@ class MainCoordinator: Coordinator {
     let cloudKit: CloudKitManager
     let coreData: CoreDataManager
 
-    init(navController: UINavigationController) {
+    init(navController: UINavigationController, cloudKit: CloudKitManager, coreData: CoreDataManager) {
         self.navController = navController
-        cloudKit = CloudKitManager()
-        coreData = CoreDataManager()
+        self.cloudKit = cloudKit
+        self.coreData = coreData
     }
 
     func start() {
@@ -41,9 +41,12 @@ class MainCoordinator: Coordinator {
     }
 
     func presentPost(postModel: PostModel) {
-        let vc = PresentPostViewController(viewModel: postModel)
         let interactor = PostInteractor(cloudkit: cloudKit, coredata: coreData)
         let viewModel = PostViewModel(interactor: interactor, coordinator: self, model: postModel)
+        let vc = PresentPostViewController(viewModel: viewModel)
+print("Artur")
+        // TO DO passar viewModel para data source dessa controller
+
 
         navController.pushViewController(vc, animated: true)
     }

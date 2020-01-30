@@ -56,7 +56,11 @@ final class ChannelInteractor {
         switch provider {
         case .cloudkit:
             let defaults = UserDefaults.standard
-            let query = cloudkit.generateQuery(of: .channels, with: NSPredicate(value: true),
+            guard let rankID = defaults.object(forKey: "UserID") as? String else {
+                return
+            }
+            let rankToMatch = CKRecord.ID(recordName: rankID)
+            let query = cloudkit.generateQuery(of: .channels, with: NSPredicate(format: "canBeViewedBy CONTAINS %@", argumentArray: [rankToMatch]),
                                                sortedBy: NSSortDescriptor(key: "creationDate", ascending: false))
             cloudkit.query(using: query, on: .publicDB) { [weak self] (response) in
                 if response.error != nil {

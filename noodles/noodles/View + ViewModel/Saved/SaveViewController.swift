@@ -12,9 +12,9 @@ class SaveViewController: UIViewController {
 
     @IBOutlet weak var postsTableView: UITableView!
     var POSTTABLEVIEWCELL = "PostTableViewCell"
-    var viewModel: FeedViewModel
+    var viewModel: BookmarksViewModel
 
-    init(viewModel: FeedViewModel) {
+    init(viewModel: BookmarksViewModel) {
         self.viewModel = viewModel
         super.init(nibName: "SaveViewController", bundle: nil)
         self.viewModel.delegate = self
@@ -59,7 +59,7 @@ extension SaveViewController: UITableViewDataSource {
 
 }
 
-extension SaveViewController: FeedViewModelDelegate {
+extension SaveViewController: BookmarksViewModelDelegate {
     func reloadUI() {
         postsTableView.reloadData()
     }

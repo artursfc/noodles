@@ -38,7 +38,7 @@ class AddPostViewController: UIViewController {
         bodyTextView.textColor = UIColor.gammaGray
     }
     
-    @objc func openModal() {
+    func openModal() {
         guard let postName = titleTextField.text else {
             return
         }

@@ -31,8 +31,10 @@ class CustomTabBarController: UITabBarController {
         let postInteractor: PostInteractor = PostInteractor(cloudkit: cloudKit, coredata: coreData)
         let feedViewModel: FeedViewModel = FeedViewModel(interactor: postInteractor, coordinator: coordinator)
         feedViewController = FeedViewController(viewModel: feedViewModel)
-        
-        saveViewController = SaveViewController(viewModel: feedViewModel)
+
+        let bookmarkInteractor: PostInteractor = PostInteractor(cloudkit: cloudKit, coredata: coreData)
+        let bookmarksViewModel = BookmarksViewModel(interactor: bookmarkInteractor, coordinator: coordinator)
+        saveViewController = SaveViewController(viewModel: bookmarksViewModel)
         
         // Para fazer o search é necessario o SerchViewModel
         

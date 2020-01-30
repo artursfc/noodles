@@ -34,7 +34,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate {
     
     init(viewModel: AddPostViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: "AddPostViewController", bundle: nil)
+        super.init(nibName: "CreatePostViewController", bundle: nil)
     }
     
     required init?(coder: NSCoder) {

@@ -46,12 +46,5 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="145"/>
         </view>
-        <view contentMode="scaleToFill" id="4qS-1d-Hkv">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-            <viewLayoutGuide key="safeArea" id="WDq-BZ-p8h"/>
-            <point key="canvasLocation" x="-959" y="-284"/>
-        </view>
     </objects>
 </document>

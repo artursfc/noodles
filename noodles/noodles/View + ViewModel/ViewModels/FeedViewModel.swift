@@ -26,7 +26,6 @@ final class FeedViewModel: ViewModel {
     init(interactor: PostInteractor, coordinator: Coordinator) {
         self.interactor = interactor
         self.coordinator = coordinator
-        fetch()
     }
 
     public func fetch() {

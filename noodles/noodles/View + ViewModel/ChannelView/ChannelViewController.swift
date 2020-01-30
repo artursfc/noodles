@@ -17,6 +17,7 @@ class ChannelViewController: UIViewController {
     init(viewModel: ChannelViewModel) {
         self.viewModel = viewModel
         super.init(nibName: "ChannelViewController", bundle: nil)
+        self.viewModel.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -27,6 +28,7 @@ class ChannelViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.fakeWhite
         setupPostTableView()
+        viewModel.fetch()
     }
     /**
      Setup Post table view used for show all posts from certain channel
@@ -47,15 +49,17 @@ extension ChannelViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: POSTTABLEVIEWCELL) as? PostTableViewCell ?? PostTableViewCell()
 
-        let post = viewModel.selected(at: indexPath.row)
-
-        
-        cell.postTitle.text = post?.title
-        cell.author.text = post?.author?.name
-        cell.date.text = post?.title
+        cell.postTitle.text = viewModel.title(at: indexPath.row)
+        cell.author.text = viewModel.author(at: indexPath.row)
+        cell.date.text = viewModel.creationDate(at: indexPath.row)
 
         return cell
     }
 }
 
+extension ChannelViewController: ChannelViewModelDelegate {
+    func reloadUI() {
+        tableView.reloadData()
+    }
 
+}

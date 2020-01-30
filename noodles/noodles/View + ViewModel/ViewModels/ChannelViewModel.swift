@@ -21,7 +21,7 @@ final class ChannelViewModel: ViewModel {
         }
     }
 
-    weak var delegate: ChannelsViewModelDelegate?
+    weak var delegate: ChannelViewModelDelegate?
 
     init(interactor: ChannelInteractor, model: ChannelModel, coordinator: Coordinator) {
         self.interactor = interactor

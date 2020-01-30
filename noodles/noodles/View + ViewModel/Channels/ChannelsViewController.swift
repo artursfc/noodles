@@ -29,6 +29,7 @@ class ChannelsViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.fakeWhite
         setupChannelsCollectionView()
+        viewModel.fetch()
     }
     /**
      Function that setup Channels collection view
@@ -37,6 +38,7 @@ class ChannelsViewController: UIViewController {
         channelsCollectionView.backgroundColor = UIColor.fakeWhite
         channelsCollectionView.register(UINib(nibName: CHANNELCOLLECTIONVIEWCELL, bundle: nil), forCellWithReuseIdentifier: CHANNELCOLLECTIONVIEWCELL)
         channelsCollectionView.dataSource = self
+        channelsCollectionView.delegate = self
     }
 }
 
@@ -49,7 +51,7 @@ extension ChannelsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CHANNELCOLLECTIONVIEWCELL, for: indexPath) as? ChannelsCollectionViewCell ?? ChannelsCollectionViewCell()
 
-        cell.channelImage.image = UIImage(named: "channelPlaceholder")
+//        cell.channelImage.image = UIImage(named: "channelPlaceholder")
         cell.channelTitle.text = viewModel.name(at: indexPath.row)
         return cell
     }
@@ -58,5 +60,11 @@ extension ChannelsViewController: UICollectionViewDataSource {
 extension ChannelsViewController: ChannelsViewModelDelegate {
     func reloadUI() {
         channelsCollectionView.reloadData()
+    }
+}
+
+extension ChannelsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.selected(at: indexPath.row)
     }
 }

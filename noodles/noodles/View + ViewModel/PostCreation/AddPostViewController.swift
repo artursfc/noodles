@@ -12,13 +12,8 @@ class AddPostViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
-    var postName: String?
-    var postBody: String?
-    weak var addPostDelegate: AddPostDelegate?
     private let viewModel: AddPostViewModel
-    
-    @IBOutlet weak var testView: UIView!
-    
+        
     init(viewModel: AddPostViewModel){
         self.viewModel = viewModel
         super.init(nibName: "AddPostViewController", bundle: nil)
@@ -32,16 +27,6 @@ class AddPostViewController: UIViewController {
         super.viewDidLoad()
         setup()
     }
-    /**
-     Function that create the post
-     */
-    func setupPostInformation() {
-        postName = titleTextField.text
-        postBody = bodyTextView.text
-    }
-    /**
-     Function that setup the ui elements of AddSetup screen
-     */
     func setup() {
         view.backgroundColor = UIColor.fakeWhite
         
@@ -52,10 +37,12 @@ class AddPostViewController: UIViewController {
     }
     
     @objc func openModal() {
-        guard let postName = postName else { return }
-        guard let postBody = postBody else { return }
-        addPostDelegate?.receivePost(postName: postName, postBody: postBody)
+        guard let postName = titleTextField.text else { return }
+        guard let postBody = bodyTextView.text else { return }
         let modalViewController = CreatePostViewController()
+        modalViewController.postName = postName
+        modalViewController.postBody = postBody
+        modalViewController.viewModel = viewModel
         modalViewController.modalPresentationStyle = .overCurrentContext
         present(modalViewController, animated: true, completion: nil)
      }
@@ -67,18 +54,4 @@ class AddPostViewController: UIViewController {
         navigationController?.navigationBar.setItems([navItem], animated: false)
     }
      
-    
 }
-
-//extension AddPostViewController: AddPostDelegate {    
-//    /**
-//     Function that receive the post name
-//     */
-//    func receivePost(postName: String, postBody: String) {
-//        let modalViewController = CreatePostViewController()
-//        modalViewController.delegate = self
-//        modalViewController.postName = postName
-//        modalViewController.modalPresentationStyle = .overCurrentContext
-//        present(modalViewController, animated: true, completion: nil)
-//    }
-//}

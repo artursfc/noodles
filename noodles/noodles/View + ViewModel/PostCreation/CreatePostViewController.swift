@@ -32,11 +32,19 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate {
     
     var viewModel: AddPostViewModel?
     
+    init(viewModel: AddPostViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: "AddPostViewController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         setupCheck()
-        feed()
         addGestureRecognizer()
         createPost()
         setupDelegates()
@@ -91,15 +99,6 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate {
         postNameTextField.delegate = self
         tagsTextField.delegate = self
         channelsSelectorTextField.delegate = self
-    }
-    
-    func feed() {
-        
-        if let tags = tagsTextField.text?.prefix(3) {
-        guard let viewModel = viewModel else { return }
-        viewModel.tags = tags.components(separatedBy: ", ")
-        }
-        
     }
     
     func createPost() {

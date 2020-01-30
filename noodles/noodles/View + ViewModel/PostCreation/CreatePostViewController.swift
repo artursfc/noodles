@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreatePostViewController: UIViewController {
+class CreatePostViewController: UIViewController, UITextFieldDelegate { 
 
     @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var firstCellView: UIView!
@@ -16,7 +16,7 @@ class CreatePostViewController: UIViewController {
     @IBOutlet weak var thirdCellView: UIView!
     
     @IBOutlet weak var firstCellCheckPlaceHolder: UIImageView!
-    @IBOutlet weak var SecondCellCheckPlaceHolder: UIImageView!
+    @IBOutlet weak var secondCellCheckPlaceHolder: UIImageView!
     @IBOutlet weak var thirdCellCheckPlaceHolder: UIImageView!
     
     @IBOutlet weak var postNameTextField: UITextField!
@@ -26,8 +26,11 @@ class CreatePostViewController: UIViewController {
     @IBOutlet weak var addPostButton: UIView!
     
     var postName: String?
+    var postBody: String?
     
-    var viewModel = PostModel(id: "id", title: "title", body: "body", author: nil, tags: ["tag1", "tag2"], readBy: [], validated: true, createdAt: nil, editedAt: nil, channels: [])
+//    var delegate: AddPostDelegate?
+    
+    var viewModel: AddPostViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,15 +38,40 @@ class CreatePostViewController: UIViewController {
         setupCheck()
         feed()
         addGestureRecognizer()
-
+        createPost()
+        setupDelegates()
+        addGestureRecognizer()
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if postNameTextField.isEmpty == false, postNameTextField.hasText {
+            firstCellCheckPlaceHolder.image = UIImage(named: "checkPlaceHolder")
+        } else {
+            firstCellCheckPlaceHolder.image = UIImage(named: "waitingInputPlaceHolder")
+        }
+        if postName != "" {
+            firstCellCheckPlaceHolder.image = UIImage(named: "checkPlaceHolder")
+        }
+        if tagsTextField.isEmpty == false, tagsTextField.hasText {
+            secondCellCheckPlaceHolder.image = UIImage(named: "checkPlaceHolder")
+        } else {
+            secondCellCheckPlaceHolder.image = UIImage(named: "waitingInputPlaceHolder")
+        }
+        if channelsSelectorTextField.isEmpty == false, channelsSelectorTextField.hasText {
+            thirdCellCheckPlaceHolder.image = UIImage(named: "checkPlaceHolder")
+        } else {
+            thirdCellCheckPlaceHolder.image = UIImage(named: "waitingInputPlaceHolder")
+        }
     }
     
     func setup() {
         
         modalView.backgroundColor = UIColor.fakeWhite
         
-        addBottomBorders()
+        addBottomBorders(view: firstCellView)
+        addBottomBorders(view: secondCellVIew)
         
         tagsTextField.placeholder = "Adicionar Tags"
         
@@ -52,28 +80,48 @@ class CreatePostViewController: UIViewController {
         addPostButton.backgroundColor = UIColor.main
         
         if postName != "" {
-            postNameTextField.text = postName
+            postNameTextField.placeholder = postName
+            firstCellCheckPlaceHolder.image = UIImage(named: "checkPlaceHolder")
         } else {
             postNameTextField.placeholder = "Adicionar Titutlo"
-        }
-        
+        }        
+    }
+    
+    func setupDelegates() {
+        postNameTextField.delegate = self
+        tagsTextField.delegate = self
+        channelsSelectorTextField.delegate = self
     }
     
     func feed() {
         
         if let tags = tagsTextField.text?.prefix(3) {
-            viewModel.tags = tags.components(separatedBy: ", ")
+        guard let viewModel = viewModel else { return }
+        viewModel.tags = tags.components(separatedBy: ", ")
         }
         
     }
     
-    func addBottomBorders() {
+    func createPost() {
+        guard let viewModel = viewModel else { return }
+        guard let postName = postName else { return }
+        guard let postBody = postBody else { return }
+        guard let tags = tagsTextField.text?.prefix(3) else { return }
+        if postNameTextField.text == nil {
+            viewModel.title = postName
+        } else {
+            viewModel.title = postNameTextField.text ?? ""
+        }
+        viewModel.body = postBody
+        viewModel.tags = tags.components(separatedBy: ", ")
+    }
+    
+    func addBottomBorders(view: UIView) {
         let thickness: CGFloat = 1.0
         let bottomBorder = CALayer()
-        bottomBorder.frame = CGRect(x:0, y: self.firstCellView.frame.size.height - thickness, width:self.firstCellView.frame.size.width, height:thickness)
+        bottomBorder.frame = CGRect(x:0, y: self.view.frame.size.height - thickness, width:self.view.frame.size.width, height:thickness)
         bottomBorder.backgroundColor = UIColor.fakeBlack.cgColor
-        firstCellView.layer.addSublayer(bottomBorder)
-        secondCellVIew.layer.addSublayer(bottomBorder)
+        view.layer.addSublayer(bottomBorder)
     }
     
     func setupCheck() {
@@ -81,7 +129,7 @@ class CreatePostViewController: UIViewController {
             firstCellCheckPlaceHolder.image = UIImage(named: "checkPlaceHolder")
         }
         if tagsTextField.isEmpty == false, tagsTextField.hasText {
-            SecondCellCheckPlaceHolder.image = UIImage(named: "checkPlaceHolder")
+            secondCellCheckPlaceHolder.image = UIImage(named: "checkPlaceHolder")
         }
         if channelsSelectorTextField.isEmpty == false, channelsSelectorTextField.hasText {
             thirdCellCheckPlaceHolder.image = UIImage(named: "checkPlaceHolder")
@@ -96,7 +144,6 @@ class CreatePostViewController: UIViewController {
     
     @objc func addPost() {
         self.dismiss(animated: true, completion: nil)
+        viewModel?.create()
     }
-    
-    
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AddPostDelegate {
-    func receiveName(postName: String)
+protocol AddPostDelegate: AnyObject {
+    func receivePost(postName: String, postBody: String)
 }
 

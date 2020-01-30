@@ -12,10 +12,9 @@ class AddPostViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
-    var postName: String?
     private let viewModel: AddPostViewModel
-    
-    required init(viewModel: AddPostViewModel){
+        
+    init(viewModel: AddPostViewModel){
         self.viewModel = viewModel
         super.init(nibName: "AddPostViewController", bundle: nil)
     }
@@ -28,17 +27,6 @@ class AddPostViewController: UIViewController {
         super.viewDidLoad()
         setup()
     }
-    /**
-     Function that create the post
-     */
-    func createPost() {
-        viewModel.title = titleTextField.text ?? ""
-        viewModel.body = bodyTextView.text
-        postName = titleTextField.text
-    }
-    /**
-     Function that setup the ui elements of AddSetup screen
-     */
     func setup() {
         view.backgroundColor = UIColor.fakeWhite
         
@@ -48,16 +36,22 @@ class AddPostViewController: UIViewController {
         bodyTextView.textColor = UIColor.gammaGray
     }
     
-}
-
-extension CreatePostViewController: AddPostDelegate {
-    /**
-     Function that receive the post name
-     */
-    func receiveName(postName: String) {
+    @objc func openModal() {
+        guard let postName = titleTextField.text else { return }
+        guard let postBody = bodyTextView.text else { return }
         let modalViewController = CreatePostViewController()
-        modalViewController.postNameTextField.placeholder = postName
+        modalViewController.postName = postName
+        modalViewController.postBody = postBody
+        modalViewController.viewModel = viewModel
         modalViewController.modalPresentationStyle = .overCurrentContext
         present(modalViewController, animated: true, completion: nil)
+     }
+    
+    func setupNavController() {
+        let nextItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(openModal))
+        let navItem = UINavigationItem(title: "Next")
+        navItem.rightBarButtonItem = nextItem
+        navigationController?.navigationBar.setItems([navItem], animated: false)
     }
+     
 }

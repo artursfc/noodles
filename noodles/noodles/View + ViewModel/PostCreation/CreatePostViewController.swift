@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreatePostViewController: UIViewController {
+class CreatePostViewController: UIViewController, AddPostDelegate { 
 
     @IBOutlet weak var modalView: UIView!
     @IBOutlet weak var firstCellView: UIView!
@@ -26,10 +26,11 @@ class CreatePostViewController: UIViewController {
     @IBOutlet weak var addPostButton: UIView!
     
     var postName: String?
+    var postBody: String?
     
     var delegate: AddPostDelegate?
     
-    var viewModel = PostModel(id: "id", title: "title", body: "body", author: nil, tags: ["tag1", "tag2"], readBy: [], validated: true, createdAt: nil, editedAt: nil, channels: [])
+    var viewModel: AddPostViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,12 @@ class CreatePostViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func receivePost(postName: String, postBody: String) {
+        self.postName = postName
+        self.postBody = postBody
+     }
+    
+     
     func setup() {
         
         modalView.backgroundColor = UIColor.fakeWhite
@@ -53,8 +60,8 @@ class CreatePostViewController: UIViewController {
         
         addPostButton.backgroundColor = UIColor.main
         
-        if postName != "" {
-            postNameTextField.text = postName
+        if postName != nil {
+            postNameTextField.placeholder = postName
         } else {
             postNameTextField.placeholder = "Adicionar Titutlo"
         }
@@ -64,9 +71,25 @@ class CreatePostViewController: UIViewController {
     func feed() {
         
         if let tags = tagsTextField.text?.prefix(3) {
+            guard let viewModel = viewModel else { return }
             viewModel.tags = tags.components(separatedBy: ", ")
         }
         
+    }
+    
+    func createPost() {
+        guard let viewModel = viewModel else { return }
+        guard let postName = postName else { return }
+        guard let postBody = postBody else { return }
+        guard let tags = tagsTextField.text?.prefix(3) else { return }
+        if postNameTextField.text == nil {
+            viewModel.title = postName
+        } else {
+            viewModel.title = postNameTextField.text ?? ""
+        }
+        viewModel.body = postBody
+        viewModel.tags = tags.components(separatedBy: ", ")
+        viewModel.create()
     }
     
     func addBottomBorders() {

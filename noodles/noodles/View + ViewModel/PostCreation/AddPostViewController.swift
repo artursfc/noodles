@@ -13,7 +13,8 @@ class AddPostViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     var postName: String?
-    weak var delegate: AddPostDelegate?
+    var postBody: String?
+    weak var addPostDelegate: AddPostDelegate?
     private let viewModel: AddPostViewModel
     
     @IBOutlet weak var testView: UIView!
@@ -34,10 +35,9 @@ class AddPostViewController: UIViewController {
     /**
      Function that create the post
      */
-    func createPost() {
-        viewModel.title = titleTextField.text ?? ""
-        viewModel.body = bodyTextView.text
+    func setupPostInformation() {
         postName = titleTextField.text
+        postBody = bodyTextView.text
     }
     /**
      Function that setup the ui elements of AddSetup screen
@@ -51,38 +51,34 @@ class AddPostViewController: UIViewController {
         bodyTextView.textColor = UIColor.gammaGray
     }
     
-    func setupGesture() {
-        let openModalGesture = UITapGestureRecognizer(target: self, action: #selector(openModal))
-        testView.addGestureRecognizer(openModalGesture)
-    }
-    
-    @objc func openModal(){
-         guard let postName = postName else {return}
-        delegate?.receiveName(postName: postName)
-        
-//         delegate?.receivePlate(restaurantName: restaurantName ?? String(), plate: plate)
+    @objc func openModal() {
+        guard let postName = postName else { return }
+        guard let postBody = postBody else { return }
+        addPostDelegate?.receivePost(postName: postName, postBody: postBody)
+        let modalViewController = CreatePostViewController()
+        modalViewController.modalPresentationStyle = .overCurrentContext
+        present(modalViewController, animated: true, completion: nil)
      }
+    
+    func setupNavController() {
+        let nextItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(openModal))
+        let navItem = UINavigationItem(title: "Next")
+        navItem.rightBarButtonItem = nextItem
+        navigationController?.navigationBar.setItems([navItem], animated: false)
+    }
      
     
 }
 
-extension AddPostViewController: AddPostDelegate {
-    /**
-     Function that receive the post name
-     */
-    func receiveName(postName: String) {
-        let modalViewController = CreatePostViewController()
-        modalViewController.delegate = self
-        modalViewController.postName = postName
-        modalViewController.modalPresentationStyle = .overCurrentContext
+//extension AddPostViewController: AddPostDelegate {    
+//    /**
+//     Function that receive the post name
+//     */
+//    func receivePost(postName: String, postBody: String) {
 //        let modalViewController = CreatePostViewController()
-//        let postTextField = modalViewController.postNameTextField.placeholder
-//        if postTextField != nil {
-//            postName = postTextField
-//        } else {
-//            postName = ""
-//        }
+//        modalViewController.delegate = self
+//        modalViewController.postName = postName
 //        modalViewController.modalPresentationStyle = .overCurrentContext
-        present(modalViewController, animated: true, completion: nil)
-    }
-}
+//        present(modalViewController, animated: true, completion: nil)
+//    }
+//}

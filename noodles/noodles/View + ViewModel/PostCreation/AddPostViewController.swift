@@ -14,7 +14,7 @@ class AddPostViewController: UIViewController {
     @IBOutlet weak var bodyTextView: UITextView!
     private let viewModel: AddPostViewModel
         
-    init(viewModel: AddPostViewModel){
+    init(viewModel: AddPostViewModel) {
         self.viewModel = viewModel
         super.init(nibName: "AddPostViewController", bundle: nil)
     }
@@ -39,10 +39,9 @@ class AddPostViewController: UIViewController {
     @objc func openModal() {
         guard let postName = titleTextField.text else { return }
         guard let postBody = bodyTextView.text else { return }
-        let modalViewController = CreatePostViewController()
+        let modalViewController = CreatePostViewController(viewModel: viewModel)
         modalViewController.postName = postName
         modalViewController.postBody = postBody
-        modalViewController.viewModel = viewModel
         modalViewController.modalPresentationStyle = .overCurrentContext
         present(modalViewController, animated: true, completion: nil)
      }

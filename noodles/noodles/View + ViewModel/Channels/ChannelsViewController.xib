@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChannelsViewController" customModule="noodles" customModuleProvider="target">
             <connections>
-                <outlet property="addChannel" destination="EM1-2v-mq6" id="Igj-fn-Wzr"/>
                 <outlet property="channelsCollectionView" destination="UvA-B9-uVv" id="MAm-Hx-dtL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,42 +22,33 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="channelTabBarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rZ4-Qg-3IW">
-                            <rect key="frame" x="20" y="65" width="35" height="35"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="35" id="BJc-PP-jDp"/>
-                                <constraint firstAttribute="width" constant="35" id="xxW-kh-1Rf"/>
-                            </constraints>
+                            <rect key="frame" x="20" y="93" width="28" height="27"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CANAIS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYA-M5-GnE">
-                            <rect key="frame" x="65" y="65" width="200" height="35"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="200" id="7Ut-BM-WTR"/>
-                                <constraint firstAttribute="height" constant="35" id="8aN-N2-4e2"/>
-                            </constraints>
+                            <rect key="frame" x="58" y="93" width="106.5" height="27"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EM1-2v-mq6">
-                            <rect key="frame" x="370" y="72" width="26" height="26"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="plusIcon"/>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="9VD-1B-nxu"/>
-                        <constraint firstAttribute="bottom" secondItem="rZ4-Qg-3IW" secondAttribute="bottom" constant="20" id="Jef-Fy-bZn"/>
-                        <constraint firstAttribute="bottom" secondItem="mYA-M5-GnE" secondAttribute="bottom" constant="20" id="j9W-Xe-kFo"/>
-                        <constraint firstItem="mYA-M5-GnE" firstAttribute="leading" secondItem="rZ4-Qg-3IW" secondAttribute="trailing" constant="10" id="oS2-DU-ut1"/>
-                        <constraint firstItem="rZ4-Qg-3IW" firstAttribute="leading" secondItem="nag-Pb-ZVK" secondAttribute="leading" constant="20" id="pB0-Ls-SaT"/>
+                        <constraint firstAttribute="bottom" secondItem="rZ4-Qg-3IW" secondAttribute="bottom" id="D88-bp-RCv"/>
+                        <constraint firstItem="rZ4-Qg-3IW" firstAttribute="top" secondItem="nag-Pb-ZVK" secondAttribute="top" constant="93" id="Kgv-QP-dlc"/>
+                        <constraint firstAttribute="trailing" secondItem="mYA-M5-GnE" secondAttribute="trailing" constant="249.5" id="VLF-1v-iNl"/>
+                        <constraint firstItem="mYA-M5-GnE" firstAttribute="top" secondItem="nag-Pb-ZVK" secondAttribute="top" constant="93" id="Wm1-Ov-g64"/>
+                        <constraint firstItem="mYA-M5-GnE" firstAttribute="leading" secondItem="rZ4-Qg-3IW" secondAttribute="trailing" constant="10" id="dJd-Y0-NUW"/>
+                        <constraint firstItem="rZ4-Qg-3IW" firstAttribute="leading" secondItem="nag-Pb-ZVK" secondAttribute="leading" constant="20" id="fpK-h7-xsH"/>
+                        <constraint firstAttribute="bottom" secondItem="mYA-M5-GnE" secondAttribute="bottom" id="rvS-rl-xU8"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UvA-B9-uVv">
-                    <rect key="frame" x="20" y="120" width="384" height="713"/>
+                    <rect key="frame" x="20" y="128" width="374" height="705"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="713" id="noZ-li-cml"/>
+                        <constraint firstAttribute="width" constant="374" id="Ehb-5a-WZN"/>
+                        <constraint firstAttribute="height" constant="705" id="XHX-nz-XKs"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ggO-pD-fF3">
                         <size key="itemSize" width="180" height="180"/>
@@ -71,12 +61,12 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UvA-B9-uVv" secondAttribute="trailing" constant="20" id="BH1-BG-4DA"/>
+                <constraint firstItem="UvA-B9-uVv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="BcY-Ih-ReL"/>
                 <constraint firstItem="nag-Pb-ZVK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="K8L-uc-rT4"/>
-                <constraint firstItem="UvA-B9-uVv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="PAc-5T-Kir"/>
                 <constraint firstItem="nag-Pb-ZVK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aCF-K6-cb2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UvA-B9-uVv" secondAttribute="bottom" constant="29" id="b2W-nr-SiN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nag-Pb-ZVK" secondAttribute="trailing" id="cx3-ms-P2D"/>
-                <constraint firstItem="UvA-B9-uVv" firstAttribute="top" secondItem="nag-Pb-ZVK" secondAttribute="bottom" id="cx7-sK-LkZ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UvA-B9-uVv" secondAttribute="trailing" constant="10" id="evc-Ac-dD4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
@@ -96,6 +86,5 @@
     </objects>
     <resources>
         <image name="channelTabBarIcon" width="28" height="24"/>
-        <image name="plusIcon" width="26" height="26"/>
     </resources>
 </document>

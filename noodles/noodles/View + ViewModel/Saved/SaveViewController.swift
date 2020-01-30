@@ -28,6 +28,7 @@ class SaveViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.fakeWhite
         setupPostTableView()
+        viewModel.fetch()
     }
     /**
      Setup Post table view used for show saved posts

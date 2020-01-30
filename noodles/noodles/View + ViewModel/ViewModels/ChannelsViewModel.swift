@@ -14,7 +14,7 @@ protocol ChannelsViewModelDelegate: class {
 
 final class ChannelsViewModel: ViewModel {
     private let interactor: ChannelInteractor
-    private let coordinator: Coordinator
+    private let coordinator: MainCoordinator
     private var models = [ChannelModel]() {
         didSet {
             delegate?.reloadUI()
@@ -23,10 +23,9 @@ final class ChannelsViewModel: ViewModel {
 
     weak var delegate: ChannelsViewModelDelegate?
 
-    init(interactor: ChannelInteractor, coordinator: Coordinator) {
+    init(interactor: ChannelInteractor, coordinator: MainCoordinator) {
         self.interactor = interactor
         self.coordinator = coordinator
-        fetch()
     }
 
     // MARK: Public functions
@@ -58,6 +57,6 @@ final class ChannelsViewModel: ViewModel {
      used by the function in the View that asks the Coordinator for the next screen
     */
     public func selected(at index: Int) {
-        // TODO: Coordinator next screen
+        coordinator.presentChannel(channelModel: models[index])
     }
 }

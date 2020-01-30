@@ -28,6 +28,7 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         setupPostTableView()
         view.backgroundColor = UIColor.fakeWhite
+        viewModel.fetch()
     }
     /**
      Setup Post table view used in feed

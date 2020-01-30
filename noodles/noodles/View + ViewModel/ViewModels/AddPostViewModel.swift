@@ -19,15 +19,17 @@ protocol AddPostViewModelDelegate: class {
     func accept(field: AddPostField)
 }
 
-final class AddPostViewModel: ViewModel {
+final class AddPostViewModel {
     private let postInteractor: PostInteractor
-    private let coordinator: Coordinator
+    private let coordinator: MainCoordinator
+    private let channel: ChannelModel
 
     weak var delegate: AddPostViewModelDelegate?
 
-    init(postInteractor: PostInteractor, coordinator: Coordinator) {
+    init(postInteractor: PostInteractor, coordinator: MainCoordinator, channel: ChannelModel) {
         self.postInteractor = postInteractor
         self.coordinator = coordinator
+        self.channel = channel
     }
 
     // MARK: Public attributes
@@ -38,18 +40,20 @@ final class AddPostViewModel: ViewModel {
     public var tags = [String]()
 
     // MARK: Private attributes
-    private let defaults = UserDefaults.standard
-
     private var validated: Bool = true
-
-    private var author: String {
-        return defaults.string(forKey: "UserID") ?? ""
-    }
 
     // MARK: Public functions
     public func create() {
         if !title.isEmpty && !body.isEmpty {
             delegate?.accept(field: .post)
+            let post = PostModel(id: "", title: title, body: body, author: nil, tags: tags, readBy: nil, validated: validated, createdAt: nil, editedAt: nil, channels: [channel])
+            postInteractor.save(post: post) { (bool) in
+                if bool {
+                    //Saved
+                } else {
+                    //Failed
+                }
+            }
         } else {
             delegate?.reject(field: .post)
         }

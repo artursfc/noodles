@@ -19,7 +19,7 @@ protocol AddChannelViewModelDelegate: class {
     func saved()
 }
 
-final class AddChannelViewModel: ViewModel {
+final class AddChannelViewModel {
     private let channelInteractor: ChannelInteractor
     private let rankInteractor: RankInteractor
     private let coordinator: Coordinator

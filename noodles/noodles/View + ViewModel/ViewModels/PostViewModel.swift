@@ -12,7 +12,7 @@ protocol PostViewModelDelegate: class {
     func reloadUI()
 }
 
-final class PostViewModel: ViewModel {
+final class PostViewModel {
     private let interactor: PostInteractor
     private let coordinator: Coordinator
     private var model: PostModel {

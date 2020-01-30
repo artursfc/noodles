@@ -12,7 +12,7 @@ protocol ProfileViewModelDelegate: class {
     func reloadUI()
 }
 
-final class ProfileViewModel: ViewModel {
+final class ProfileViewModel {
     private let interactor: UserInteractor
     private let coordinator: Coordinator
     private var model: UserModel {

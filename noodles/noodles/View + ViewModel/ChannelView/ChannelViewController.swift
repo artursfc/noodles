@@ -28,6 +28,7 @@ class ChannelViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.fakeWhite
         setupPostTableView()
+        setupNavButton()
         viewModel.fetch()
     }
     /**
@@ -37,6 +38,15 @@ class ChannelViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: POSTTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: POSTTABLEVIEWCELL)
         tableView.separatorColor = UIColor.clear
+    }
+
+    public func setupNavButton() {
+        let addPostButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPost))
+        self.navigationItem.rightBarButtonItem = addPostButton
+    }
+
+    @objc private func addPost() {
+        viewModel.addPost()
     }
 }
 

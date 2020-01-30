@@ -12,7 +12,7 @@ protocol BookmarksViewModelDelegate: class {
     func reloadUI()
 }
 
-final class BookmarksViewModel: ViewModel {
+final class BookmarksViewModel {
     private let interactor: PostInteractor
     private let coordinator: Coordinator
     private var models = [PostModel]() {

@@ -42,7 +42,7 @@ class CloudKitTests: XCTestCase {
     }
 
     func testSave() {
-        let record = CKRecord(recordType: "Channel")
+        let record = CKRecord(recordType: "Channels")
         record.setValue("Bob", forKey: "name")
 
         let exp = expectation(description: "CloudKit Async Save")
@@ -66,8 +66,9 @@ class CloudKitTests: XCTestCase {
     }
 
     func testUpdate() {
-        let newRecord = CKRecord(recordType: "Channel")
-        let recordID = CKRecord.ID(recordName: "15F50A18-BE79-5D1B-5C05-FAB2104FAC3D")
+        let newRecord = CKRecord(recordType: "Channels")
+        newRecord.setValue("Memes", forKey: "name")
+        let recordID = CKRecord.ID(recordName: "4384EAEE-96F3-4E1B-A9CC-A32E417D1D33")
         let manager = CloudKitManager()
         let exp = expectation(description: "CloudKit Async Update")
 
@@ -89,7 +90,7 @@ class CloudKitTests: XCTestCase {
     }
 
     func testDelete() {
-        let recordID = CKRecord.ID(recordName: "15F50A18-BE79-5D1B-5C05-FAB2104FAC3D")
+        let recordID = CKRecord.ID(recordName: "4384EAEE-96F3-4E1B-A9CC-A32E417D1D33")
 
         let exp = expectation(description: "CloudKit Async Delete")
         let manager = CloudKitManager()
@@ -136,7 +137,6 @@ class CloudKitTests: XCTestCase {
         let channelInteractor = ChannelInteractor(cloudkit: manager, coredata: coredata)
 
         channelInteractor.fetchAll(from: .cloudkit) { (channels) in
-            print(channels)
             exp.fulfill()
         }
 

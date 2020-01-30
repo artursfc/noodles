@@ -12,7 +12,7 @@ protocol ChannelsViewModelDelegate: class {
     func reloadUI()
 }
 
-final class ChannelsViewModel: ViewModel {
+final class ChannelsViewModel {
     private let interactor: ChannelInteractor
     private let coordinator: MainCoordinator
     private var models = [ChannelModel]() {

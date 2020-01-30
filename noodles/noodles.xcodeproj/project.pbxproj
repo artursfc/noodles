@@ -70,7 +70,6 @@
 		A42EE85A23CE338A0046E645 /* CloudKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE85923CE338A0046E645 /* CloudKitTests.swift */; };
 		A42EE86523CE338A0046E645 /* NoodlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42EE86423CE338A0046E645 /* NoodlesUITests.swift */; };
 		A42EE87523CE34FB0046E645 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42EE87423CE34FB0046E645 /* CloudKit.framework */; };
-		A4FC9C4F23E1C4FC00BD916F /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC9C4E23E1C4FC00BD916F /* ViewModelProtocol.swift */; };
 		A4FE0D1A23D1F5B10061EEDA /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FE0D1923D1F5B10061EEDA /* CloudKitManager.swift */; };
 		D91B3BB123CE47680005F0CE /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */; };
 		D91B3BB323CE4B160005F0CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91B3BB223CE4B160005F0CE /* Constants.swift */; };
@@ -181,7 +180,6 @@
 		A42EE86623CE338A0046E645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A42EE87223CE34420046E645 /* noodles.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = noodles.entitlements; sourceTree = "<group>"; };
 		A42EE87423CE34FB0046E645 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		A4FC9C4E23E1C4FC00BD916F /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		A4FE0D1923D1F5B10061EEDA /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		D91B3BB023CE47680005F0CE /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		D91B3BB223CE4B160005F0CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -390,7 +388,6 @@
 				A427071A23DE6C6C00E9CC27 /* ProfileViewModel.swift */,
 				A427072423DFA7A900E9CC27 /* AddChannelViewModel.swift */,
 				A427072623E067D400E9CC27 /* AddPostViewModel.swift */,
-				A4FC9C4E23E1C4FC00BD916F /* ViewModelProtocol.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -722,7 +719,6 @@
 				A427070F23DB77FC00E9CC27 /* FeedViewModel.swift in Sources */,
 				4F678DCE23DAAC1400A20396 /* RankSelectionTableViewCell.swift in Sources */,
 				7597314D23CE6FAF00F9EFA5 /* ChannelsViewController.swift in Sources */,
-				A4FC9C4F23E1C4FC00BD916F /* ViewModelProtocol.swift in Sources */,
 				A427071323DBAF9400E9CC27 /* ChannelsViewModel.swift in Sources */,
 				A427071123DBAEDB00E9CC27 /* Coordinator.swift in Sources */,
 				4F55FDDB23CFAD110032EF0F /* PostModel.swift in Sources */,

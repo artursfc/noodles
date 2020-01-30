@@ -12,9 +12,9 @@ protocol ChannelViewModelDelegate: class {
     func reloadUI()
 }
 
-final class ChannelViewModel: ViewModel {
+final class ChannelViewModel {
     private let interactor: ChannelInteractor
-    private let coordinator: Coordinator
+    private let coordinator: MainCoordinator
     private var model: ChannelModel {
         didSet {
             delegate?.reloadUI()
@@ -23,7 +23,7 @@ final class ChannelViewModel: ViewModel {
 
     weak var delegate: ChannelViewModelDelegate?
 
-    init(interactor: ChannelInteractor, model: ChannelModel, coordinator: Coordinator) {
+    init(interactor: ChannelInteractor, model: ChannelModel, coordinator: MainCoordinator) {
         self.interactor = interactor
         self.coordinator = coordinator
         self.model = model
@@ -87,10 +87,15 @@ final class ChannelViewModel: ViewModel {
     }
 
     /*
-     Use this function to get the PostModel chosen by the user. The returning model should be
-     used by the function in the View that asks the Coordinator for the next screen
+     Use this function to choose which post to look at.
     */
-    public func selected(at index: Int) -> PostModel? {
-        return model.posts?[index] ?? nil
+    public func selected(at index: Int) {
+        if let posts = model.posts {
+            coordinator.presentPost(postModel: posts[index])
+        }
+    }
+
+    public func addPost() {
+        coordinator.addPost(to: model)
     }
 }

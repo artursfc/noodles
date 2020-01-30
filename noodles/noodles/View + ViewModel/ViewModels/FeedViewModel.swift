@@ -12,7 +12,7 @@ protocol FeedViewModelDelegate: class {
     func reloadUI()
 }
 
-final class FeedViewModel: ViewModel {
+final class FeedViewModel {
     private let interactor: PostInteractor
     private let coordinator: Coordinator
     private var models = [PostModel]() {

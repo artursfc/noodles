@@ -26,7 +26,9 @@ class AddPostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupNavButton()
     }
+
     func setup() {
         view.backgroundColor = UIColor.fakeWhite
         
@@ -37,8 +39,12 @@ class AddPostViewController: UIViewController {
     }
     
     @objc func openModal() {
-        guard let postName = titleTextField.text else { return }
-        guard let postBody = bodyTextView.text else { return }
+        guard let postName = titleTextField.text else {
+            return
+        }
+        guard let postBody = bodyTextView.text else {
+            return
+        }
         let modalViewController = CreatePostViewController(viewModel: viewModel)
         modalViewController.postName = postName
         modalViewController.postBody = postBody
@@ -46,11 +52,13 @@ class AddPostViewController: UIViewController {
         present(modalViewController, animated: true, completion: nil)
      }
     
-    func setupNavController() {
-        let nextItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(openModal))
-        let navItem = UINavigationItem(title: "Next")
-        navItem.rightBarButtonItem = nextItem
-        navigationController?.navigationBar.setItems([navItem], animated: false)
+    public func setupNavButton() {
+        let addPostButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPost))
+        self.navigationItem.rightBarButtonItem = addPostButton
+    }
+
+    @objc private func addPost() {
+        openModal()
     }
      
 }

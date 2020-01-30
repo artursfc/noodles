@@ -11,7 +11,7 @@ import UIKit
 
 class CustomTabBarController: UITabBarController {
     
-    let coordinator: Coordinator
+    let coordinator: MainCoordinator
     let cloudKit: CloudKitManager
     let coreData: CoreDataManager
     var channelsViewController: ChannelsViewController
@@ -20,7 +20,7 @@ class CustomTabBarController: UITabBarController {
     var saveViewController: SaveViewController
     var profileViewController: ProfileViewController
     
-    init(coordinator: Coordinator, cloudKit: CloudKitManager, coreData: CoreDataManager){
+    init(coordinator: MainCoordinator, cloudKit: CloudKitManager, coreData: CoreDataManager) {
         self.coordinator = coordinator
         self.cloudKit = cloudKit
         self.coreData = coreData

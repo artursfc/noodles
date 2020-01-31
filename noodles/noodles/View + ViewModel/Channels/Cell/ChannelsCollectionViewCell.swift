@@ -11,10 +11,6 @@ import UIKit
 class ChannelsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var channelImage: UIImageView!
-
-    @IBOutlet weak var badget: UIImageView!
-
-    @IBOutlet weak var newPostCount: UILabel!
     
     @IBOutlet weak var channelTitle: UILabel!
     

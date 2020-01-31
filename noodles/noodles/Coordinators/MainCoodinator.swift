@@ -25,7 +25,6 @@ class MainCoordinator: Coordinator {
         let interactor = PostInteractor(cloudkit: cloudKit, coredata: coreData)
         let viewModel = FeedViewModel(interactor: interactor, coordinator: self)
         let vc = FeedViewController(viewModel: viewModel)
-        navController.pushViewController(vc, animated: false)
     }
 
     func presentChannelCreation(push viewController: UIViewController) {
@@ -62,6 +61,6 @@ class MainCoordinator: Coordinator {
     }
     
     func goBack() {
-        navController.popToRootViewController(animated: true)
+        navController.popViewController(animated: true)
     }
 }

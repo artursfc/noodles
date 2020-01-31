@@ -14,7 +14,7 @@ protocol FeedViewModelDelegate: class {
 
 final class FeedViewModel {
     private let interactor: PostInteractor
-    private let coordinator: Coordinator
+    private let coordinator: MainCoordinator
     private var models = [PostModel]() {
         didSet {
             delegate?.reloadUI()
@@ -23,7 +23,7 @@ final class FeedViewModel {
 
     weak var delegate: FeedViewModelDelegate?
 
-    init(interactor: PostInteractor, coordinator: Coordinator) {
+    init(interactor: PostInteractor, coordinator: MainCoordinator) {
         self.interactor = interactor
         self.coordinator = coordinator
     }
@@ -82,7 +82,7 @@ final class FeedViewModel {
     }
 
     public func selected(index: Int) {
-        // Coordinator -> Single Post
+        coordinator.presentPost(postModel: models[index])
     }
 
     public func bookmark(index: Int) {

@@ -218,6 +218,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate {
     @objc func addPost() {
         viewModel?.create()
         self.dismiss(animated: true, completion: nil)
+        viewModel?.goBackToChannel()
     }
     
     @objc func didTapOutside() {

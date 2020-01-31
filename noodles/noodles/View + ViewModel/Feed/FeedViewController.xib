@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -61,8 +61,8 @@
                 <constraint firstItem="GFe-d9-acU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0Cd-MS-4cd"/>
                 <constraint firstItem="GFe-d9-acU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8U4-QT-oVT"/>
                 <constraint firstItem="Zhe-cg-Eh4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Bwy-EL-r5b"/>
-                <constraint firstItem="GFe-d9-acU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FoY-nF-Pfn"/>
                 <constraint firstItem="Zhe-cg-Eh4" firstAttribute="top" secondItem="GFe-d9-acU" secondAttribute="bottom" id="Wnh-Jy-8jC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="GFe-d9-acU" secondAttribute="top" constant="44" id="hjV-CI-aTv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zhe-cg-Eh4" secondAttribute="trailing" constant="20" id="pZw-gd-5Ay"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

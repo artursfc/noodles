@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -57,13 +57,13 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="6TN-w9-1Iq" secondAttribute="top" constant="44" id="35G-TC-VeC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Fdj-CS-gra" secondAttribute="bottom" id="6od-E9-QTv"/>
                 <constraint firstItem="6TN-w9-1Iq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YX9-yP-tnD"/>
                 <constraint firstItem="Fdj-CS-gra" firstAttribute="top" secondItem="6TN-w9-1Iq" secondAttribute="bottom" id="aPS-EV-VOv"/>
                 <constraint firstItem="Fdj-CS-gra" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ejW-HO-SaS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fdj-CS-gra" secondAttribute="trailing" constant="20" id="hVF-0H-z0E"/>
                 <constraint firstItem="6TN-w9-1Iq" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hdV-Wg-tpu"/>
-                <constraint firstItem="6TN-w9-1Iq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jeM-8g-6li"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="125"/>

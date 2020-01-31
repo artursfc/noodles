@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,9 +71,9 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="nag-Pb-ZVK" secondAttribute="top" constant="44" id="4c9-nX-f3w"/>
                 <constraint firstItem="nag-Pb-ZVK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="K8L-uc-rT4"/>
                 <constraint firstItem="UvA-B9-uVv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="PAc-5T-Kir"/>
-                <constraint firstItem="nag-Pb-ZVK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aCF-K6-cb2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nag-Pb-ZVK" secondAttribute="trailing" id="cx3-ms-P2D"/>
                 <constraint firstItem="UvA-B9-uVv" firstAttribute="top" secondItem="nag-Pb-ZVK" secondAttribute="bottom" id="cx7-sK-LkZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UvA-B9-uVv" secondAttribute="trailing" constant="10" id="evc-Ac-dD4"/>

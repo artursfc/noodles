@@ -165,7 +165,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate {
     
     func addGestureRecognizer() {
         
-        let addPostGestureRecognizer = UIGestureRecognizer(target: self, action: #selector(addPost))
+        let addPostGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addPost))
         addPostButton.addGestureRecognizer(addPostGestureRecognizer)
     }
     
@@ -216,8 +216,8 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate {
       }
 
     @objc func addPost() {
-        self.dismiss(animated: true, completion: nil)
         viewModel?.create()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc func didTapOutside() {

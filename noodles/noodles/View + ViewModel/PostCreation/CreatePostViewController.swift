@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Foundation
+import NotificationCenter
 
 class CreatePostViewController: UIViewController, UITextFieldDelegate { 
 
     @IBOutlet weak var modalView: UIView!
+    
     @IBOutlet weak var firstCellView: UIView!
     @IBOutlet weak var secondCellVIew: UIView!
     @IBOutlet weak var thirdCellView: UIView!
@@ -25,8 +28,14 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var addPostButton: UIView!
     
+    @IBOutlet weak var bottomModalViewConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var outsideView: UIView!
+    
     var postName: String?
     var postBody: String?
+    
+    var constant: Int = 0
     
 //    var delegate: AddPostDelegate?
     
@@ -49,8 +58,22 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate {
         createPost()
         setupDelegates()
         addGestureRecognizer()
+        addRoundCorners()
+        addObserver()
+        setupTextView()
+        setupOutsideView()
         
         // Do any additional setup after loading the view.
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NSObject.removeObserver(self, forKeyPath: UIResponder.keyboardWillShowNotification.rawValue)
+        NSObject.removeObserver(self, forKeyPath: UIResponder.keyboardWillHideNotification.rawValue)
+        NotificationCenter.default.removeObserver(self)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -101,6 +124,12 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate {
         channelsSelectorTextField.delegate = self
     }
     
+    func setupTextView() {
+        postNameTextField.addDoneButton(title: "Done", target: self, selector: #selector(tapDone))
+        tagsTextField.addDoneButton(title: "Done", target: self, selector:  #selector(tapDone))
+        channelsSelectorTextField.addDoneButton(title: "Done", target: self, selector:  #selector(tapDone))
+    }
+    
     func createPost() {
         guard let viewModel = viewModel else { return }
         guard let postName = postName else { return }
@@ -141,8 +170,62 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate {
         addPostButton.addGestureRecognizer(addPostGestureRecognizer)
     }
     
+    func addRoundCorners() {
+        modalView.layer.cornerRadius = 14
+        firstCellView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        firstCellView.layer.cornerRadius = 14
+        addPostButton.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        addPostButton.layer.cornerRadius = 14
+    }
+    
+    func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setupchecksPlaceHolders), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setupchecksPlaceHolders), name: UIResponder.keyboardWillHideNotification, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func setupOutsideView() {
+        outsideView.backgroundColor = UIColor.fakeBlack.withAlphaComponent(0.3)
+        let outsideTap = UITapGestureRecognizer(target: self, action: #selector(didTapOutside))
+        self.outsideView.addGestureRecognizer(outsideTap)
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            if constant == 0 {
+                bottomModalViewConstraint.constant += keyboardHeight
+                constant += 1
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            bottomModalViewConstraint.constant -= keyboardHeight
+            constant -= 1
+        }
+    }
+    
+    @objc func setupchecksPlaceHolders() {
+          setupCheck()
+      }
+
     @objc func addPost() {
         self.dismiss(animated: true, completion: nil)
         viewModel?.create()
+    }
+    
+    @objc func didTapOutside() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func tapDone(sender: Any) {
+        setupCheck()
+        self.view.endEditing(true)
     }
 }

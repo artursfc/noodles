@@ -35,6 +35,7 @@ class FeedViewController: UIViewController {
      */
     func setupPostTableView() {
         postsTableView.dataSource = self
+        postsTableView.delegate = self
         postsTableView.register(UINib(nibName: POSTTABLEVIEWCELL, bundle: nil), forCellReuseIdentifier: POSTTABLEVIEWCELL)
         postsTableView.separatorColor = UIColor.clear
     }
@@ -61,5 +62,11 @@ extension FeedViewController: UITableViewDataSource {
 extension FeedViewController: FeedViewModelDelegate {
     func reloadUI() {
         postsTableView.reloadData()
+    }
+}
+
+extension FeedViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selected(index: indexPath.row)
     }
 }

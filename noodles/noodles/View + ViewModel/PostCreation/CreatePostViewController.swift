@@ -67,13 +67,12 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self)
+       NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        NSObject.removeObserver(self, forKeyPath: UIResponder.keyboardWillShowNotification.rawValue)
-        NSObject.removeObserver(self, forKeyPath: UIResponder.keyboardWillHideNotification.rawValue)
-        NotificationCenter.default.removeObserver(self)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -183,6 +182,7 @@ class CreatePostViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(setupchecksPlaceHolders), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setupchecksPlaceHolders), name: UIResponder.keyboardWillHideNotification, object: self)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
     func setupOutsideView() {

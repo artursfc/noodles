@@ -60,4 +60,8 @@ class MainCoordinator: Coordinator {
         let vc = AddPostViewController(viewModel: viewModel)
         navController.pushViewController(vc, animated: true)
     }
+    
+    func goBack() {
+        navController.popToRootViewController(animated: true)
+    }
 }

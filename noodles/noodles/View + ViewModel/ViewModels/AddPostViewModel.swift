@@ -58,4 +58,8 @@ final class AddPostViewModel {
             delegate?.reject(field: .post)
         }
     }
+    
+    public func goBackToChannel() {
+        coordinator.goBack()
+    }
 }
